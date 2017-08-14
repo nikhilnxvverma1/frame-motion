@@ -1,0 +1,521 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C48F86861F42597F00412D7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F86851F42597F00412D7B /* AppDelegate.swift */; };
+		C48F86881F42597F00412D7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F86871F42597F00412D7B /* ViewController.swift */; };
+		C48F868A1F42597F00412D7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C48F86891F42597F00412D7B /* Assets.xcassets */; };
+		C48F868D1F42597F00412D7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C48F868B1F42597F00412D7B /* Main.storyboard */; };
+		C48F86981F42597F00412D7B /* motion_frameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F86971F42597F00412D7B /* motion_frameTests.swift */; };
+		C48F86A31F42597F00412D7B /* motion_frameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F86A21F42597F00412D7B /* motion_frameUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C48F86941F42597F00412D7B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C48F867A1F42597F00412D7B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C48F86811F42597F00412D7B;
+			remoteInfo = "motion-frame";
+		};
+		C48F869F1F42597F00412D7B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C48F867A1F42597F00412D7B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C48F86811F42597F00412D7B;
+			remoteInfo = "motion-frame";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C48F86821F42597F00412D7B /* motion-frame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "motion-frame.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C48F86851F42597F00412D7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C48F86871F42597F00412D7B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C48F86891F42597F00412D7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C48F868C1F42597F00412D7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C48F868E1F42597F00412D7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C48F86931F42597F00412D7B /* motion-frameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "motion-frameTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C48F86971F42597F00412D7B /* motion_frameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = motion_frameTests.swift; sourceTree = "<group>"; };
+		C48F86991F42597F00412D7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C48F869E1F42597F00412D7B /* motion-frameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "motion-frameUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C48F86A21F42597F00412D7B /* motion_frameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = motion_frameUITests.swift; sourceTree = "<group>"; };
+		C48F86A41F42597F00412D7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C48F867F1F42597F00412D7B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C48F86901F42597F00412D7B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C48F869B1F42597F00412D7B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C48F86791F42597F00412D7B = {
+			isa = PBXGroup;
+			children = (
+				C48F86841F42597F00412D7B /* motion-frame */,
+				C48F86961F42597F00412D7B /* motion-frameTests */,
+				C48F86A11F42597F00412D7B /* motion-frameUITests */,
+				C48F86831F42597F00412D7B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C48F86831F42597F00412D7B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C48F86821F42597F00412D7B /* motion-frame.app */,
+				C48F86931F42597F00412D7B /* motion-frameTests.xctest */,
+				C48F869E1F42597F00412D7B /* motion-frameUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C48F86841F42597F00412D7B /* motion-frame */ = {
+			isa = PBXGroup;
+			children = (
+				C48F86851F42597F00412D7B /* AppDelegate.swift */,
+				C48F86871F42597F00412D7B /* ViewController.swift */,
+				C48F86891F42597F00412D7B /* Assets.xcassets */,
+				C48F868B1F42597F00412D7B /* Main.storyboard */,
+				C48F868E1F42597F00412D7B /* Info.plist */,
+			);
+			path = "motion-frame";
+			sourceTree = "<group>";
+		};
+		C48F86961F42597F00412D7B /* motion-frameTests */ = {
+			isa = PBXGroup;
+			children = (
+				C48F86971F42597F00412D7B /* motion_frameTests.swift */,
+				C48F86991F42597F00412D7B /* Info.plist */,
+			);
+			path = "motion-frameTests";
+			sourceTree = "<group>";
+		};
+		C48F86A11F42597F00412D7B /* motion-frameUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C48F86A21F42597F00412D7B /* motion_frameUITests.swift */,
+				C48F86A41F42597F00412D7B /* Info.plist */,
+			);
+			path = "motion-frameUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C48F86811F42597F00412D7B /* motion-frame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C48F86A71F42597F00412D7B /* Build configuration list for PBXNativeTarget "motion-frame" */;
+			buildPhases = (
+				C48F867E1F42597F00412D7B /* Sources */,
+				C48F867F1F42597F00412D7B /* Frameworks */,
+				C48F86801F42597F00412D7B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "motion-frame";
+			productName = "motion-frame";
+			productReference = C48F86821F42597F00412D7B /* motion-frame.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C48F86921F42597F00412D7B /* motion-frameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C48F86AA1F42597F00412D7B /* Build configuration list for PBXNativeTarget "motion-frameTests" */;
+			buildPhases = (
+				C48F868F1F42597F00412D7B /* Sources */,
+				C48F86901F42597F00412D7B /* Frameworks */,
+				C48F86911F42597F00412D7B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C48F86951F42597F00412D7B /* PBXTargetDependency */,
+			);
+			name = "motion-frameTests";
+			productName = "motion-frameTests";
+			productReference = C48F86931F42597F00412D7B /* motion-frameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C48F869D1F42597F00412D7B /* motion-frameUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C48F86AD1F42597F00412D7B /* Build configuration list for PBXNativeTarget "motion-frameUITests" */;
+			buildPhases = (
+				C48F869A1F42597F00412D7B /* Sources */,
+				C48F869B1F42597F00412D7B /* Frameworks */,
+				C48F869C1F42597F00412D7B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C48F86A01F42597F00412D7B /* PBXTargetDependency */,
+			);
+			name = "motion-frameUITests";
+			productName = "motion-frameUITests";
+			productReference = C48F869E1F42597F00412D7B /* motion-frameUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C48F867A1F42597F00412D7B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Nikhil Verma";
+				TargetAttributes = {
+					C48F86811F42597F00412D7B = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+					C48F86921F42597F00412D7B = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C48F86811F42597F00412D7B;
+					};
+					C48F869D1F42597F00412D7B = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C48F86811F42597F00412D7B;
+					};
+				};
+			};
+			buildConfigurationList = C48F867D1F42597F00412D7B /* Build configuration list for PBXProject "motion-frame" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C48F86791F42597F00412D7B;
+			productRefGroup = C48F86831F42597F00412D7B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C48F86811F42597F00412D7B /* motion-frame */,
+				C48F86921F42597F00412D7B /* motion-frameTests */,
+				C48F869D1F42597F00412D7B /* motion-frameUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C48F86801F42597F00412D7B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C48F868A1F42597F00412D7B /* Assets.xcassets in Resources */,
+				C48F868D1F42597F00412D7B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C48F86911F42597F00412D7B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C48F869C1F42597F00412D7B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C48F867E1F42597F00412D7B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C48F86881F42597F00412D7B /* ViewController.swift in Sources */,
+				C48F86861F42597F00412D7B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C48F868F1F42597F00412D7B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C48F86981F42597F00412D7B /* motion_frameTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C48F869A1F42597F00412D7B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C48F86A31F42597F00412D7B /* motion_frameUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C48F86951F42597F00412D7B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C48F86811F42597F00412D7B /* motion-frame */;
+			targetProxy = C48F86941F42597F00412D7B /* PBXContainerItemProxy */;
+		};
+		C48F86A01F42597F00412D7B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C48F86811F42597F00412D7B /* motion-frame */;
+			targetProxy = C48F869F1F42597F00412D7B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C48F868B1F42597F00412D7B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C48F868C1F42597F00412D7B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C48F86A51F42597F00412D7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C48F86A61F42597F00412D7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		C48F86A81F42597F00412D7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "motion-frame/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "madebynikhil.motion-frame";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		C48F86A91F42597F00412D7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "motion-frame/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "madebynikhil.motion-frame";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		C48F86AB1F42597F00412D7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "motion-frameTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "madebynikhil.motion-frameTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/motion-frame.app/Contents/MacOS/motion-frame";
+			};
+			name = Debug;
+		};
+		C48F86AC1F42597F00412D7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "motion-frameTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "madebynikhil.motion-frameTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/motion-frame.app/Contents/MacOS/motion-frame";
+			};
+			name = Release;
+		};
+		C48F86AE1F42597F00412D7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "motion-frameUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "madebynikhil.motion-frameUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "motion-frame";
+			};
+			name = Debug;
+		};
+		C48F86AF1F42597F00412D7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "motion-frameUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "madebynikhil.motion-frameUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "motion-frame";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C48F867D1F42597F00412D7B /* Build configuration list for PBXProject "motion-frame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C48F86A51F42597F00412D7B /* Debug */,
+				C48F86A61F42597F00412D7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C48F86A71F42597F00412D7B /* Build configuration list for PBXNativeTarget "motion-frame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C48F86A81F42597F00412D7B /* Debug */,
+				C48F86A91F42597F00412D7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C48F86AA1F42597F00412D7B /* Build configuration list for PBXNativeTarget "motion-frameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C48F86AB1F42597F00412D7B /* Debug */,
+				C48F86AC1F42597F00412D7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C48F86AD1F42597F00412D7B /* Build configuration list for PBXNativeTarget "motion-frameUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C48F86AE1F42597F00412D7B /* Debug */,
+				C48F86AF1F42597F00412D7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C48F867A1F42597F00412D7B /* Project object */;
+}
