@@ -1,3 +1,3 @@
 # Frame Motion
 
-Animation tool. Work in progress.
+Frame by frame Animation tool with supposed keyframe support. Work in progress.
