@@ -671,15 +671,11 @@
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <toolbar key="toolbar" implicitIdentifier="D2904DF8-FED0-4F0A-809E-D810A7079DC7" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="MCT-nS-D51">
                             <allowedToolbarItems>
-                                <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="eo4-uG-jys"/>
-                                <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="P2C-kh-A9g"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="uzY-xR-JmW"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="Kmb-KH-GYG"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="NT5-mY-pSy"/>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
-                                <toolbarItem reference="eo4-uG-jys"/>
-                                <toolbarItem reference="P2C-kh-A9g"/>
                                 <toolbarItem reference="NT5-mY-pSy"/>
                                 <toolbarItem reference="uzY-xR-JmW"/>
                             </defaultToolbarItems>
