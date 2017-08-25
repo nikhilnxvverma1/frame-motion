@@ -13,6 +13,7 @@
 		C48F868D1F42597F00412D7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C48F868B1F42597F00412D7B /* Main.storyboard */; };
 		C48F86981F42597F00412D7B /* motion_frameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F86971F42597F00412D7B /* motion_frameTests.swift */; };
 		C48F86A31F42597F00412D7B /* motion_frameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F86A21F42597F00412D7B /* motion_frameUITests.swift */; };
+		C48F86B51F4FB4F000412D7B /* CGTrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F86B41F4FB4F000412D7B /* CGTrainingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		C48F869E1F42597F00412D7B /* motion-frameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "motion-frameUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C48F86A21F42597F00412D7B /* motion_frameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = motion_frameUITests.swift; sourceTree = "<group>"; };
 		C48F86A41F42597F00412D7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C48F86B41F4FB4F000412D7B /* CGTrainingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CGTrainingView.swift; path = ../CGTrainingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 		C48F86841F42597F00412D7B /* motion-frame */ = {
 			isa = PBXGroup;
 			children = (
+				C48F86B41F4FB4F000412D7B /* CGTrainingView.swift */,
 				C48F86851F42597F00412D7B /* AppDelegate.swift */,
 				C48F86871F42597F00412D7B /* ViewController.swift */,
 				C48F86891F42597F00412D7B /* Assets.xcassets */,
@@ -256,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C48F86881F42597F00412D7B /* ViewController.swift in Sources */,
+				C48F86B51F4FB4F000412D7B /* CGTrainingView.swift in Sources */,
 				C48F86861F42597F00412D7B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -498,6 +502,7 @@
 				C48F86A91F42597F00412D7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C48F86AA1F42597F00412D7B /* Build configuration list for PBXNativeTarget "motion-frameTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +511,7 @@
 				C48F86AC1F42597F00412D7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C48F86AD1F42597F00412D7B /* Build configuration list for PBXNativeTarget "motion-frameUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +520,7 @@
 				C48F86AF1F42597F00412D7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
