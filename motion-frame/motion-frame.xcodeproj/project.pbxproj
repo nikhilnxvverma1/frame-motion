@@ -14,6 +14,9 @@
 		C48F86981F42597F00412D7B /* motion_frameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F86971F42597F00412D7B /* motion_frameTests.swift */; };
 		C48F86A31F42597F00412D7B /* motion_frameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F86A21F42597F00412D7B /* motion_frameUITests.swift */; };
 		C48F86B51F4FB4F000412D7B /* CGTrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F86B41F4FB4F000412D7B /* CGTrainingView.swift */; };
+		C48F86B71F528F1300412D7B /* WorkspaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F86B61F528F1300412D7B /* WorkspaceController.swift */; };
+		C48F86B91F528F9200412D7B /* OverviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F86B81F528F9200412D7B /* OverviewController.swift */; };
+		C48F86BB1F528FE400412D7B /* DrawAreaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F86BA1F528FE400412D7B /* DrawAreaController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		C48F86A21F42597F00412D7B /* motion_frameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = motion_frameUITests.swift; sourceTree = "<group>"; };
 		C48F86A41F42597F00412D7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C48F86B41F4FB4F000412D7B /* CGTrainingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CGTrainingView.swift; path = ../CGTrainingView.swift; sourceTree = "<group>"; };
+		C48F86B61F528F1300412D7B /* WorkspaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkspaceController.swift; sourceTree = "<group>"; };
+		C48F86B81F528F9200412D7B /* OverviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewController.swift; sourceTree = "<group>"; };
+		C48F86BA1F528FE400412D7B /* DrawAreaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawAreaController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,10 +104,13 @@
 			isa = PBXGroup;
 			children = (
 				C48F86B41F4FB4F000412D7B /* CGTrainingView.swift */,
+				C48F86B61F528F1300412D7B /* WorkspaceController.swift */,
 				C48F86851F42597F00412D7B /* AppDelegate.swift */,
 				C48F86871F42597F00412D7B /* ViewController.swift */,
 				C48F86891F42597F00412D7B /* Assets.xcassets */,
 				C48F868B1F42597F00412D7B /* Main.storyboard */,
+				C48F86B81F528F9200412D7B /* OverviewController.swift */,
+				C48F86BA1F528FE400412D7B /* DrawAreaController.swift */,
 				C48F868E1F42597F00412D7B /* Info.plist */,
 			);
 			path = "motion-frame";
@@ -258,9 +267,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C48F86BB1F528FE400412D7B /* DrawAreaController.swift in Sources */,
 				C48F86881F42597F00412D7B /* ViewController.swift in Sources */,
 				C48F86B51F4FB4F000412D7B /* CGTrainingView.swift in Sources */,
 				C48F86861F42597F00412D7B /* AppDelegate.swift in Sources */,
+				C48F86B91F528F9200412D7B /* OverviewController.swift in Sources */,
+				C48F86B71F528F1300412D7B /* WorkspaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

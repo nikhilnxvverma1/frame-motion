@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -690,10 +689,10 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--Split View Controller-->
+        <!--Workspace Controller-->
         <scene sceneID="4l8-DB-eUD">
             <objects>
-                <splitViewController id="48P-Fy-GxX" sceneMemberID="viewController">
+                <splitViewController id="48P-Fy-GxX" customClass="WorkspaceController" customModule="motion_frame" customModuleProvider="target" sceneMemberID="viewController">
                     <splitViewItems>
                         <splitViewItem id="5r7-c2-3Dy"/>
                         <splitViewItem id="4RR-0j-chg"/>
@@ -711,10 +710,10 @@
             </objects>
             <point key="canvasLocation" x="75" y="861"/>
         </scene>
-        <!--View Controller-->
+        <!--Overview Controller-->
         <scene sceneID="WDd-Bd-Ji4">
             <objects>
-                <viewController id="Y87-DH-O71" sceneMemberID="viewController">
+                <viewController id="Y87-DH-O71" customClass="OverviewController" customModule="motion_frame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="6yu-vo-eOF">
                         <rect key="frame" x="0.0" y="0.0" width="170" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -724,23 +723,26 @@
             </objects>
             <point key="canvasLocation" x="759" y="664"/>
         </scene>
-        <!--View Controller-->
+        <!--Draw Area Controller-->
         <scene sceneID="Qfm-OJ-r1p">
             <objects>
-                <viewController id="1SC-tv-nac" sceneMemberID="viewController">
+                <viewController id="1SC-tv-nac" customClass="DrawAreaController" customModule="motion_frame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="fR0-0c-T8L">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <containerView ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Ar-OG-Jaz">
+                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="3Ar-OG-Jaz">
                                 <rect key="frame" x="318" y="0.0" width="132" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="132" id="dWk-QG-mba"/>
+                                </constraints>
                                 <connections>
                                     <segue destination="skp-VX-LTZ" kind="embed" id="4k3-kq-oXh"/>
                                 </connections>
                             </containerView>
-                            <scrollView wantsLayer="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QFd-Uy-KvC">
+                            <scrollView wantsLayer="YES" ambiguous="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QFd-Uy-KvC">
                                 <rect key="frame" x="0.0" y="0.0" width="319" height="300"/>
-                                <clipView key="contentView" id="Bgr-a1-NLM">
+                                <clipView key="contentView" ambiguous="YES" id="Bgr-a1-NLM">
                                     <rect key="frame" x="1" y="1" width="317" height="298"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
@@ -750,7 +752,7 @@
                                     </subviews>
                                 </clipView>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="QFd-Uy-KvC" secondAttribute="height" multiplier="319:300" id="s8o-Dk-ukk"/>
+                                    <constraint firstAttribute="height" secondItem="DZ8-TA-RsF" secondAttribute="height" id="FGd-gP-S8I"/>
                                 </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="lmA-Fq-CY9">
                                     <rect key="frame" x="-100" y="-100" width="302" height="15"/>
