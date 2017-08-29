@@ -663,21 +663,31 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
+                <windowController id="B8D-0N-5wS" customClass="WindowController" customModule="motion_frame" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <toolbar key="toolbar" implicitIdentifier="D2904DF8-FED0-4F0A-809E-D810A7079DC7" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="MCT-nS-D51">
+                        <toolbar key="toolbar" implicitIdentifier="277A7F8A-F15C-498F-A1D4-A07CC8B644CE" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="ltP-S1-129">
                             <allowedToolbarItems>
-                                <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="uzY-xR-JmW"/>
-                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="Kmb-KH-GYG"/>
-                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="NT5-mY-pSy"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="1rR-i3-EiA"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="2Te-OD-uY6"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="0td-Qi-7vA"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="FKW-8U-r3X"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="CrJ-uC-4kl"/>
+                                <toolbarItem implicitItemIdentifier="A3E61502-8C69-445D-8258-27F748CBFB46" label="Toolbar Item" paletteLabel="Toolbar Item" tag="-1" image="NSFolder" id="83E-cA-LrL">
+                                    <connections>
+                                        <action selector="printPressed:" target="B8D-0N-5wS" id="YIR-Tn-VJB"/>
+                                    </connections>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
-                                <toolbarItem reference="NT5-mY-pSy"/>
-                                <toolbarItem reference="uzY-xR-JmW"/>
+                                <toolbarItem reference="1rR-i3-EiA"/>
+                                <toolbarItem reference="2Te-OD-uY6"/>
+                                <toolbarItem reference="CrJ-uC-4kl"/>
+                                <toolbarItem reference="0td-Qi-7vA"/>
+                                <toolbarItem reference="83E-cA-LrL"/>
                             </defaultToolbarItems>
                         </toolbar>
                     </window>
@@ -686,6 +696,7 @@
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="dr8-X1-Qf9"/>
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
@@ -721,7 +732,7 @@
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btJ-Jr-q4F">
                                 <rect key="frame" x="0.0" y="288" width="170" height="195"/>
                                 <clipView key="contentView" id="G42-l7-kV9">
-                                    <rect key="frame" x="1" y="23" width="168" height="171"/>
+                                    <rect key="frame" x="1" y="0.0" width="168" height="194"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="E56-jb-90r" viewBased="YES" id="DB0-jw-IUL">
@@ -732,7 +743,7 @@
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
                                                 <tableColumn width="165" minWidth="40" maxWidth="1000" id="M0X-zd-ahr">
-                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Pages">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -744,7 +755,7 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="EUE-xw-7IT">
+                                                        <tableCellView identifier="PagesCellID" id="EUE-xw-7IT">
                                                             <rect key="frame" x="1" y="1" width="165" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -775,7 +786,7 @@
                                     <rect key="frame" x="1" y="119" width="223" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="WWz-Si-k8U">
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="WWz-Si-k8U">
                                     <rect key="frame" x="224" y="17" width="15" height="102"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -787,7 +798,7 @@
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gag-kj-7Yy">
                                 <rect key="frame" x="0.0" y="0.0" width="170" height="290"/>
                                 <clipView key="contentView" id="2zw-Jb-Oug">
-                                    <rect key="frame" x="1" y="23" width="168" height="266"/>
+                                    <rect key="frame" x="1" y="0.0" width="168" height="289"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="8X6-z6-P1G" viewBased="YES" indentationPerLevel="16" outlineTableColumn="2bN-IW-R8Z" id="DtW-Ua-hb3">
@@ -862,6 +873,10 @@
                             <constraint firstItem="gag-kj-7Yy" firstAttribute="leading" secondItem="6yu-vo-eOF" secondAttribute="leading" id="y6a-gL-bek"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="graphicTable" destination="DtW-Ua-hb3" id="eAm-at-gJ4"/>
+                        <outlet property="pagesTable" destination="DB0-jw-IUL" id="hVe-WY-MaD"/>
+                    </connections>
                 </viewController>
                 <customObject id="cr8-vs-bMx" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -891,12 +906,13 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <view ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DZ8-TA-RsF">
-                                            <rect key="frame" x="0.0" y="0.0" width="302" height="283"/>
+                                            <rect key="frame" x="0.0" y="-1" width="302" height="300"/>
                                         </view>
                                     </subviews>
                                 </clipView>
                                 <constraints>
                                     <constraint firstAttribute="height" secondItem="DZ8-TA-RsF" secondAttribute="height" id="FGd-gP-S8I"/>
+                                    <constraint firstItem="DZ8-TA-RsF" firstAttribute="centerY" secondItem="QFd-Uy-KvC" secondAttribute="centerY" id="cHb-CO-9Tv"/>
                                 </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="lmA-Fq-CY9">
                                     <rect key="frame" x="-100" y="-100" width="302" height="15"/>
@@ -911,11 +927,13 @@
                         <constraints>
                             <constraint firstItem="QFd-Uy-KvC" firstAttribute="leading" secondItem="fR0-0c-T8L" secondAttribute="leading" id="3tS-6b-Z4A"/>
                             <constraint firstItem="3Ar-OG-Jaz" firstAttribute="leading" secondItem="DZ8-TA-RsF" secondAttribute="trailing" constant="30" id="4eV-Mk-mEj"/>
+                            <constraint firstItem="3Ar-OG-Jaz" firstAttribute="centerY" secondItem="DZ8-TA-RsF" secondAttribute="centerY" id="58V-lg-qQH"/>
                             <constraint firstItem="3Ar-OG-Jaz" firstAttribute="top" secondItem="fR0-0c-T8L" secondAttribute="top" id="bGQ-WC-lh3"/>
                             <constraint firstItem="QFd-Uy-KvC" firstAttribute="top" secondItem="fR0-0c-T8L" secondAttribute="top" id="cnR-Jq-e3H"/>
                             <constraint firstAttribute="bottom" secondItem="3Ar-OG-Jaz" secondAttribute="bottom" id="mfq-rF-daz"/>
                             <constraint firstAttribute="trailing" secondItem="3Ar-OG-Jaz" secondAttribute="trailing" id="nIF-Zu-pZI"/>
                             <constraint firstAttribute="bottom" secondItem="QFd-Uy-KvC" secondAttribute="bottom" id="o3G-1Q-KEB"/>
+                            <constraint firstItem="QFd-Uy-KvC" firstAttribute="top" secondItem="3Ar-OG-Jaz" secondAttribute="bottom" constant="-300" id="rHn-1z-ud6"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -937,4 +955,7 @@
             <point key="canvasLocation" x="380" y="1474"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NSFolder" width="32" height="32"/>
+    </resources>
 </document>

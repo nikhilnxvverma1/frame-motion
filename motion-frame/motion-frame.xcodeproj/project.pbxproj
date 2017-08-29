@@ -17,6 +17,7 @@
 		C48F86B71F528F1300412D7B /* WorkspaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F86B61F528F1300412D7B /* WorkspaceController.swift */; };
 		C48F86B91F528F9200412D7B /* OverviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F86B81F528F9200412D7B /* OverviewController.swift */; };
 		C48F86BB1F528FE400412D7B /* DrawAreaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F86BA1F528FE400412D7B /* DrawAreaController.swift */; };
+		C48F86BD1F553ABA00412D7B /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F86BC1F553ABA00412D7B /* WindowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		C48F86B61F528F1300412D7B /* WorkspaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkspaceController.swift; sourceTree = "<group>"; };
 		C48F86B81F528F9200412D7B /* OverviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewController.swift; sourceTree = "<group>"; };
 		C48F86BA1F528FE400412D7B /* DrawAreaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawAreaController.swift; sourceTree = "<group>"; };
+		C48F86BC1F553ABA00412D7B /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				C48F86871F42597F00412D7B /* ViewController.swift */,
 				C48F86891F42597F00412D7B /* Assets.xcassets */,
 				C48F868B1F42597F00412D7B /* Main.storyboard */,
+				C48F86BC1F553ABA00412D7B /* WindowController.swift */,
 				C48F86B81F528F9200412D7B /* OverviewController.swift */,
 				C48F86BA1F528FE400412D7B /* DrawAreaController.swift */,
 				C48F868E1F42597F00412D7B /* Info.plist */,
@@ -270,6 +273,7 @@
 				C48F86BB1F528FE400412D7B /* DrawAreaController.swift in Sources */,
 				C48F86881F42597F00412D7B /* ViewController.swift in Sources */,
 				C48F86B51F4FB4F000412D7B /* CGTrainingView.swift in Sources */,
+				C48F86BD1F553ABA00412D7B /* WindowController.swift in Sources */,
 				C48F86861F42597F00412D7B /* AppDelegate.swift in Sources */,
 				C48F86B91F528F9200412D7B /* OverviewController.swift in Sources */,
 				C48F86B71F528F1300412D7B /* WorkspaceController.swift in Sources */,
