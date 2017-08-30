@@ -1,15 +1,15 @@
 //
-//  motion_frameTests.swift
-//  motion-frameTests
+//  sketch_proTests.swift
+//  sketch-proTests
 //
-//  Created by Nikhil Verma on 8/14/17.
+//  Created by Nikhil Verma on 8/30/17.
 //  Copyright © 2017 Nikhil Verma. All rights reserved.
 //
 
 import XCTest
-@testable import motion_frame
+@testable import sketch_pro
 
-class motion_frameTests: XCTestCase {
+class sketch_proTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:motion-frame.xcodeproj">
+      location = "self:sketch-pro.xcodeproj">
    </FileRef>
 </Workspace>

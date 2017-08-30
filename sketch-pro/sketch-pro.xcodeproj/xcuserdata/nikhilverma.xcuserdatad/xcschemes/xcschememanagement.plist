@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>motion-frame.xcscheme</key>
+		<key>sketch-pro.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,17 +12,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>C48F86811F42597F00412D7B</key>
+		<key>C48F87071F56E43600412D7B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C48F86921F42597F00412D7B</key>
+		<key>C48F871D1F56E43600412D7B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C48F869D1F42597F00412D7B</key>
+		<key>C48F87281F56E43600412D7B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

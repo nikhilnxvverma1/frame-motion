@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C48F86811F42597F00412D7B"
-               BuildableName = "motion-frame.app"
-               BlueprintName = "motion-frame"
-               ReferencedContainer = "container:motion-frame.xcodeproj">
+               BlueprintIdentifier = "C48F87071F56E43600412D7B"
+               BuildableName = "sketch-pro.app"
+               BlueprintName = "sketch-pro"
+               ReferencedContainer = "container:sketch-pro.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,30 +32,30 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C48F86921F42597F00412D7B"
-               BuildableName = "motion-frameTests.xctest"
-               BlueprintName = "motion-frameTests"
-               ReferencedContainer = "container:motion-frame.xcodeproj">
+               BlueprintIdentifier = "C48F871D1F56E43600412D7B"
+               BuildableName = "sketch-proTests.xctest"
+               BlueprintName = "sketch-proTests"
+               ReferencedContainer = "container:sketch-pro.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C48F869D1F42597F00412D7B"
-               BuildableName = "motion-frameUITests.xctest"
-               BlueprintName = "motion-frameUITests"
-               ReferencedContainer = "container:motion-frame.xcodeproj">
+               BlueprintIdentifier = "C48F87281F56E43600412D7B"
+               BuildableName = "sketch-proUITests.xctest"
+               BlueprintName = "sketch-proUITests"
+               ReferencedContainer = "container:sketch-pro.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C48F86811F42597F00412D7B"
-            BuildableName = "motion-frame.app"
-            BlueprintName = "motion-frame"
-            ReferencedContainer = "container:motion-frame.xcodeproj">
+            BlueprintIdentifier = "C48F87071F56E43600412D7B"
+            BuildableName = "sketch-pro.app"
+            BlueprintName = "sketch-pro"
+            ReferencedContainer = "container:sketch-pro.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -75,10 +75,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C48F86811F42597F00412D7B"
-            BuildableName = "motion-frame.app"
-            BlueprintName = "motion-frame"
-            ReferencedContainer = "container:motion-frame.xcodeproj">
+            BlueprintIdentifier = "C48F87071F56E43600412D7B"
+            BuildableName = "sketch-pro.app"
+            BlueprintName = "sketch-pro"
+            ReferencedContainer = "container:sketch-pro.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,10 +94,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C48F86811F42597F00412D7B"
-            BuildableName = "motion-frame.app"
-            BlueprintName = "motion-frame"
-            ReferencedContainer = "container:motion-frame.xcodeproj">
+            BlueprintIdentifier = "C48F87071F56E43600412D7B"
+            BuildableName = "sketch-pro.app"
+            BlueprintName = "sketch-pro"
+            ReferencedContainer = "container:sketch-pro.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

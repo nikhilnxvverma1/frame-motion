@@ -24,7 +24,7 @@ class OverviewController: NSViewController,NSTableViewDelegate,NSTableViewDataSo
 		graphicTable.dataSource=self
     }
 	
-	// MARK Table View
+	// MARK: Table View
 	
 	func numberOfRows(in tableView: NSTableView) -> Int {
 		return 3
@@ -56,6 +56,6 @@ class OverviewController: NSViewController,NSTableViewDelegate,NSTableViewDataSo
 		return true
 	}
 	
-	// #MARK Scroll View
+	// MARK: Outline View
 	
 }

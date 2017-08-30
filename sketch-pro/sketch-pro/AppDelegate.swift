@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  motion-frame
+//  sketch-pro
 //
-//  Created by Nikhil Verma on 8/14/17.
+//  Created by Nikhil Verma on 8/30/17.
 //  Copyright © 2017 Nikhil Verma. All rights reserved.
 //
 
