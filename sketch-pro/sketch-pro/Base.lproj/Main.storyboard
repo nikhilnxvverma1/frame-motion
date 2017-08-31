@@ -663,7 +663,7 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController storyboardIdentifier="Document Window Controller" id="jGA-0Y-lOj" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="Document Window Controller" id="jGA-0Y-lOj" customClass="WIndowController" customModule="sketch_pro" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="Ckk-yw-fiv">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -671,14 +671,13 @@
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <toolbar key="toolbar" implicitIdentifier="653A9A1C-148F-468C-896F-4BEC6FDB2A98" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="Ure-Vx-JrO">
                             <allowedToolbarItems>
-                                <toolbarItem implicitItemIdentifier="E8ABD834-C217-42C9-B6D7-161F10FC2FBA" label="Insert" paletteLabel="Insert" tag="-1" id="4so-Wq-aL2"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="Gmj-jc-pgI"/>
                                 <toolbarItem implicitItemIdentifier="1CA2D952-7E8D-48DC-8A15-E20611C7202B" label="Group" paletteLabel="Group" tag="-1" id="89J-Hm-7CA"/>
                                 <toolbarItem implicitItemIdentifier="F9D3C8C3-708C-4B6C-A114-53BF04FCAF3B" label="Ungroup" paletteLabel="Ungroup" tag="-1" id="Btm-zy-pWa"/>
                                 <toolbarItem implicitItemIdentifier="8999D60A-B993-4B36-BB98-0316C81981C3" label="Create Symbol" paletteLabel="Create Symbol" tag="-1" id="pgV-BU-7eU"/>
-                                <toolbarItem implicitItemIdentifier="01150023-48D9-4348-A7BF-1CF16DAB6D3D" label="-" paletteLabel="-" tag="-1" id="qAb-Yv-cwa"/>
+                                <toolbarItem implicitItemIdentifier="01150023-48D9-4348-A7BF-1CF16DAB6D3D" label="-" paletteLabel="-" tag="-1" image="NSRemoveTemplate" id="qAb-Yv-cwa"/>
                                 <toolbarItem implicitItemIdentifier="75ADBE9D-D4E0-47BB-8C1D-24D1DF3FEA81" label="Zoom" paletteLabel="Zoom" tag="-1" id="B9L-ob-qFx"/>
-                                <toolbarItem implicitItemIdentifier="CFEC47FF-C334-4D34-8B3F-BCEE96B18D85" label="+" paletteLabel="+" tag="-1" id="nFS-ua-d1k"/>
+                                <toolbarItem implicitItemIdentifier="CFEC47FF-C334-4D34-8B3F-BCEE96B18D85" label="+" paletteLabel="+" tag="-1" image="NSAddTemplate" id="nFS-ua-d1k"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="X1l-TZ-d7T"/>
                                 <toolbarItem implicitItemIdentifier="1FF730CF-AAFB-423A-98C1-994D605A974E" label="Edit" paletteLabel="Edit" tag="-1" id="fEd-zj-1gI"/>
                                 <toolbarItem implicitItemIdentifier="2AD924AB-6919-4FFD-8FF3-1CC0CB2AB24E" label="Transform" paletteLabel="Transform" tag="-1" id="MfV-a0-rKZ"/>
@@ -694,11 +693,60 @@
                                 <toolbarItem implicitItemIdentifier="502B8A88-5182-4180-94A5-2B59BDCC84EB" label="Backward" paletteLabel="Backward" tag="-1" id="4at-75-ZSA"/>
                                 <toolbarItem implicitItemIdentifier="9F66654B-80B7-4955-9A38-953D09C5E8DA" label="Mirror" paletteLabel="Mirror" tag="-1" id="0jj-Fa-shc"/>
                                 <toolbarItem implicitItemIdentifier="68760CB4-0CE3-461E-917E-5F7FB9563C8E" label="Cloud" paletteLabel="Cloud" tag="-1" id="SGN-s9-mog"/>
-                                <toolbarItem implicitItemIdentifier="ACCA1245-B0BB-4F3F-B5D4-D4F0CFB25B3C" label="View" paletteLabel="View" tag="-1" id="lIX-VX-pOb"/>
                                 <toolbarItem implicitItemIdentifier="DC683A29-F301-4FE6-8288-FD362DDE2DA8" label="Export" paletteLabel="Export" tag="-1" id="Ojg-eU-Iso"/>
+                                <toolbarItem implicitItemIdentifier="798BB9BD-FD49-4B58-A902-8E67273147D3" label="View" paletteLabel="View" image="NSInfo" id="GxX-w6-eke">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="45" height="32"/>
+                                    <size key="maxSize" width="100" height="32"/>
+                                    <popUpButton key="view" id="hS9-Wn-gdW">
+                                        <rect key="frame" x="0.0" y="14" width="45" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <popUpButtonCell key="cell" type="square" bezelStyle="shadowlessSquare" imagePosition="only" alignment="left" lineBreakMode="truncatingTail" state="on" inset="2" pullsDown="YES" arrowPosition="noArrow" selectedItem="H3M-fR-uc8" id="108-et-znv">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="menu"/>
+                                            <menu key="menu" id="NiK-ts-D35">
+                                                <items>
+                                                    <menuItem state="on" image="NSInfo" hidden="YES" id="H3M-fR-uc8"/>
+                                                    <menuItem title="Item 2" image="NSColorPanel" id="vC3-Oh-kSB"/>
+                                                    <menuItem title="Item 3" image="NSCaution" id="T4n-fh-iNP"/>
+                                                </items>
+                                            </menu>
+                                        </popUpButtonCell>
+                                    </popUpButton>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="1C09A690-9B1B-4AEE-92EB-9B009B28429E" label="Insert" paletteLabel="Insert" image="NSFolder" id="2oU-VW-pTL">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="45" height="32"/>
+                                    <size key="maxSize" width="100" height="32"/>
+                                    <popUpButton key="view" id="n13-gG-42M">
+                                        <rect key="frame" x="0.0" y="14" width="45" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <popUpButtonCell key="cell" type="square" bezelStyle="shadowlessSquare" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" inset="2" pullsDown="YES" arrowPosition="noArrow" id="eRL-uf-6aC">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="menu"/>
+                                            <menu key="menu" id="MYh-yK-ty6">
+                                                <items>
+                                                    <menuItem state="on" image="NSFolder" hidden="YES" id="Uhw-Nc-xbn"/>
+                                                    <menuItem title="Artboard" image="NSBonjour" id="dml-Rx-dbB"/>
+                                                    <menuItem title="Shapes" image="NSAdvanced" id="Bb7-CT-34N">
+                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                        <menu key="submenu" title="Shapes" id="U5u-Pc-mVI">
+                                                            <items>
+                                                                <menuItem title="Rectangle" image="NSFontPanel" id="YU5-Lg-nJu">
+                                                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                                                </menuItem>
+                                                            </items>
+                                                        </menu>
+                                                    </menuItem>
+                                                    <menuItem title="Item 3" image="NSComputer" id="8wl-VF-lnT"/>
+                                                </items>
+                                            </menu>
+                                        </popUpButtonCell>
+                                    </popUpButton>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
-                                <toolbarItem reference="4so-Wq-aL2"/>
+                                <toolbarItem reference="2oU-VW-pTL"/>
                                 <toolbarItem reference="X1l-TZ-d7T"/>
                                 <toolbarItem reference="89J-Hm-7CA"/>
                                 <toolbarItem reference="Btm-zy-pWa"/>
@@ -728,7 +776,7 @@
                                 <toolbarItem reference="0jj-Fa-shc"/>
                                 <toolbarItem reference="SGN-s9-mog"/>
                                 <toolbarItem reference="X1l-TZ-d7T"/>
-                                <toolbarItem reference="lIX-VX-pOb"/>
+                                <toolbarItem reference="GxX-w6-eke"/>
                                 <toolbarItem reference="X1l-TZ-d7T"/>
                                 <toolbarItem reference="Ojg-eU-Iso"/>
                             </defaultToolbarItems>
@@ -920,18 +968,91 @@
             </objects>
             <point key="canvasLocation" x="673" y="589"/>
         </scene>
-        <!--View Controller-->
+        <!--Draw Area Controller-->
         <scene sceneID="C36-9Z-Wdk">
             <objects>
-                <viewController id="0wX-pm-A4X" sceneMemberID="viewController">
+                <viewController id="0wX-pm-A4X" customClass="DrawAreaController" customModule="sketch_pro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="7eT-R3-irg">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="p0D-9f-Tey">
+                                <rect key="frame" x="250" y="0.0" width="200" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="zwq-uD-Abx"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="t5W-t7-1qK" kind="embed" id="c0b-kn-jN3"/>
+                                </connections>
+                            </containerView>
+                            <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9NU-4E-rto">
+                                <rect key="frame" x="0.0" y="0.0" width="250" height="300"/>
+                                <clipView key="contentView" id="rxZ-fR-qZV">
+                                    <rect key="frame" x="1" y="1" width="248" height="298"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ps1-OR-RIt" customClass="DrawAreaBasicView" customModule="sketch_pro" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="233" height="283"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="WjC-Cc-Q8s">
+                                    <rect key="frame" x="-100" y="-100" width="233" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="r3P-VX-Dsu">
+                                    <rect key="frame" x="-100" y="-100" width="15" height="298"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="p0D-9f-Tey" secondAttribute="trailing" id="6ql-LB-oJq"/>
+                            <constraint firstItem="p0D-9f-Tey" firstAttribute="top" secondItem="7eT-R3-irg" secondAttribute="top" id="Kog-Tu-e0g"/>
+                            <constraint firstItem="p0D-9f-Tey" firstAttribute="height" secondItem="7eT-R3-irg" secondAttribute="height" id="Lf1-RZ-ihj"/>
+                            <constraint firstAttribute="bottom" secondItem="9NU-4E-rto" secondAttribute="bottom" id="NUz-uq-Tfg"/>
+                            <constraint firstAttribute="bottom" secondItem="p0D-9f-Tey" secondAttribute="bottom" id="S2Y-Mr-89Y"/>
+                            <constraint firstItem="9NU-4E-rto" firstAttribute="leading" secondItem="7eT-R3-irg" secondAttribute="leading" id="Uz7-VK-q0w"/>
+                            <constraint firstItem="p0D-9f-Tey" firstAttribute="leading" secondItem="9NU-4E-rto" secondAttribute="trailing" id="Zqy-o1-CiI"/>
+                            <constraint firstItem="9NU-4E-rto" firstAttribute="height" secondItem="7eT-R3-irg" secondAttribute="height" id="bTo-Ll-unb"/>
+                            <constraint firstItem="9NU-4E-rto" firstAttribute="top" secondItem="7eT-R3-irg" secondAttribute="top" id="pCX-FF-ko4"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="drawArea" destination="9NU-4E-rto" id="g3r-fg-yB7"/>
+                        <outlet property="drawAreaBasicView" destination="Ps1-OR-RIt" id="PJn-ZL-0GN"/>
+                    </connections>
                 </viewController>
                 <customObject id="ror-U9-fmL" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="802" y="1211"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Xj5-vc-GR1">
+            <objects>
+                <viewController id="t5W-t7-1qK" sceneMemberID="viewController">
+                    <view key="view" id="w8w-uk-FGA">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="8Rt-cM-aU2" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="802" y="1657"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="NSAddTemplate" width="11" height="11"/>
+        <image name="NSAdvanced" width="32" height="32"/>
+        <image name="NSBonjour" width="32" height="32"/>
+        <image name="NSCaution" width="32" height="32"/>
+        <image name="NSColorPanel" width="32" height="32"/>
+        <image name="NSComputer" width="32" height="32"/>
+        <image name="NSFolder" width="32" height="32"/>
+        <image name="NSFontPanel" width="32" height="32"/>
+        <image name="NSInfo" width="32" height="32"/>
+        <image name="NSRemoveTemplate" width="11" height="11"/>
+    </resources>
 </document>
