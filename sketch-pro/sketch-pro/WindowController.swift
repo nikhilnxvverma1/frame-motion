@@ -9,18 +9,17 @@
 import Cocoa
 
 class WindowController: NSWindowController {
-
-	var workspace : Workspace!
 	
     override func windowDidLoad() {
         super.windowDidLoad()
     
         // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
-		let appDelegate = NSApplication.shared().delegate as! AppDelegate
-		workspace = appDelegate.workspace
+		
     }
 
 	@IBAction func insertArtboard(_ sender: NSMenuItem) {
-		workspace.current = .Artboard
+		let appDelegate = NSApplication.shared().delegate as! AppDelegate
+		let workspace = appDelegate.workspace
+		workspace?.setCurrent(.Artboard)
 	}
 }

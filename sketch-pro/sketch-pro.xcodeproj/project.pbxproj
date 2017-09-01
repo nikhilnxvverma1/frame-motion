@@ -20,6 +20,9 @@
 		C48F87401F57DFC800412D7B /* DrawAreaBasicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F873F1F57DFC800412D7B /* DrawAreaBasicView.swift */; };
 		C48F87421F57E39700412D7B /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F87411F57E39700412D7B /* WindowController.swift */; };
 		C48F87441F57E8CF00412D7B /* Workspace.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F87431F57E8CF00412D7B /* Workspace.swift */; };
+		C48F87461F57ED4300412D7B /* PressDragReleaseProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F87451F57ED4300412D7B /* PressDragReleaseProcessor.swift */; };
+		C48F87481F57EE6100412D7B /* ArtboardTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F87471F57EE6100412D7B /* ArtboardTool.swift */; };
+		C48F874A1F57EEE400412D7B /* SelectionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F87491F57EEE400412D7B /* SelectionTool.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		C48F873F1F57DFC800412D7B /* DrawAreaBasicView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawAreaBasicView.swift; sourceTree = "<group>"; };
 		C48F87411F57E39700412D7B /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		C48F87431F57E8CF00412D7B /* Workspace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workspace.swift; sourceTree = "<group>"; };
+		C48F87451F57ED4300412D7B /* PressDragReleaseProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PressDragReleaseProcessor.swift; sourceTree = "<group>"; };
+		C48F87471F57EE6100412D7B /* ArtboardTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtboardTool.swift; sourceTree = "<group>"; };
+		C48F87491F57EEE400412D7B /* SelectionTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionTool.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,9 @@
 				C48F87411F57E39700412D7B /* WindowController.swift */,
 				C48F873D1F57D9CE00412D7B /* DrawAreaController.swift */,
 				C48F873F1F57DFC800412D7B /* DrawAreaBasicView.swift */,
+				C48F87451F57ED4300412D7B /* PressDragReleaseProcessor.swift */,
+				C48F87471F57EE6100412D7B /* ArtboardTool.swift */,
+				C48F87491F57EEE400412D7B /* SelectionTool.swift */,
 				C48F87431F57E8CF00412D7B /* Workspace.swift */,
 				C48F873B1F56E80B00412D7B /* OverviewController.swift */,
 				C48F87191F56E43600412D7B /* Info.plist */,
@@ -276,15 +285,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C48F87461F57ED4300412D7B /* PressDragReleaseProcessor.swift in Sources */,
 				C48F87401F57DFC800412D7B /* DrawAreaBasicView.swift in Sources */,
 				C48F873E1F57D9CE00412D7B /* DrawAreaController.swift in Sources */,
 				C48F87131F56E43600412D7B /* Document.xcdatamodeld in Sources */,
 				C48F870E1F56E43600412D7B /* ViewController.swift in Sources */,
 				C48F870C1F56E43600412D7B /* AppDelegate.swift in Sources */,
+				C48F874A1F57EEE400412D7B /* SelectionTool.swift in Sources */,
 				C48F87421F57E39700412D7B /* WindowController.swift in Sources */,
 				C48F87441F57E8CF00412D7B /* Workspace.swift in Sources */,
 				C48F873C1F56E80B00412D7B /* OverviewController.swift in Sources */,
 				C48F87101F56E43600412D7B /* Document.swift in Sources */,
+				C48F87481F57EE6100412D7B /* ArtboardTool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

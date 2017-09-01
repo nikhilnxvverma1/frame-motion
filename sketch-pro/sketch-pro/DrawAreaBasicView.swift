@@ -21,15 +21,15 @@ class DrawAreaBasicView: NSView {
     }
 	
 	override func mouseDown(with event: NSEvent) {
-		NSLog("Mouse down")
+		workspace.mouseHandler.mouseDown(with: event, under: self)
 	}
 	
 	override func mouseDragged(with event: NSEvent){
-		NSLog("Mouse Dragged")
+		workspace.mouseHandler.mouseDragged(with: event, under: self)
 	}
 	
 	override func mouseUp(with event: NSEvent) {
-		NSLog("Mouse up")
+		workspace.mouseHandler.mouseUp(with: event, under: self)
 	}
     
 }

@@ -16,5 +16,21 @@ enum Tool{
 }
 
 class Workspace: NSObject {
-	var current : Tool = .Selection
+	private var current : Tool = .Selection
+	var mouseHandler : PressDragReleaseProcessor!
+	
+	override init(){
+		mouseHandler = SelectionTool()
+	}
+	
+	func setCurrent(_ tool : Tool){
+		switch(tool){
+		case .Artboard:
+			mouseHandler = ArtboardTool()
+		case .Selection:
+			mouseHandler = SelectionTool()
+		default:
+			mouseHandler = SelectionTool()
+		}
+	}
 }
