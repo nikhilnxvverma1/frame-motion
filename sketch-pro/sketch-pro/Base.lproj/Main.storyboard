@@ -989,25 +989,25 @@
                                     <segue destination="t5W-t7-1qK" kind="embed" id="c0b-kn-jN3"/>
                                 </connections>
                             </containerView>
-                            <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9NU-4E-rto">
+                            <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9NU-4E-rto" customClass="DrawAreaView" customModule="sketch_pro" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="250" height="300"/>
                                 <clipView key="contentView" id="rxZ-fR-qZV">
-                                    <rect key="frame" x="1" y="1" width="248" height="298"/>
+                                    <rect key="frame" x="1" y="1" width="233" height="283"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ps1-OR-RIt" customClass="DrawAreaBasicView" customModule="sketch_pro" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="233" height="283"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="218" height="268"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </view>
                                     </subviews>
                                     <color key="backgroundColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="WjC-Cc-Q8s">
-                                    <rect key="frame" x="-100" y="-100" width="233" height="15"/>
+                                <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="WjC-Cc-Q8s">
+                                    <rect key="frame" x="1" y="284" width="233" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="r3P-VX-Dsu">
-                                    <rect key="frame" x="-100" y="-100" width="15" height="298"/>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="r3P-VX-Dsu">
+                                    <rect key="frame" x="234" y="1" width="15" height="283"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>

@@ -10,13 +10,14 @@ import Cocoa
 
 class DrawAreaController: NSViewController {
 
-	@IBOutlet weak var drawArea: NSScrollView!
+	@IBOutlet weak var drawArea: DrawAreaView!
 	
-	@IBOutlet weak var drawAreaBasicView:  DrawAreaBasicView!
+	@IBOutlet weak var drawAreaBasicView: NSView!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+		drawArea.drawAreaBasicView = drawAreaBasicView
     }
 	
 	
