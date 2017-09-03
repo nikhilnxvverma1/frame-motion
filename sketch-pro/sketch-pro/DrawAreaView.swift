@@ -19,24 +19,26 @@ class DrawAreaView: NSScrollView {
         // Drawing code here.
 		let appDelegate = NSApplication.shared().delegate as! AppDelegate
 		workspace = appDelegate.workspace
+
     }
 	
 	override func mouseDown(with event: NSEvent) {
 //		let localPoint = self.convert(event.locationInWindow, to: drawAreaBasicView)
 //		NSLog("Local ppoint outside is "+localPoint.debugDescription)
 //		workspace.mouseHandler.mouseDown(with: event, under: self)
+		
 		let subview=NSView()
 		subview.wantsLayer=true
 		subview.layer?.backgroundColor=NSColor.red.cgColor
 		subview.frame.size.width=200
 		subview.frame.size.height=200
 		
+//		self.contentView.addSubview(subview)
+		self.contentView.documentView?.addSubview(subview)
 		
-		drawAreaBasicView.addSubview(subview)
-		
-		let localPoint = self.contentView.convert(event.locationInWindow, to: nil)
-		subview.frame.origin.x=localPoint.x
-		subview.frame.origin.y=localPoint.y
+		let localPoint = self.contentView.documentView?.convert(event.locationInWindow, to: nil)
+		subview.frame.origin.x=(localPoint?.x)!
+		subview.frame.origin.y=(localPoint?.y)!
 		NSLog("Local point on mouse down "+localPoint.debugDescription)
 
 	}
