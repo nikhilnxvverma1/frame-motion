@@ -9,15 +9,15 @@
 import Cocoa
 
 class SelectionTool: NSObject,PressDragReleaseProcessor {
-	func mouseDown(with event: NSEvent,under view: NSView){
+	func mouseDown(with event: NSEvent,under view: NSScrollView){
 		
 	}
 	
-	func mouseDragged(with event: NSEvent,under view: NSView){
+	func mouseDragged(with event: NSEvent,under view: NSScrollView){
 		
 	}
 	
-	func mouseUp(with event: NSEvent,under view: NSView){
+	func mouseUp(with event: NSEvent,under view: NSScrollView){
 		
 	}
 }

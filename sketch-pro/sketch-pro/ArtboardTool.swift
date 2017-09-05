@@ -9,30 +9,26 @@
 import Cocoa
 
 class ArtboardTool: NSObject,PressDragReleaseProcessor {
-	func mouseDown(with event: NSEvent,under view: NSView){
+	var artboardView : ArtboardView!
+	func mouseDown(with event: NSEvent,under view: NSScrollView){
 		
-		let subview=NSView()
-		subview.wantsLayer=true
-		subview.layer?.backgroundColor=NSColor.red.cgColor
-		subview.frame.size.width=200
-		subview.frame.size.height=200
+		artboardView=ArtboardView()
+		artboardView.wantsLayer=true
+		artboardView.layer?.backgroundColor=NSColor.red.cgColor
 		
-		view.addSubview(subview)
+		view.contentView.documentView?.addSubview(artboardView)
 		
-		let localPoint = view.convert(event.locationInWindow, to: nil)
-		subview.frame.origin.x=localPoint.x
-		subview.frame.origin.y=localPoint.y
-		NSLog("Local point on mouse down "+localPoint.debugDescription)
-		NSEvent.mouseLocation()
-		
+		let localPoint = view.convert(event.locationInWindow, from: nil)
+		artboardView.frame.origin.x=(localPoint.x)+(view.documentVisibleRect.origin.x)
+		artboardView.frame.origin.y=(view.documentVisibleRect.origin.y)+(view.documentVisibleRect.size.height-localPoint.y)
 		
 	}
 	
-	func mouseDragged(with event: NSEvent,under view: NSView){
+	func mouseDragged(with event: NSEvent,under view: NSScrollView){
 		NSLog("Mouse dragged")
 	}
 	
-	func mouseUp(with event: NSEvent,under view: NSView){
+	func mouseUp(with event: NSEvent,under view: NSScrollView){
 		NSLog("Mouse up")
 	}
 }

@@ -23,6 +23,8 @@
 		C48F87461F57ED4300412D7B /* PressDragReleaseProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F87451F57ED4300412D7B /* PressDragReleaseProcessor.swift */; };
 		C48F87481F57EE6100412D7B /* ArtboardTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F87471F57EE6100412D7B /* ArtboardTool.swift */; };
 		C48F874A1F57EEE400412D7B /* SelectionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F87491F57EEE400412D7B /* SelectionTool.swift */; };
+		C48F87851F5E7BFC00412D7B /* GraphicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F87841F5E7BFC00412D7B /* GraphicView.swift */; };
+		C48F87871F5EAA1400412D7B /* ArtboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F87861F5EAA1400412D7B /* ArtboardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		C48F87451F57ED4300412D7B /* PressDragReleaseProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PressDragReleaseProcessor.swift; sourceTree = "<group>"; };
 		C48F87471F57EE6100412D7B /* ArtboardTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtboardTool.swift; sourceTree = "<group>"; };
 		C48F87491F57EEE400412D7B /* SelectionTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionTool.swift; sourceTree = "<group>"; };
+		C48F87841F5E7BFC00412D7B /* GraphicView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphicView.swift; sourceTree = "<group>"; };
+		C48F87861F5EAA1400412D7B /* ArtboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtboardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,11 +124,13 @@
 				C48F870F1F56E43600412D7B /* Document.swift */,
 				C48F87141F56E43600412D7B /* Assets.xcassets */,
 				C48F87161F56E43600412D7B /* Main.storyboard */,
+				C48F87841F5E7BFC00412D7B /* GraphicView.swift */,
 				C48F87411F57E39700412D7B /* WindowController.swift */,
 				C48F873D1F57D9CE00412D7B /* DrawAreaController.swift */,
 				C48F873F1F57DFC800412D7B /* DrawAreaView.swift */,
 				C48F87451F57ED4300412D7B /* PressDragReleaseProcessor.swift */,
 				C48F87471F57EE6100412D7B /* ArtboardTool.swift */,
+				C48F87861F5EAA1400412D7B /* ArtboardView.swift */,
 				C48F87491F57EEE400412D7B /* SelectionTool.swift */,
 				C48F87431F57E8CF00412D7B /* Workspace.swift */,
 				C48F873B1F56E80B00412D7B /* OverviewController.swift */,
@@ -287,6 +293,7 @@
 			files = (
 				C48F87461F57ED4300412D7B /* PressDragReleaseProcessor.swift in Sources */,
 				C48F87401F57DFC800412D7B /* DrawAreaView.swift in Sources */,
+				C48F87851F5E7BFC00412D7B /* GraphicView.swift in Sources */,
 				C48F873E1F57D9CE00412D7B /* DrawAreaController.swift in Sources */,
 				C48F87131F56E43600412D7B /* Document.xcdatamodeld in Sources */,
 				C48F870E1F56E43600412D7B /* ViewController.swift in Sources */,
@@ -295,6 +302,7 @@
 				C48F87421F57E39700412D7B /* WindowController.swift in Sources */,
 				C48F87441F57E8CF00412D7B /* Workspace.swift in Sources */,
 				C48F873C1F56E80B00412D7B /* OverviewController.swift in Sources */,
+				C48F87871F5EAA1400412D7B /* ArtboardView.swift in Sources */,
 				C48F87101F56E43600412D7B /* Document.swift in Sources */,
 				C48F87481F57EE6100412D7B /* ArtboardTool.swift in Sources */,
 			);
@@ -538,6 +546,7 @@
 				C48F87341F56E43700412D7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C48F87351F56E43700412D7B /* Build configuration list for PBXNativeTarget "sketch-proTests" */ = {
 			isa = XCConfigurationList;
@@ -546,6 +555,7 @@
 				C48F87371F56E43700412D7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C48F87381F56E43700412D7B /* Build configuration list for PBXNativeTarget "sketch-proUITests" */ = {
 			isa = XCConfigurationList;
@@ -554,6 +564,7 @@
 				C48F873A1F56E43700412D7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
