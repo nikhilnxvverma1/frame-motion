@@ -25,7 +25,10 @@ class ArtboardTool: NSObject,PressDragReleaseProcessor {
 	}
 	
 	func mouseDragged(with event: NSEvent,under view: NSScrollView){
-		NSLog("Mouse dragged")
+		let localPoint = view.convert(event.locationInWindow, from: nil)
+		artboardView.frame.size.width=(localPoint.x)-artboardView.frame.origin.x
+		artboardView.frame.size.height=(localPoint.y)-artboardView.frame.origin.y
+//		NSLog("Mouse dragged")
 	}
 	
 	func mouseUp(with event: NSEvent,under view: NSScrollView){
