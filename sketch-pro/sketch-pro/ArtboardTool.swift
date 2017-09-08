@@ -29,7 +29,7 @@ class ArtboardTool: NSObject,PressDragReleaseProcessor {
 		artboardView.frame.size.width=(localPoint.x)-artboardView.frame.origin.x
 		// TODO calculate the right height
 //		artboardView.frame.origin.y=(view.documentVisibleRect.origin.y)+(view.documentVisibleRect.size.height-localPoint.y)
-		artboardView.frame.size.height=(localPoint.y)-artboardView.frame.origin.y
+		artboardView.frame.size.height=artboardView.frame.origin.y-(localPoint.y)
 	}
 	
 	func mouseUp(with event: NSEvent,under view: NSScrollView){

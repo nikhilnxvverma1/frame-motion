@@ -25,6 +25,7 @@
 		C48F874A1F57EEE400412D7B /* SelectionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F87491F57EEE400412D7B /* SelectionTool.swift */; };
 		C48F87851F5E7BFC00412D7B /* GraphicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F87841F5E7BFC00412D7B /* GraphicView.swift */; };
 		C48F87871F5EAA1400412D7B /* ArtboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F87861F5EAA1400412D7B /* ArtboardView.swift */; };
+		C48F87891F63046800412D7B /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F87881F63046800412D7B /* Command.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		C48F87491F57EEE400412D7B /* SelectionTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionTool.swift; sourceTree = "<group>"; };
 		C48F87841F5E7BFC00412D7B /* GraphicView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphicView.swift; sourceTree = "<group>"; };
 		C48F87861F5EAA1400412D7B /* ArtboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtboardView.swift; sourceTree = "<group>"; };
+		C48F87881F63046800412D7B /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				C48F873F1F57DFC800412D7B /* DrawAreaView.swift */,
 				C48F87451F57ED4300412D7B /* PressDragReleaseProcessor.swift */,
 				C48F87471F57EE6100412D7B /* ArtboardTool.swift */,
+				C48F87881F63046800412D7B /* Command.swift */,
 				C48F87861F5EAA1400412D7B /* ArtboardView.swift */,
 				C48F87491F57EEE400412D7B /* SelectionTool.swift */,
 				C48F87431F57E8CF00412D7B /* Workspace.swift */,
@@ -299,6 +302,7 @@
 				C48F870E1F56E43600412D7B /* ViewController.swift in Sources */,
 				C48F870C1F56E43600412D7B /* AppDelegate.swift in Sources */,
 				C48F874A1F57EEE400412D7B /* SelectionTool.swift in Sources */,
+				C48F87891F63046800412D7B /* Command.swift in Sources */,
 				C48F87421F57E39700412D7B /* WindowController.swift in Sources */,
 				C48F87441F57E8CF00412D7B /* Workspace.swift in Sources */,
 				C48F873C1F56E80B00412D7B /* OverviewController.swift in Sources */,
