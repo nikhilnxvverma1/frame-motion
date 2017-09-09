@@ -51,6 +51,10 @@ class ArtboardTool: NSObject,PressDragReleaseProcessor {
 	}
 	
 	func mouseUp(with event: NSEvent,under view: NSScrollView){
-		NSLog("Mouse up")
+		
+		let artboardCommand = CreateArtboard(artboardView,scrollView:view)
+		let appDelegate = NSApplication.shared().delegate as! AppDelegate
+		let workspace = appDelegate.workspace
+		workspace?.pushCommand(command: artboardCommand, executeBeforePushing: false)
 	}
 }

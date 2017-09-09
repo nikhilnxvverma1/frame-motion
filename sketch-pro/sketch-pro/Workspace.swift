@@ -18,12 +18,15 @@ enum Tool{
 class Workspace: NSObject {
 	private var current : Tool = .Selection
 	var mouseHandler : PressDragReleaseProcessor!
+	var undoStack = [Command]()
+	var redoStack = [Command]()
 	
 	override init(){
 		mouseHandler = SelectionTool()
 	}
 	
 	func setCurrent(_ tool : Tool){
+		
 		switch(tool){
 		case .Artboard:
 			mouseHandler = ArtboardTool()
@@ -31,6 +34,30 @@ class Workspace: NSObject {
 			mouseHandler = SelectionTool()
 		default:
 			mouseHandler = SelectionTool()
+		}
+	}
+	
+	func pushCommand(command:Command!,executeBeforePushing:Bool){
+		if executeBeforePushing {
+			command.execute()
+		}
+		undoStack.append(command)
+		redoStack.removeAll()
+	}
+	
+	func undo(){
+		let popped=undoStack.popLast()
+		popped?.unexecute()
+		if popped != nil {
+			redoStack.append(popped!)
+		}
+	}
+	
+	func redo(){
+		let popped=redoStack.popLast()
+		popped?.execute()
+		if popped != nil {
+			undoStack.append(popped!)
 		}
 	}
 }

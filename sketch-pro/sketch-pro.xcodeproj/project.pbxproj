@@ -26,6 +26,7 @@
 		C48F87851F5E7BFC00412D7B /* GraphicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F87841F5E7BFC00412D7B /* GraphicView.swift */; };
 		C48F87871F5EAA1400412D7B /* ArtboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F87861F5EAA1400412D7B /* ArtboardView.swift */; };
 		C48F87891F63046800412D7B /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F87881F63046800412D7B /* Command.swift */; };
+		C48F878B1F63F9DA00412D7B /* CreateArtboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F878A1F63F9DA00412D7B /* CreateArtboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		C48F87841F5E7BFC00412D7B /* GraphicView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphicView.swift; sourceTree = "<group>"; };
 		C48F87861F5EAA1400412D7B /* ArtboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtboardView.swift; sourceTree = "<group>"; };
 		C48F87881F63046800412D7B /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		C48F878A1F63F9DA00412D7B /* CreateArtboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateArtboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				C48F87861F5EAA1400412D7B /* ArtboardView.swift */,
 				C48F87491F57EEE400412D7B /* SelectionTool.swift */,
 				C48F87431F57E8CF00412D7B /* Workspace.swift */,
+				C48F878A1F63F9DA00412D7B /* CreateArtboard.swift */,
 				C48F873B1F56E80B00412D7B /* OverviewController.swift */,
 				C48F87191F56E43600412D7B /* Info.plist */,
 				C48F87111F56E43600412D7B /* Document.xcdatamodeld */,
@@ -296,6 +299,7 @@
 			files = (
 				C48F87461F57ED4300412D7B /* PressDragReleaseProcessor.swift in Sources */,
 				C48F87401F57DFC800412D7B /* DrawAreaView.swift in Sources */,
+				C48F878B1F63F9DA00412D7B /* CreateArtboard.swift in Sources */,
 				C48F87851F5E7BFC00412D7B /* GraphicView.swift in Sources */,
 				C48F873E1F57D9CE00412D7B /* DrawAreaController.swift in Sources */,
 				C48F87131F56E43600412D7B /* Document.xcdatamodeld in Sources */,
