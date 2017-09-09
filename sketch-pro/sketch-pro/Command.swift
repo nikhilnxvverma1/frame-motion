@@ -9,7 +9,7 @@
 import Cocoa
 
 protocol Command {
-	func undo()
-	func redo()
+	func execute()
+	func unexecute()
 }
 

@@ -22,6 +22,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		// Insert code here to tear down your application
 	}
 
+	@IBAction func undo(_ sender: Any) {
+		NSLog("Undo called")
+	}
 
+	@IBAction func redo(_ sender: Any) {
+		NSLog("Redo Called")
+	}
 }
 
