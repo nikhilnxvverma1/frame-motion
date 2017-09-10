@@ -23,12 +23,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}
 
 	@IBAction func undo(_ sender: Any) {
-		NSLog("Undo called")
 		workspace.undo()
 	}
 
 	@IBAction func redo(_ sender: Any) {
-		NSLog("Redo Called")
 		workspace.redo()
 	}
 }
