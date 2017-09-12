@@ -9,10 +9,13 @@
 import Cocoa
 
 class Document: NSPersistentDocument {
+	
+	var workspace : Workspace!
 
 	override init() {
 	    super.init()
 		// Add your subclass-specific initialization here.
+		workspace = Workspace(self)
 	}
 
 	override class func autosavesInPlace() -> Bool {
@@ -24,6 +27,14 @@ class Document: NSPersistentDocument {
 		let storyboard = NSStoryboard(name: "Main", bundle: nil)
 		let windowController = storyboard.instantiateController(withIdentifier: "Document Window Controller") as! NSWindowController
 		self.addWindowController(windowController)
+	}
+	
+	func undo(){
+		workspace.undo()
+	}
+	
+	func redo(){
+		workspace.redo()
 	}
 
 }

@@ -17,20 +17,23 @@ class DrawAreaView: NSScrollView {
         super.draw(dirtyRect)
 
         // Drawing code here.
-		let appDelegate = NSApplication.shared().delegate as! AppDelegate
-		workspace = appDelegate.workspace
-
     }
 	
 	override func mouseDown(with event: NSEvent) {
+		let document = self.window?.windowController?.document as! Document
+		workspace = document.workspace
 		workspace.mouseHandler.mouseDown(with: event, under: self)
 	}
 	
 	override func mouseDragged(with event: NSEvent){
+		let document = self.window?.windowController?.document as! Document
+		workspace = document.workspace
 		workspace.mouseHandler.mouseDragged(with: event, under: self)
 	}
 	
 	override func mouseUp(with event: NSEvent) {
+		let document = self.window?.windowController?.document as! Document
+		workspace = document.workspace
 		workspace.mouseHandler.mouseUp(with: event, under: self)
 	}
     

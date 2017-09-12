@@ -20,8 +20,10 @@ class Workspace: NSObject {
 	var mouseHandler : PressDragReleaseProcessor!
 	var undoStack = [Command]()
 	var redoStack = [Command]()
+	var document : Document!
 	
-	override init(){
+	init(_ document : Document){
+		self.document=document
 		mouseHandler = SelectionTool()
 	}
 	
@@ -29,7 +31,7 @@ class Workspace: NSObject {
 		
 		switch(tool){
 		case .Artboard:
-			mouseHandler = ArtboardTool()
+			mouseHandler = ArtboardTool(self)
 		case .Selection:
 			mouseHandler = SelectionTool()
 		default:

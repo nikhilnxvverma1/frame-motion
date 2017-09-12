@@ -11,11 +11,8 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-	var workspace : Workspace!
-
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
 		// Insert code here to initialize your application
-		workspace = Workspace()
 	}
 
 	func applicationWillTerminate(_ aNotification: Notification) {
@@ -23,11 +20,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}
 
 	@IBAction func undo(_ sender: Any) {
-		workspace.undo()
+		let document = NSApplication.shared().mainWindow?.windowController?.document as! Document
+		document.undo()
 	}
 
 	@IBAction func redo(_ sender: Any) {
-		workspace.redo()
+		let document = NSApplication.shared().mainWindow?.windowController?.document as! Document
+		document.redo()
 	}
 }
 

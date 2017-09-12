@@ -18,8 +18,7 @@ class WindowController: NSWindowController {
     }
 
 	@IBAction func insertArtboard(_ sender: NSMenuItem) {
-		let appDelegate = NSApplication.shared().delegate as! AppDelegate
-		let workspace = appDelegate.workspace
+		let workspace = (self.document as! Document).workspace
 		workspace?.setCurrent(.Artboard)
 	}
 }

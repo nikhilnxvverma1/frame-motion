@@ -11,6 +11,12 @@ import Cocoa
 class ArtboardTool: NSObject,PressDragReleaseProcessor {
 	var artboardView : ArtboardView!
 	var initialPoint : NSPoint!
+	var workspace : Workspace!
+	
+	init(_ workspace : Workspace) {
+		self.workspace = workspace
+	}
+	
 	func mouseDown(with event: NSEvent,under view: NSScrollView){
 		
 		artboardView=ArtboardView()
@@ -53,8 +59,6 @@ class ArtboardTool: NSObject,PressDragReleaseProcessor {
 	func mouseUp(with event: NSEvent,under view: NSScrollView){
 		
 		let artboardCommand = CreateArtboard(artboardView,scrollView:view)
-		let appDelegate = NSApplication.shared().delegate as! AppDelegate
-		let workspace = appDelegate.workspace
-		workspace?.pushCommand(command: artboardCommand, executeBeforePushing: false)
+		self.workspace?.pushCommand(command: artboardCommand, executeBeforePushing: false)
 	}
 }
