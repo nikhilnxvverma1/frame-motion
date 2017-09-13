@@ -17,25 +17,25 @@ enum Tool{
 
 class Workspace: NSObject {
 	private var current : Tool = .Selection
-	var mouseHandler : PressDragReleaseProcessor!
+	var canvasHandler : CanvasHandler!
 	var undoStack = [Command]()
 	var redoStack = [Command]()
 	var document : Document!
 	
 	init(_ document : Document){
 		self.document=document
-		mouseHandler = SelectionTool()
+		canvasHandler = SelectionTool()
 	}
 	
 	func setCurrent(_ tool : Tool){
 		
 		switch(tool){
 		case .Artboard:
-			mouseHandler = ArtboardTool(self)
+			canvasHandler = ArtboardTool(self)
 		case .Selection:
-			mouseHandler = SelectionTool()
+			canvasHandler = SelectionTool()
 		default:
-			mouseHandler = SelectionTool()
+			canvasHandler = SelectionTool()
 		}
 	}
 	

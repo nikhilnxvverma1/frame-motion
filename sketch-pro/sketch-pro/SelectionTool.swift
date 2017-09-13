@@ -8,16 +8,16 @@
 
 import Cocoa
 
-class SelectionTool: NSObject,PressDragReleaseProcessor {
-	func mouseDown(with event: NSEvent,under view: NSScrollView){
+class SelectionTool: NSObject,CanvasHandler {
+	func mouseDown(with event: NSEvent,under view: DrawAreaView){
 		
 	}
 	
-	func mouseDragged(with event: NSEvent,under view: NSScrollView){
+	func mouseDragged(with event: NSEvent,under view: DrawAreaView){
 		
 	}
 	
-	func mouseUp(with event: NSEvent,under view: NSScrollView){
+	func mouseUp(with event: NSEvent,under view: DrawAreaView){
 		
 	}
 }

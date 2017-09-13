@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C41D15721F69920600586FCA /* ArtboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D15711F69920600586FCA /* ArtboardHandler.swift */; };
 		C48F870C1F56E43600412D7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F870B1F56E43600412D7B /* AppDelegate.swift */; };
 		C48F870E1F56E43600412D7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F870D1F56E43600412D7B /* ViewController.swift */; };
 		C48F87101F56E43600412D7B /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F870F1F56E43600412D7B /* Document.swift */; };
@@ -20,7 +21,7 @@
 		C48F87401F57DFC800412D7B /* DrawAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F873F1F57DFC800412D7B /* DrawAreaView.swift */; };
 		C48F87421F57E39700412D7B /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F87411F57E39700412D7B /* WindowController.swift */; };
 		C48F87441F57E8CF00412D7B /* Workspace.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F87431F57E8CF00412D7B /* Workspace.swift */; };
-		C48F87461F57ED4300412D7B /* PressDragReleaseProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F87451F57ED4300412D7B /* PressDragReleaseProcessor.swift */; };
+		C48F87461F57ED4300412D7B /* CanvasHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F87451F57ED4300412D7B /* CanvasHandler.swift */; };
 		C48F87481F57EE6100412D7B /* ArtboardTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F87471F57EE6100412D7B /* ArtboardTool.swift */; };
 		C48F874A1F57EEE400412D7B /* SelectionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F87491F57EEE400412D7B /* SelectionTool.swift */; };
 		C48F87851F5E7BFC00412D7B /* GraphicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F87841F5E7BFC00412D7B /* GraphicView.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C41D15711F69920600586FCA /* ArtboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtboardHandler.swift; sourceTree = "<group>"; };
 		C48F87081F56E43600412D7B /* sketch-pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sketch-pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C48F870B1F56E43600412D7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C48F870D1F56E43600412D7B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,7 +68,7 @@
 		C48F873F1F57DFC800412D7B /* DrawAreaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawAreaView.swift; sourceTree = "<group>"; };
 		C48F87411F57E39700412D7B /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		C48F87431F57E8CF00412D7B /* Workspace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workspace.swift; sourceTree = "<group>"; };
-		C48F87451F57ED4300412D7B /* PressDragReleaseProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PressDragReleaseProcessor.swift; sourceTree = "<group>"; };
+		C48F87451F57ED4300412D7B /* CanvasHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasHandler.swift; sourceTree = "<group>"; };
 		C48F87471F57EE6100412D7B /* ArtboardTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtboardTool.swift; sourceTree = "<group>"; };
 		C48F87491F57EEE400412D7B /* SelectionTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionTool.swift; sourceTree = "<group>"; };
 		C48F87841F5E7BFC00412D7B /* GraphicView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphicView.swift; sourceTree = "<group>"; };
@@ -124,19 +126,20 @@
 			isa = PBXGroup;
 			children = (
 				C48F870B1F56E43600412D7B /* AppDelegate.swift */,
-				C48F870D1F56E43600412D7B /* ViewController.swift */,
 				C48F870F1F56E43600412D7B /* Document.swift */,
 				C48F87431F57E8CF00412D7B /* Workspace.swift */,
+				C48F87411F57E39700412D7B /* WindowController.swift */,
+				C48F870D1F56E43600412D7B /* ViewController.swift */,
 				C48F87141F56E43600412D7B /* Assets.xcassets */,
 				C48F87161F56E43600412D7B /* Main.storyboard */,
 				C48F87841F5E7BFC00412D7B /* GraphicView.swift */,
-				C48F87411F57E39700412D7B /* WindowController.swift */,
+				C48F87861F5EAA1400412D7B /* ArtboardView.swift */,
 				C48F873D1F57D9CE00412D7B /* DrawAreaController.swift */,
 				C48F873F1F57DFC800412D7B /* DrawAreaView.swift */,
-				C48F87451F57ED4300412D7B /* PressDragReleaseProcessor.swift */,
+				C48F87451F57ED4300412D7B /* CanvasHandler.swift */,
+				C41D15711F69920600586FCA /* ArtboardHandler.swift */,
 				C48F87471F57EE6100412D7B /* ArtboardTool.swift */,
 				C48F87881F63046800412D7B /* Command.swift */,
-				C48F87861F5EAA1400412D7B /* ArtboardView.swift */,
 				C48F87491F57EEE400412D7B /* SelectionTool.swift */,
 				C48F878A1F63F9DA00412D7B /* CreateArtboard.swift */,
 				C48F873B1F56E80B00412D7B /* OverviewController.swift */,
@@ -297,7 +300,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C48F87461F57ED4300412D7B /* PressDragReleaseProcessor.swift in Sources */,
+				C48F87461F57ED4300412D7B /* CanvasHandler.swift in Sources */,
+				C41D15721F69920600586FCA /* ArtboardHandler.swift in Sources */,
 				C48F87401F57DFC800412D7B /* DrawAreaView.swift in Sources */,
 				C48F878B1F63F9DA00412D7B /* CreateArtboard.swift in Sources */,
 				C48F87851F5E7BFC00412D7B /* GraphicView.swift in Sources */,

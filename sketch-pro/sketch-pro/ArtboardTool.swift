@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ArtboardTool: NSObject,PressDragReleaseProcessor {
+class ArtboardTool: NSObject,CanvasHandler {
 	var artboardView : ArtboardView!
 	var initialPoint : NSPoint!
 	var workspace : Workspace!
@@ -17,11 +17,11 @@ class ArtboardTool: NSObject,PressDragReleaseProcessor {
 		self.workspace = workspace
 	}
 	
-	func mouseDown(with event: NSEvent,under view: NSScrollView){
+	func mouseDown(with event: NSEvent,under view: DrawAreaView){
 		
 		artboardView=ArtboardView()
 		artboardView.wantsLayer=true
-		artboardView.layer?.backgroundColor=NSColor.red.cgColor
+		artboardView.layer?.backgroundColor=NSColor.white.cgColor
 		
 		view.contentView.documentView?.addSubview(artboardView)
 		
@@ -32,7 +32,7 @@ class ArtboardTool: NSObject,PressDragReleaseProcessor {
 		
 	}
 	
-	func mouseDragged(with event: NSEvent,under view: NSScrollView){
+	func mouseDragged(with event: NSEvent,under view: DrawAreaView){
 		let localPoint = view.convert(event.locationInWindow, from: nil)
 		// width
 		artboardView.frame.size.width = localPoint.x - initialPoint.x
@@ -56,7 +56,7 @@ class ArtboardTool: NSObject,PressDragReleaseProcessor {
 		}
 	}
 	
-	func mouseUp(with event: NSEvent,under view: NSScrollView){
+	func mouseUp(with event: NSEvent,under view: DrawAreaView){
 		
 		let artboardCommand = CreateArtboard(artboardView,scrollView:view)
 		self.workspace?.pushCommand(command: artboardCommand, executeBeforePushing: false)

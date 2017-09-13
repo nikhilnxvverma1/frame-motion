@@ -22,19 +22,19 @@ class DrawAreaView: NSScrollView {
 	override func mouseDown(with event: NSEvent) {
 		let document = self.window?.windowController?.document as! Document
 		workspace = document.workspace
-		workspace.mouseHandler.mouseDown(with: event, under: self)
+		workspace.canvasHandler.mouseDown(with: event, under: self)
 	}
 	
 	override func mouseDragged(with event: NSEvent){
 		let document = self.window?.windowController?.document as! Document
 		workspace = document.workspace
-		workspace.mouseHandler.mouseDragged(with: event, under: self)
+		workspace.canvasHandler.mouseDragged(with: event, under: self)
 	}
 	
 	override func mouseUp(with event: NSEvent) {
 		let document = self.window?.windowController?.document as! Document
 		workspace = document.workspace
-		workspace.mouseHandler.mouseUp(with: event, under: self)
+		workspace.canvasHandler.mouseUp(with: event, under: self)
 	}
     
 }
