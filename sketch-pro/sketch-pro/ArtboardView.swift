@@ -15,5 +15,22 @@ class ArtboardView: NSView {
 
         // Drawing code here.
     }
-    
+	
+	override func mouseDown(with event: NSEvent) {
+		let document = self.window?.windowController?.document as! Document
+		let workspace = document.workspace
+		workspace!.artboardHandler.mouseDown(with: event, artboardView: self)
+	}
+	
+	override func mouseDragged(with event: NSEvent){
+		let document = self.window?.windowController?.document as! Document
+		let workspace = document.workspace
+		workspace!.artboardHandler.mouseDragged(with: event, artboardView: self)
+	}
+	
+	override func mouseUp(with event: NSEvent) {
+		let document = self.window?.windowController?.document as! Document
+		let workspace = document.workspace
+		workspace!.artboardHandler.mouseUp(with: event, artboardView: self)
+	}
 }

@@ -9,7 +9,7 @@
 import Cocoa
 
 protocol ArtboardHandler {
-	func mouseDown(with event: NSEvent,under view: ArtboardView)
-	func mouseDragged(with event: NSEvent,under view: ArtboardView)
-	func mouseUp(with event: NSEvent,under view: ArtboardView)
+	func mouseDown(with event: NSEvent,artboardView: ArtboardView)
+	func mouseDragged(with event: NSEvent,artboardView: ArtboardView)
+	func mouseUp(with event: NSEvent,artboardView: ArtboardView)
 }

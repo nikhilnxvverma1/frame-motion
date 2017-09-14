@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C41D15721F69920600586FCA /* ArtboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D15711F69920600586FCA /* ArtboardHandler.swift */; };
+		C41D15741F6A99D300586FCA /* RectangleTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D15731F6A99D300586FCA /* RectangleTool.swift */; };
 		C48F870C1F56E43600412D7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F870B1F56E43600412D7B /* AppDelegate.swift */; };
 		C48F870E1F56E43600412D7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F870D1F56E43600412D7B /* ViewController.swift */; };
 		C48F87101F56E43600412D7B /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F870F1F56E43600412D7B /* Document.swift */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		C41D15711F69920600586FCA /* ArtboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtboardHandler.swift; sourceTree = "<group>"; };
+		C41D15731F6A99D300586FCA /* RectangleTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleTool.swift; sourceTree = "<group>"; };
 		C48F87081F56E43600412D7B /* sketch-pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sketch-pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C48F870B1F56E43600412D7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C48F870D1F56E43600412D7B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				C48F870B1F56E43600412D7B /* AppDelegate.swift */,
 				C48F870F1F56E43600412D7B /* Document.swift */,
 				C48F87431F57E8CF00412D7B /* Workspace.swift */,
+				C41D15731F6A99D300586FCA /* RectangleTool.swift */,
 				C48F87411F57E39700412D7B /* WindowController.swift */,
 				C48F870D1F56E43600412D7B /* ViewController.swift */,
 				C48F87141F56E43600412D7B /* Assets.xcassets */,
@@ -317,6 +320,7 @@
 				C48F87871F5EAA1400412D7B /* ArtboardView.swift in Sources */,
 				C48F87101F56E43600412D7B /* Document.swift in Sources */,
 				C48F87481F57EE6100412D7B /* ArtboardTool.swift in Sources */,
+				C41D15741F6A99D300586FCA /* RectangleTool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

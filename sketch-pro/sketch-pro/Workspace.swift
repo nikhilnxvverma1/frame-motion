@@ -18,6 +18,7 @@ enum Tool{
 class Workspace: NSObject {
 	private var current : Tool = .Selection
 	var canvasHandler : CanvasHandler!
+	var artboardHandler : ArtboardHandler!
 	var undoStack = [Command]()
 	var redoStack = [Command]()
 	var document : Document!
@@ -32,8 +33,12 @@ class Workspace: NSObject {
 		switch(tool){
 		case .Artboard:
 			canvasHandler = ArtboardTool(self)
+			artboardHandler = SelectionTool()
 		case .Selection:
 			canvasHandler = SelectionTool()
+		case .Rectangle:
+			canvasHandler = RectangleTool()
+			artboardHandler = RectangleTool()
 		default:
 			canvasHandler = SelectionTool()
 		}
