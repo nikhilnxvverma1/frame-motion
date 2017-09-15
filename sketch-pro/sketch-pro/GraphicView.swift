@@ -14,6 +14,9 @@ class GraphicView: NSView {
         super.draw(dirtyRect)
 
         // Drawing code here.
+		NSColor.gray.setFill()
+		NSRectFill(dirtyRect)
+		super.draw(dirtyRect)
     }
     
 }

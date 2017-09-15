@@ -10,6 +10,8 @@ import Cocoa
 
 class RectangleTool: NSObject, CanvasHandler, ArtboardHandler{
 	
+	var graphicView: GraphicView!
+	
 	// MARK: Scroll View Canvas
 	
 	func mouseDown(with event: NSEvent,under view: DrawAreaView){
@@ -27,6 +29,13 @@ class RectangleTool: NSObject, CanvasHandler, ArtboardHandler{
 	// MARK: Artboard
 	
 	func mouseDown(with event: NSEvent,artboardView: ArtboardView){
+		graphicView = GraphicView()
+		
+		let localPoint = artboardView.convert(event.locationInWindow, from : nil)
+		graphicView.frame.origin.x=localPoint.x
+		graphicView.frame.origin.y=localPoint.y
+		
+		artboardView.addSubview(graphicView)
 		NSLog("Receiving down")
 	}
 	
