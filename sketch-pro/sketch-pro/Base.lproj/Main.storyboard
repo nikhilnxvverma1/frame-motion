@@ -738,6 +738,9 @@
                                                             <items>
                                                                 <menuItem title="Rectangle" image="NSFontPanel" id="YU5-Lg-nJu">
                                                                     <modifierMask key="keyEquivalentModifierMask"/>
+                                                                    <connections>
+                                                                        <action selector="insertRectangle:" target="jGA-0Y-lOj" id="hIx-P7-yei"/>
+                                                                    </connections>
                                                                 </menuItem>
                                                             </items>
                                                         </menu>

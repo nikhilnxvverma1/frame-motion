@@ -21,4 +21,9 @@ class WindowController: NSWindowController {
 		let workspace = (self.document as! Document).workspace
 		workspace?.setCurrent(.Artboard)
 	}
+	
+	@IBAction func insertRectangle(_ sender: NSMenuItem) {
+		let workspace = (self.document as! Document).workspace
+		workspace?.setCurrent(.Rectangle)
+	}
 }
