@@ -12,6 +12,11 @@ class RectangleTool: NSObject, CanvasHandler, ArtboardHandler{
 	
 	var graphicView: GraphicView!
 	var originalPoint: NSPoint!
+	var document: Document!
+	
+	init(_ document : Document) {
+		self.document = document
+	}
 	
 	// MARK: Scroll View Canvas
 	
@@ -36,21 +41,35 @@ class RectangleTool: NSObject, CanvasHandler, ArtboardHandler{
 		originalPoint=localPoint
 		graphicView.frame.origin.x=localPoint.x
 		graphicView.frame.origin.y=localPoint.y
-		graphicView.frame.size.width=200
-		graphicView.frame.size.height=200
+		
 		
 		artboardView.addSubview(graphicView)
-		NSLog("Receiving down")
 	}
 	
 	func mouseDragged(with event: NSEvent,artboardView: ArtboardView){
 		let localPoint = artboardView.convert(event.locationInWindow, from : nil)
+		//width
+		if(originalPoint.x < localPoint.x){
+			graphicView.frame.size.width = localPoint.x - originalPoint.x
+		}else{
+			graphicView.frame.size.width =  originalPoint.x - localPoint.x
+			graphicView.frame.origin.x = localPoint.x
+		}
 		
-		NSLog("Receiving drag")
+		//height
+		if(originalPoint.y < localPoint.y){
+			graphicView.frame.size.height = localPoint.y - originalPoint.y
+		
+		}else{
+			graphicView.frame.size.height =  originalPoint.y - localPoint.y
+			graphicView.frame.origin.y = localPoint.y
+		}
+		
 	}
 	
 	func mouseUp(with event: NSEvent,artboardView: ArtboardView){
-		NSLog("Receiving up")
+		let command = CreateRectangle(graphicView,artboardView)
+		self.document.workspace.pushCommand(command: command, executeBeforePushing: false)
 	}
 
 }

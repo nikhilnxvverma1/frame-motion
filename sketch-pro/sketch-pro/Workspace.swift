@@ -37,8 +37,8 @@ class Workspace: NSObject {
 		case .Selection:
 			canvasHandler = SelectionTool()
 		case .Rectangle:
-			canvasHandler = RectangleTool()
-			artboardHandler = RectangleTool()
+			canvasHandler = RectangleTool(self.document)
+			artboardHandler = RectangleTool(self.document)
 		default:
 			canvasHandler = SelectionTool()
 		}

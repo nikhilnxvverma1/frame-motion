@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		C41D15721F69920600586FCA /* ArtboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D15711F69920600586FCA /* ArtboardHandler.swift */; };
 		C41D15741F6A99D300586FCA /* RectangleTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D15731F6A99D300586FCA /* RectangleTool.swift */; };
+		C41D15761F6E5BA200586FCA /* CreateRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D15751F6E5BA200586FCA /* CreateRectangle.swift */; };
 		C48F870C1F56E43600412D7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F870B1F56E43600412D7B /* AppDelegate.swift */; };
-		C48F870E1F56E43600412D7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F870D1F56E43600412D7B /* ViewController.swift */; };
 		C48F87101F56E43600412D7B /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F870F1F56E43600412D7B /* Document.swift */; };
 		C48F87131F56E43600412D7B /* Document.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C48F87111F56E43600412D7B /* Document.xcdatamodeld */; };
 		C48F87151F56E43600412D7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C48F87141F56E43600412D7B /* Assets.xcassets */; };
@@ -51,9 +51,9 @@
 /* Begin PBXFileReference section */
 		C41D15711F69920600586FCA /* ArtboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtboardHandler.swift; sourceTree = "<group>"; };
 		C41D15731F6A99D300586FCA /* RectangleTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleTool.swift; sourceTree = "<group>"; };
+		C41D15751F6E5BA200586FCA /* CreateRectangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRectangle.swift; sourceTree = "<group>"; };
 		C48F87081F56E43600412D7B /* sketch-pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sketch-pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C48F870B1F56E43600412D7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C48F870D1F56E43600412D7B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C48F870F1F56E43600412D7B /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		C48F87121F56E43600412D7B /* Document.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Document.xcdatamodel; sourceTree = "<group>"; };
 		C48F87141F56E43600412D7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -104,6 +104,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C41D15771F6E696A00586FCA /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				C48F87881F63046800412D7B /* Command.swift */,
+				C48F878A1F63F9DA00412D7B /* CreateArtboard.swift */,
+				C41D15751F6E5BA200586FCA /* CreateRectangle.swift */,
+			);
+			name = Commands;
+			sourceTree = "<group>";
+		};
+		C41D15781F6E699000586FCA /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				C48F87861F5EAA1400412D7B /* ArtboardView.swift */,
+				C48F87841F5E7BFC00412D7B /* GraphicView.swift */,
+				C48F873F1F57DFC800412D7B /* DrawAreaView.swift */,
+			);
+			name = "Custom Views";
+			sourceTree = "<group>";
+		};
+		C41D15791F6E6ADF00586FCA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C48F873D1F57D9CE00412D7B /* DrawAreaController.swift */,
+				C48F87411F57E39700412D7B /* WindowController.swift */,
+				C48F873B1F56E80B00412D7B /* OverviewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		C48F86FF1F56E43600412D7B = {
 			isa = PBXGroup;
 			children = (
@@ -130,24 +160,18 @@
 				C48F870B1F56E43600412D7B /* AppDelegate.swift */,
 				C48F870F1F56E43600412D7B /* Document.swift */,
 				C48F87431F57E8CF00412D7B /* Workspace.swift */,
-				C41D15731F6A99D300586FCA /* RectangleTool.swift */,
-				C48F87411F57E39700412D7B /* WindowController.swift */,
-				C48F870D1F56E43600412D7B /* ViewController.swift */,
 				C48F87141F56E43600412D7B /* Assets.xcassets */,
 				C48F87161F56E43600412D7B /* Main.storyboard */,
-				C48F87841F5E7BFC00412D7B /* GraphicView.swift */,
-				C48F87861F5EAA1400412D7B /* ArtboardView.swift */,
-				C48F873D1F57D9CE00412D7B /* DrawAreaController.swift */,
-				C48F873F1F57DFC800412D7B /* DrawAreaView.swift */,
+				C48F87111F56E43600412D7B /* Document.xcdatamodeld */,
+				C41D15771F6E696A00586FCA /* Commands */,
+				C41D15781F6E699000586FCA /* Custom Views */,
+				C41D15731F6A99D300586FCA /* RectangleTool.swift */,
+				C41D15791F6E6ADF00586FCA /* Controllers */,
 				C48F87451F57ED4300412D7B /* CanvasHandler.swift */,
 				C41D15711F69920600586FCA /* ArtboardHandler.swift */,
 				C48F87471F57EE6100412D7B /* ArtboardTool.swift */,
-				C48F87881F63046800412D7B /* Command.swift */,
 				C48F87491F57EEE400412D7B /* SelectionTool.swift */,
-				C48F878A1F63F9DA00412D7B /* CreateArtboard.swift */,
-				C48F873B1F56E80B00412D7B /* OverviewController.swift */,
 				C48F87191F56E43600412D7B /* Info.plist */,
-				C48F87111F56E43600412D7B /* Document.xcdatamodeld */,
 			);
 			path = "sketch-pro";
 			sourceTree = "<group>";
@@ -310,13 +334,13 @@
 				C48F87851F5E7BFC00412D7B /* GraphicView.swift in Sources */,
 				C48F873E1F57D9CE00412D7B /* DrawAreaController.swift in Sources */,
 				C48F87131F56E43600412D7B /* Document.xcdatamodeld in Sources */,
-				C48F870E1F56E43600412D7B /* ViewController.swift in Sources */,
 				C48F870C1F56E43600412D7B /* AppDelegate.swift in Sources */,
 				C48F874A1F57EEE400412D7B /* SelectionTool.swift in Sources */,
 				C48F87891F63046800412D7B /* Command.swift in Sources */,
 				C48F87421F57E39700412D7B /* WindowController.swift in Sources */,
 				C48F87441F57E8CF00412D7B /* Workspace.swift in Sources */,
 				C48F873C1F56E80B00412D7B /* OverviewController.swift in Sources */,
+				C41D15761F6E5BA200586FCA /* CreateRectangle.swift in Sources */,
 				C48F87871F5EAA1400412D7B /* ArtboardView.swift in Sources */,
 				C48F87101F56E43600412D7B /* Document.swift in Sources */,
 				C48F87481F57EE6100412D7B /* ArtboardTool.swift in Sources */,
