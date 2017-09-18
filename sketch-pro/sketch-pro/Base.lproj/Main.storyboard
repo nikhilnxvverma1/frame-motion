@@ -998,7 +998,7 @@
                                     <rect key="frame" x="1" y="1" width="233" height="283"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ps1-OR-RIt" customClass="DrawAreaBasicView" customModule="sketch_pro" customModuleProvider="target">
+                                        <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ps1-OR-RIt">
                                             <rect key="frame" x="0.0" y="0.0" width="5000" height="5000"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </view>

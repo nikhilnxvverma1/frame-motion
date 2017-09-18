@@ -58,4 +58,30 @@ class OverviewController: NSViewController,NSTableViewDelegate,NSTableViewDataSo
 	
 	// MARK: Outline View
 	
+	func outlineView(_ outlineView: NSOutlineView,
+	                 child index: Int,
+	                 ofItem item: Any?) -> Any{
+		return index
+	}
+	
+	func outlineView(_ outlineView: NSOutlineView,
+	                 isItemExpandable item: Any) -> Bool{
+		return false
+	}
+	
+	func outlineView(_ outlineView: NSOutlineView,
+	                 numberOfChildrenOfItem item: Any?) -> Int{
+		if(item != nil) {
+			return 0
+		}else{
+			return 3
+		}
+	}
+	
+	func outlineView(_ outlineView: NSOutlineView,
+	                 objectValueFor tableColumn: NSTableColumn?,
+	                 byItem item: Any?) -> Any?{
+		return nil
+	}
+
 }
