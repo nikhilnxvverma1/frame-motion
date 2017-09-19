@@ -68,7 +68,7 @@ class RectangleTool: NSObject, CanvasHandler, ArtboardHandler{
 	}
 	
 	func mouseUp(with event: NSEvent,artboardView: ArtboardView){
-		let command = CreateRectangle(graphicView,artboardView)
+		let command = CreateRectangle(graphicView,artboardView,document: self.document)
 		self.document.workspace.pushCommand(command: command, executeBeforePushing: false)
 	}
 

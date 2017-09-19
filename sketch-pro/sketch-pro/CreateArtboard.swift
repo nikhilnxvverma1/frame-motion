@@ -12,10 +12,12 @@ class CreateArtboard: NSObject,Command {
 	
 	var artboardView : ArtboardView!
 	var scrollView : NSScrollView!
+	var document : Document!
 	
-	init(_ artboardView:ArtboardView,scrollView : NSScrollView) {
+	init(_ artboardView:ArtboardView,scrollView : NSScrollView,document : Document) {
 		self.artboardView = artboardView
 		self.scrollView = scrollView
+		self.document = document
 	}
 	
 	func execute(){

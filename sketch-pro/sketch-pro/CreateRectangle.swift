@@ -12,10 +12,12 @@ class CreateRectangle: NSObject,Command {
 	
 	var graphicView : GraphicView!
 	var artboardView : ArtboardView!
+	var document : Document!
 	
-	init(_ graphicView:GraphicView,_ artboardView:ArtboardView) {
+	init(_ graphicView:GraphicView,_ artboardView:ArtboardView, document : Document) {
 		self.graphicView = graphicView
 		self.artboardView = artboardView
+		self.document = document
 	}
 	
 	func execute(){

@@ -32,7 +32,7 @@ class Workspace: NSObject {
 		
 		switch(tool){
 		case .Artboard:
-			canvasHandler = ArtboardTool(self)
+			canvasHandler = ArtboardTool(self.document)
 			artboardHandler = SelectionTool()
 		case .Selection:
 			canvasHandler = SelectionTool()

@@ -11,10 +11,10 @@ import Cocoa
 class ArtboardTool: NSObject,CanvasHandler {
 	var artboardView : ArtboardView!
 	var initialPoint : NSPoint!
-	var workspace : Workspace!
+	var document : Document!
 	
-	init(_ workspace : Workspace) {
-		self.workspace = workspace
+	init(_ document : Document) {
+		self.document = document
 	}
 	
 	func mouseDown(with event: NSEvent,under view: DrawAreaView){
@@ -58,7 +58,7 @@ class ArtboardTool: NSObject,CanvasHandler {
 	
 	func mouseUp(with event: NSEvent,under view: DrawAreaView){
 		
-		let artboardCommand = CreateArtboard(artboardView,scrollView:view)
-		self.workspace?.pushCommand(command: artboardCommand, executeBeforePushing: false)
+		let artboardCommand = CreateArtboard(artboardView,scrollView:view,document:self.document)
+		self.document.workspace?.pushCommand(command: artboardCommand, executeBeforePushing: false)
 	}
 }
