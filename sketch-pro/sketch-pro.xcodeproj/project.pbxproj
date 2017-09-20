@@ -29,6 +29,7 @@
 		C48F87871F5EAA1400412D7B /* ArtboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F87861F5EAA1400412D7B /* ArtboardView.swift */; };
 		C48F87891F63046800412D7B /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F87881F63046800412D7B /* Command.swift */; };
 		C48F878B1F63F9DA00412D7B /* CreateArtboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F878A1F63F9DA00412D7B /* CreateArtboard.swift */; };
+		C4CDF05B1F716E5300138CA7 /* ArtboardMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CDF05A1F716E5300138CA7 /* ArtboardMO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		C48F87861F5EAA1400412D7B /* ArtboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtboardView.swift; sourceTree = "<group>"; };
 		C48F87881F63046800412D7B /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		C48F878A1F63F9DA00412D7B /* CreateArtboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateArtboard.swift; sourceTree = "<group>"; };
+		C4CDF05A1F716E5300138CA7 /* ArtboardMO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtboardMO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,7 +164,7 @@
 				C48F87431F57E8CF00412D7B /* Workspace.swift */,
 				C48F87141F56E43600412D7B /* Assets.xcassets */,
 				C48F87161F56E43600412D7B /* Main.storyboard */,
-				C48F87111F56E43600412D7B /* Document.xcdatamodeld */,
+				C4CDF0591F716E1300138CA7 /* Data model */,
 				C41D15771F6E696A00586FCA /* Commands */,
 				C41D15781F6E699000586FCA /* Custom Views */,
 				C41D15791F6E6ADF00586FCA /* Controllers */,
@@ -192,6 +194,15 @@
 				C48F872F1F56E43600412D7B /* Info.plist */,
 			);
 			path = "sketch-proUITests";
+			sourceTree = "<group>";
+		};
+		C4CDF0591F716E1300138CA7 /* Data model */ = {
+			isa = PBXGroup;
+			children = (
+				C48F87111F56E43600412D7B /* Document.xcdatamodeld */,
+				C4CDF05A1F716E5300138CA7 /* ArtboardMO.swift */,
+			);
+			name = "Data model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +274,11 @@
 					C48F87071F56E43600412D7B = {
 						CreatedOnToolsVersion = 8.3.3;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 					C48F871D1F56E43600412D7B = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -342,6 +358,7 @@
 				C48F873C1F56E80B00412D7B /* OverviewController.swift in Sources */,
 				C41D15761F6E5BA200586FCA /* CreateRectangle.swift in Sources */,
 				C48F87871F5EAA1400412D7B /* ArtboardView.swift in Sources */,
+				C4CDF05B1F716E5300138CA7 /* ArtboardMO.swift in Sources */,
 				C48F87101F56E43600412D7B /* Document.swift in Sources */,
 				C48F87481F57EE6100412D7B /* ArtboardTool.swift in Sources */,
 				C41D15741F6A99D300586FCA /* RectangleTool.swift in Sources */,

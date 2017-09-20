@@ -58,7 +58,7 @@ class ArtboardTool: NSObject,CanvasHandler {
 	
 	func mouseUp(with event: NSEvent,under view: DrawAreaView){
 		
-		let artboardCommand = CreateArtboard(artboardView,scrollView:view,document:self.document)
+		let artboardCommand = CreateArtboard(artboardView,scrollView:view,document:self.document, rect: artboardView.frame, saveModel: true)
 		self.document.workspace?.pushCommand(command: artboardCommand, executeBeforePushing: false)
 	}
 }
