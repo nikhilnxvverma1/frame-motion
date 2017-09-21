@@ -25,9 +25,9 @@ class Document: NSPersistentDocument {
 	override func makeWindowControllers() {
 		// Returns the Storyboard that contains your Document window.
 		let storyboard = NSStoryboard(name: "Main", bundle: nil)
-		let windowController = storyboard.instantiateController(withIdentifier: "Document Window Controller") as! NSWindowController
+		let windowController = storyboard.instantiateController(withIdentifier: "Document Window Controller") as! WindowController
 		self.addWindowController(windowController)
-		
+		windowController.setupViewsAndCommunication(document: self)
 	}
 	
 	func undo(){

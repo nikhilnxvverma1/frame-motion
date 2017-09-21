@@ -8,8 +8,10 @@
 
 import Cocoa
 
-class OverviewController: NSViewController,NSTableViewDelegate,NSTableViewDataSource, NSOutlineViewDelegate,NSOutlineViewDataSource {
+class OverviewController: NSViewController,NSTableViewDelegate,NSTableViewDataSource, NSOutlineViewDelegate,NSOutlineViewDataSource,OverviewDelegate {
 
+	var drawAreaDelegate : DrawAreaDelegate!
+	
 	@IBOutlet weak var pagesTable: NSTableView!
 	
 	@IBOutlet weak var graphicTable: NSOutlineView!

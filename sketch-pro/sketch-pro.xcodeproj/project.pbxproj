@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C40D67F51F73764800FD7554 /* InspectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D67F41F73764800FD7554 /* InspectorController.swift */; };
+		C40D67F81F738CDA00FD7554 /* DrawAreaDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D67F71F738CDA00FD7554 /* DrawAreaDelegate.swift */; };
+		C40D67FA1F738CFD00FD7554 /* InspectorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D67F91F738CFD00FD7554 /* InspectorDelegate.swift */; };
+		C40D67FC1F738D3200FD7554 /* OverviewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D67FB1F738D3200FD7554 /* OverviewDelegate.swift */; };
+		C40D67FE1F738FFB00FD7554 /* LayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D67FD1F738FFB00FD7554 /* LayerDelegate.swift */; };
 		C41D15721F69920600586FCA /* ArtboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D15711F69920600586FCA /* ArtboardHandler.swift */; };
 		C41D15741F6A99D300586FCA /* RectangleTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D15731F6A99D300586FCA /* RectangleTool.swift */; };
 		C41D15761F6E5BA200586FCA /* CreateRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D15751F6E5BA200586FCA /* CreateRectangle.swift */; };
@@ -50,6 +55,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C40D67F41F73764800FD7554 /* InspectorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspectorController.swift; sourceTree = "<group>"; };
+		C40D67F71F738CDA00FD7554 /* DrawAreaDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawAreaDelegate.swift; sourceTree = "<group>"; };
+		C40D67F91F738CFD00FD7554 /* InspectorDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspectorDelegate.swift; sourceTree = "<group>"; };
+		C40D67FB1F738D3200FD7554 /* OverviewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewDelegate.swift; sourceTree = "<group>"; };
+		C40D67FD1F738FFB00FD7554 /* LayerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerDelegate.swift; sourceTree = "<group>"; };
 		C41D15711F69920600586FCA /* ArtboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtboardHandler.swift; sourceTree = "<group>"; };
 		C41D15731F6A99D300586FCA /* RectangleTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleTool.swift; sourceTree = "<group>"; };
 		C41D15751F6E5BA200586FCA /* CreateRectangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRectangle.swift; sourceTree = "<group>"; };
@@ -106,6 +116,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C40D67F61F738C3F00FD7554 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				C40D67F71F738CDA00FD7554 /* DrawAreaDelegate.swift */,
+				C40D67F91F738CFD00FD7554 /* InspectorDelegate.swift */,
+				C40D67FB1F738D3200FD7554 /* OverviewDelegate.swift */,
+				C40D67FD1F738FFB00FD7554 /* LayerDelegate.swift */,
+			);
+			name = Delegates;
+			sourceTree = "<group>";
+		};
 		C41D15771F6E696A00586FCA /* Commands */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,9 +150,10 @@
 		C41D15791F6E6ADF00586FCA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C48F873D1F57D9CE00412D7B /* DrawAreaController.swift */,
 				C48F87411F57E39700412D7B /* WindowController.swift */,
 				C48F873B1F56E80B00412D7B /* OverviewController.swift */,
+				C48F873D1F57D9CE00412D7B /* DrawAreaController.swift */,
+				C40D67F41F73764800FD7554 /* InspectorController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -168,6 +190,7 @@
 				C41D15771F6E696A00586FCA /* Commands */,
 				C41D15781F6E699000586FCA /* Custom Views */,
 				C41D15791F6E6ADF00586FCA /* Controllers */,
+				C40D67F61F738C3F00FD7554 /* Delegates */,
 				C48F87451F57ED4300412D7B /* CanvasHandler.swift */,
 				C41D15731F6A99D300586FCA /* RectangleTool.swift */,
 				C41D15711F69920600586FCA /* ArtboardHandler.swift */,
@@ -351,6 +374,8 @@
 				C48F873E1F57D9CE00412D7B /* DrawAreaController.swift in Sources */,
 				C48F87131F56E43600412D7B /* Document.xcdatamodeld in Sources */,
 				C48F870C1F56E43600412D7B /* AppDelegate.swift in Sources */,
+				C40D67F51F73764800FD7554 /* InspectorController.swift in Sources */,
+				C40D67F81F738CDA00FD7554 /* DrawAreaDelegate.swift in Sources */,
 				C48F874A1F57EEE400412D7B /* SelectionTool.swift in Sources */,
 				C48F87891F63046800412D7B /* Command.swift in Sources */,
 				C48F87421F57E39700412D7B /* WindowController.swift in Sources */,
@@ -359,8 +384,11 @@
 				C41D15761F6E5BA200586FCA /* CreateRectangle.swift in Sources */,
 				C48F87871F5EAA1400412D7B /* ArtboardView.swift in Sources */,
 				C4CDF05B1F716E5300138CA7 /* ArtboardMO.swift in Sources */,
+				C40D67FA1F738CFD00FD7554 /* InspectorDelegate.swift in Sources */,
 				C48F87101F56E43600412D7B /* Document.swift in Sources */,
 				C48F87481F57EE6100412D7B /* ArtboardTool.swift in Sources */,
+				C40D67FC1F738D3200FD7554 /* OverviewDelegate.swift in Sources */,
+				C40D67FE1F738FFB00FD7554 /* LayerDelegate.swift in Sources */,
 				C41D15741F6A99D300586FCA /* RectangleTool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
