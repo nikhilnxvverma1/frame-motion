@@ -24,34 +24,18 @@ class DrawAreaController: NSViewController, DrawAreaDelegate, LayerDelegate{
 //		drawArea.drawAreaBasicView = drawAreaBasicView
     }
 	
-	override func viewWillAppear() {
-		super.viewWillAppear()
-//		setupViews()
-	}
-	
-	override func viewDidAppear() {
-		super.viewDidAppear()
-		setupViews()
-	}
-	
-	func setupViews(){
-		let document = self.view.window?.windowController?.document
-		let artboardFetch = NSFetchRequest<ArtboardMO>(entityName: "Artboard")
-		do{
-			let list=try document?.managedObjectContext?.fetch(artboardFetch)
-			if (list != nil){
-				for artboard in list!{
-					let artboardView = ArtboardView()
-					drawArea.addSubview(artboardView)
-					artboardView.frame.origin.x = CGFloat (artboard.x)
-					artboardView.frame.origin.y = CGFloat (artboard.y)
-					artboardView.frame.size.width = CGFloat(artboard.width)
-					artboardView.frame.size.height = CGFloat(artboard.height)
-				}
+	func loadContentFrom(artboardList:[ArtboardMO]?){
+		if (artboardList != nil){
+			for artboardMO in artboardList!{
+				let artboardView = ArtboardView()
+				drawArea.contentView.documentView?.addSubview(artboardView)
+				artboardView.model = artboardMO
+				artboardView.frame.origin.x = CGFloat (artboardMO.x)
+				artboardView.frame.origin.y = CGFloat (artboardMO.y)
+				artboardView.frame.size.width = CGFloat(artboardMO.width)
+				artboardView.frame.size.height = CGFloat(artboardMO.height)
 			}
-		}catch{
-			fatalError("Failed to fetch artboard: \(error)")
 		}
 	}
-    
+	
 }

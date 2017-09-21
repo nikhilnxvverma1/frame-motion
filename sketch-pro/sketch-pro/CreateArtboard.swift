@@ -13,7 +13,6 @@ class CreateArtboard: NSObject,Command {
 	var artboardView : ArtboardView!
 	var scrollView : NSScrollView!
 	var document : Document!
-	var artboardModel : ArtboardMO!
 	var rect:NSRect!
 	
 	init(_ artboardView:ArtboardView,scrollView : NSScrollView,document : Document, rect:NSRect, saveModel:Bool) {
@@ -36,17 +35,17 @@ class CreateArtboard: NSObject,Command {
 	
 	func unexecute(){
 		self.artboardView.removeFromSuperview()
-		self.document.managedObjectContext?.delete(artboardModel)
+		self.document.managedObjectContext?.delete(artboardView.model)
 	}
 	
 	func saveDataModel(){
-		artboardModel=NSEntityDescription.insertNewObject(forEntityName: "Artboard",
+		artboardView.model=NSEntityDescription.insertNewObject(forEntityName: "Artboard",
 		                                                  into: self.document.managedObjectContext!) as! ArtboardMO
 		//set properties
-		artboardModel.x = Float(rect.origin.x)
-		artboardModel.y = Float(rect.origin.y)
-		artboardModel.width = Float(rect.size.width)
-		artboardModel.height = Float(rect.size.height)
+		artboardView.model.x = Float(rect.origin.x)
+		artboardView.model.y = Float(rect.origin.y)
+		artboardView.model.width = Float(rect.size.width)
+		artboardView.model.height = Float(rect.size.height)
 	}
 
 }

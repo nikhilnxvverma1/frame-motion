@@ -8,13 +8,21 @@
 
 import Cocoa
 
-class OverviewController: NSViewController,NSTableViewDelegate,NSTableViewDataSource, NSOutlineViewDelegate,NSOutlineViewDataSource,OverviewDelegate {
+class OverviewController: NSViewController,
+	NSTableViewDelegate,
+	NSTableViewDataSource,
+	NSOutlineViewDelegate,
+	NSOutlineViewDataSource,
+	OverviewDelegate,
+	NSFetchedResultsControllerDelegate{
 
 	var drawAreaDelegate : DrawAreaDelegate!
 	
 	@IBOutlet weak var pagesTable: NSTableView!
 	
 	@IBOutlet weak var graphicTable: NSOutlineView!
+	
+	private var artboardList : [ArtboardMO]?
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,5 +93,19 @@ class OverviewController: NSViewController,NSTableViewDelegate,NSTableViewDataSo
 	                 byItem item: Any?) -> Any?{
 		return nil
 	}
+	
+	// MARK: fetching 
+	
+	func fetchDataModel(document:Document){
+		let artboardFetch = NSFetchRequest<ArtboardMO>(entityName: "Artboard")
+		do{
+			artboardList=try document.managedObjectContext?.fetch(artboardFetch)
+			drawAreaDelegate.loadContentFrom(artboardList: artboardList)
+			
+		}catch{
+			fatalError("Failed to fetch artboard: \(error)")
+		}
+	}
+	
 
 }

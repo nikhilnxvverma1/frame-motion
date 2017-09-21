@@ -9,11 +9,15 @@
 import Cocoa
 
 class ArtboardView: NSView {
+	
+	var model : ArtboardMO!
 
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
 
         // Drawing code here.
+		NSColor.white.set()
+		NSRectFill(self.bounds)
     }
 	
 	override func mouseDown(with event: NSEvent) {

@@ -800,7 +800,7 @@
         <!--Split View Controller-->
         <scene sceneID="N4e-uh-mSc">
             <objects>
-                <splitViewController id="spt-t4-FP9" customClass="SplitViewController" sceneMemberID="viewController">
+                <splitViewController id="spt-t4-FP9" sceneMemberID="viewController">
                     <splitViewItems>
                         <splitViewItem id="LjB-Jf-gms"/>
                         <splitViewItem id="P3E-PR-XlL"/>

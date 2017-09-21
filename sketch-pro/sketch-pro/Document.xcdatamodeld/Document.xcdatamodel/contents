@@ -2,16 +2,58 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16F73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Artboard" representedClassName=".ArtboardMO" syncable="YES">
         <attribute name="height" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="width" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="x" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="y" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="layers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Layer" syncable="YES"/>
+    </entity>
+    <entity name="BezierPoint" representedClassName="BezierPoint" syncable="YES" codeGenerationType="class">
+        <attribute name="x" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="y" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="controlPoint1" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Point" syncable="YES"/>
+        <relationship name="controlPoint2" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Point" syncable="YES"/>
     </entity>
     <entity name="Canvas" representedClassName="Canvas" syncable="YES" codeGenerationType="class">
         <attribute name="height" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="width" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
+    <entity name="Layer" representedClassName="Layer" isAbstract="YES" syncable="YES" codeGenerationType="class">
+        <attribute name="locked" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="visible" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="Page" representedClassName="Page" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="artboards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Artboard" syncable="YES"/>
+        <relationship name="outerLayers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Layer" syncable="YES"/>
+    </entity>
+    <entity name="Point" representedClassName="Point" syncable="YES" codeGenerationType="class">
+        <attribute name="x" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="y" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="Shape" representedClassName="Shape" parentEntity="Layer" syncable="YES" codeGenerationType="class">
+        <relationship name="path" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BezierPoint" syncable="YES"/>
+    </entity>
+    <entity name="Slice" representedClassName="Slice" parentEntity="Layer" syncable="YES" codeGenerationType="class">
+        <attribute name="height" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="width" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="x" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="y" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="Text" representedClassName="Text" parentEntity="Layer" syncable="YES" codeGenerationType="class">
+        <attribute name="value" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Artboard" positionX="-36" positionY="27" width="128" height="105"/>
-        <element name="Canvas" positionX="-54" positionY="-9" width="128" height="75"/>
+        <element name="Artboard" positionX="-758" positionY="45" width="128" height="135"/>
+        <element name="Canvas" positionX="-524" positionY="-93" width="128" height="75"/>
+        <element name="Page" positionX="-774" positionY="-90" width="128" height="88"/>
+        <element name="Layer" positionX="-560" positionY="63" width="128" height="105"/>
+        <element name="Shape" positionX="-729" positionY="273" width="128" height="60"/>
+        <element name="Text" positionX="-362" positionY="273" width="128" height="60"/>
+        <element name="BezierPoint" positionX="-909" positionY="216" width="128" height="105"/>
+        <element name="Point" positionX="-1064" positionY="258" width="128" height="75"/>
+        <element name="Slice" positionX="-551" positionY="252" width="128" height="105"/>
     </elements>
 </model>
