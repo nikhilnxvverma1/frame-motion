@@ -13,4 +13,5 @@ class ArtboardMO: NSManagedObject {
 	@NSManaged var y : Float
 	@NSManaged var width : Float
 	@NSManaged var height : Float
+	@NSManaged var name : String
 }

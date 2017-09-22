@@ -24,9 +24,10 @@ class DrawAreaController: NSViewController, DrawAreaDelegate, LayerDelegate{
 //		drawArea.drawAreaBasicView = drawAreaBasicView
     }
 	
-	func loadContentFrom(artboardList:[ArtboardMO]?){
-		if (artboardList != nil){
-			for artboardMO in artboardList!{
+	func loadContentFrom(artboardSet:NSSet?){
+		if (artboardSet != nil){
+			for artboardObject in artboardSet!{
+				let artboardMO = artboardObject as! ArtboardMO
 				let artboardView = ArtboardView()
 				drawArea.contentView.documentView?.addSubview(artboardView)
 				artboardView.model = artboardMO

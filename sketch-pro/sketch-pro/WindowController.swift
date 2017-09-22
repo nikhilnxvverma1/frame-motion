@@ -37,24 +37,7 @@ class WindowController: NSWindowController {
 		inspectorController.layerDelegate = drawAreaController
 		
 		
-		
-		//rough
-		let artboardFetch = NSFetchRequest<ArtboardMO>(entityName: "Artboard")
-		do{
-			let list=try document.managedObjectContext?.fetch(artboardFetch)
-			if (list != nil){
-				for artboard in list!{
-					let artboardView = ArtboardView()
-					drawAreaController.drawArea.contentView.documentView?.addSubview(artboardView)
-					artboardView.frame.origin.x = CGFloat (artboard.x)
-					artboardView.frame.origin.y = CGFloat (artboard.y)
-					artboardView.frame.size.width = CGFloat(artboard.width)
-					artboardView.frame.size.height = CGFloat(artboard.height)
-				}
-			}
-		}catch{
-			fatalError("Failed to fetch artboard: \(error)")
-		}
+		overviewController.initializeDataModel(document: document)
 	}
 	
 

@@ -10,5 +10,5 @@ import Cocoa
 
 //Communication from Sidebar overview to Drawing area
 protocol DrawAreaDelegate {
-	func loadContentFrom(artboardList:[ArtboardMO]?)
+	func loadContentFrom(artboardSet:NSSet?)
 }
