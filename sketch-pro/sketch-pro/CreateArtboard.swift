@@ -14,6 +14,7 @@ class CreateArtboard: NSObject,Command {
 	var scrollView : NSScrollView!
 	var document : Document!
 	var rect:NSRect!
+	var selectedPage : PageMO!
 	
 	init(_ artboardView:ArtboardView,scrollView : NSScrollView,document : Document, rect:NSRect, saveModel:Bool) {
 		super.init()
@@ -21,21 +22,24 @@ class CreateArtboard: NSObject,Command {
 		self.scrollView = scrollView
 		self.document = document
 		self.rect = rect
-		
+		selectedPage = self.document.workspace.windowController.overviewController.selectedPage
 		if(saveModel){
 			saveDataModel()
 		}
-		
+		self.document.workspace.windowController.overviewController.graphicTable.reloadData()
 	}
 	
 	func execute(){
 		self.scrollView.contentView.documentView?.addSubview(artboardView)
 		saveDataModel()
+		self.document.workspace.windowController.overviewController.graphicTable.reloadData()
 	}
 	
 	func unexecute(){
 		self.artboardView.removeFromSuperview()
 		self.document.managedObjectContext?.delete(artboardView.model)
+		selectedPage.removeFromArtboards(self.artboardView.model)
+		self.document.workspace.windowController.overviewController.graphicTable.reloadData()
 	}
 	
 	func saveDataModel(){
@@ -46,6 +50,9 @@ class CreateArtboard: NSObject,Command {
 		artboardView.model.y = Float(rect.origin.y)
 		artboardView.model.width = Float(rect.size.width)
 		artboardView.model.height = Float(rect.size.height)
+		
+		//add this to the current selected page
+		selectedPage?.addToArtboards(artboardView.model)
 	}
 
 }

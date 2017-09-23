@@ -22,6 +22,7 @@ class Workspace: NSObject {
 	var undoStack = [Command]()
 	var redoStack = [Command]()
 	var document : Document!
+	var windowController : WindowController! 
 	
 	init(_ document : Document){
 		self.document=document

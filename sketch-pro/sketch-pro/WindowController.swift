@@ -10,9 +10,9 @@ import Cocoa
 
 class WindowController: NSWindowController {
 	
-	private var overviewController : OverviewController!
-	private var drawAreaController : DrawAreaController!
-	private var inspectorController : InspectorController!
+	var overviewController : OverviewController!
+	var drawAreaController : DrawAreaController!
+	var inspectorController : InspectorController!
 	
     override func windowDidLoad() {
         super.windowDidLoad()

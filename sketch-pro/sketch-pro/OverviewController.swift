@@ -26,7 +26,7 @@ class OverviewController: NSViewController,
 	
 	private var pageList : [PageMO]?
 	
-	private var selectedPage : PageMO!
+	var selectedPage : PageMO!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,20 +41,25 @@ class OverviewController: NSViewController,
 	// MARK: Table View
 	
 	func numberOfRows(in tableView: NSTableView) -> Int {
-		if( pageList == nil){
-			return 0
-		}else{
-			return pageList!.count
+		if(tableView == pagesTable){
+			if( pageList == nil){
+				return 0
+			}else{
+				return pageList!.count
+			}
 		}
+		return 0
 	}
 	
 	func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
-		
-		if( pageList == nil){
-			return 0
-		}else{
-			return pageList![row]
+		if(tableView == pagesTable){
+			if( pageList == nil){
+				return 0
+			}else{
+				return pageList![row]
+			}
 		}
+		return 0
 	}
 	
 	func tableView(_ tableView: NSTableView,
@@ -82,27 +87,56 @@ class OverviewController: NSViewController,
 	func outlineView(_ outlineView: NSOutlineView,
 	                 child index: Int,
 	                 ofItem item: Any?) -> Any{
-		return index
+		if outlineView == graphicTable{
+			if let page = item as? PageMO{
+				return page.artboards?.allObjects[index]
+			}else if let artboard = item as? ArtboardMO{
+				return artboard.layers?.allObjects[index]
+			}
+		}
+		return 0
 	}
 	
 	func outlineView(_ outlineView: NSOutlineView,
 	                 isItemExpandable item: Any) -> Bool{
+		if outlineView == graphicTable{
+			if item is PageMO{
+				return true
+			}else if item is ArtboardMO{
+				return true
+			}
+		}
 		return false
 	}
 	
 	func outlineView(_ outlineView: NSOutlineView,
 	                 numberOfChildrenOfItem item: Any?) -> Int{
-		if(item != nil) {
-			return 0
-		}else{
-			return 3
+		
+		if( outlineView == graphicTable){
+			if let page = item as? PageMO{
+				return (page.artboards?.allObjects.count)! + (page.outerLayers?.allObjects.count)!
+			}else if let artboard = item as? ArtboardMO{
+				return (artboard.layers?.allObjects.count)!
+			}
 		}
+		return 0
+		
 	}
 	
 	func outlineView(_ outlineView: NSOutlineView,
 	                 objectValueFor tableColumn: NSTableColumn?,
 	                 byItem item: Any?) -> Any?{
-		return nil
+		var view:NSTableCellView?
+		if outlineView == graphicTable{
+			if let artboard = item as? ArtboardMO{
+				view = outlineView.make(withIdentifier: "graphicCell", owner: self) as? NSTableCellView
+				if let textField = view?.textField{
+					textField.stringValue = artboard.name!
+					textField.sizeToFit()
+				}
+			}
+		}
+		return view
 	}
 	
 	// MARK: fetching 
