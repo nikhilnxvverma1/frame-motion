@@ -92,6 +92,10 @@ class OverviewController: NSViewController,
 				return page.artboards?.allObjects[index]
 			}else if let artboard = item as? ArtboardMO{
 				return artboard.layers?.allObjects[index]
+			}else if item == nil {
+				if pageList != nil {
+					return pageList![index]
+				}
 			}
 		}
 		return 0
@@ -117,6 +121,13 @@ class OverviewController: NSViewController,
 				return (page.artboards?.allObjects.count)! + (page.outerLayers?.allObjects.count)!
 			}else if let artboard = item as? ArtboardMO{
 				return (artboard.layers?.allObjects.count)!
+			}else if item == nil{
+				if pageList == nil{
+					return 0
+				}else{
+					return pageList!.count
+				}
+				
 			}
 		}
 		return 0
@@ -124,15 +135,28 @@ class OverviewController: NSViewController,
 	}
 	
 	func outlineView(_ outlineView: NSOutlineView,
-	                 objectValueFor tableColumn: NSTableColumn?,
-	                 byItem item: Any?) -> Any?{
+	                 viewFor tableColumn: NSTableColumn?,
+	                 item: Any) -> NSView?{
 		var view:NSTableCellView?
 		if outlineView == graphicTable{
-			if let artboard = item as? ArtboardMO{
-				view = outlineView.make(withIdentifier: "graphicCell", owner: self) as? NSTableCellView
-				if let textField = view?.textField{
-					textField.stringValue = artboard.name!
-					textField.sizeToFit()
+			if tableColumn?.identifier == "graphicColumn"{
+			
+				if let artboard = item as? ArtboardMO{
+					view = outlineView.make(withIdentifier: "graphicCell", owner: self) as? NSTableCellView
+					
+//					view?.stringValue = artboard.name!
+					if let textField = view?.textField{
+						textField.stringValue = artboard.name!
+//						textField.sizeToFit()
+					}
+				}else if let page = item as? PageMO{
+					view = outlineView.make(withIdentifier: "graphicCell", owner: self) as? NSTableCellView
+					
+					//					view?.stringValue = artboard.name!
+					if let textField = view?.textField{
+						textField.stringValue = page.name!
+//						textField.sizeToFit()
+					}
 				}
 			}
 		}

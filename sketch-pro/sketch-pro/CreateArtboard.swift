@@ -14,14 +14,16 @@ class CreateArtboard: NSObject,Command {
 	var scrollView : NSScrollView!
 	var document : Document!
 	var rect:NSRect!
+	var name : String!
 	var selectedPage : PageMO!
 	
-	init(_ artboardView:ArtboardView,scrollView : NSScrollView,document : Document, rect:NSRect, saveModel:Bool) {
+	init(_ artboardView:ArtboardView,scrollView : NSScrollView,document : Document, rect:NSRect,name:String, saveModel:Bool) {
 		super.init()
 		self.artboardView = artboardView
 		self.scrollView = scrollView
 		self.document = document
 		self.rect = rect
+		self.name = name
 		selectedPage = self.document.workspace.windowController.overviewController.selectedPage
 		if(saveModel){
 			saveDataModel()
@@ -50,6 +52,7 @@ class CreateArtboard: NSObject,Command {
 		artboardView.model.y = Float(rect.origin.y)
 		artboardView.model.width = Float(rect.size.width)
 		artboardView.model.height = Float(rect.size.height)
+		artboardView.model.name = name
 		
 		//add this to the current selected page
 		selectedPage?.addToArtboards(artboardView.model)

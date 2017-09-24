@@ -9,9 +9,11 @@
 import Cocoa
 
 class ArtboardTool: NSObject,CanvasHandler {
+	
 	var artboardView : ArtboardView!
 	var initialPoint : NSPoint!
 	var document : Document!
+	var artboardSoFar = 0
 	
 	init(_ document : Document) {
 		self.document = document
@@ -58,7 +60,13 @@ class ArtboardTool: NSObject,CanvasHandler {
 	
 	func mouseUp(with event: NSEvent,under view: DrawAreaView){
 		
-		let artboardCommand = CreateArtboard(artboardView,scrollView:view,document:self.document, rect: artboardView.frame, saveModel: true)
+		artboardSoFar += 1
+		let artboardCommand = CreateArtboard(artboardView,
+		                                     scrollView:view,
+		                                     document:self.document,
+		                                     rect: artboardView.frame,
+		                                     name : "Artboard \(artboardSoFar)",
+		                                     saveModel: true)
 		self.document.workspace?.pushCommand(command: artboardCommand, executeBeforePushing: false)
 	}
 }

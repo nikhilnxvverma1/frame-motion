@@ -22,26 +22,40 @@ class Workspace: NSObject {
 	var undoStack = [Command]()
 	var redoStack = [Command]()
 	var document : Document!
-	var windowController : WindowController! 
+	var windowController : WindowController!
+	
+	// Tools
+	var artboardTool : ArtboardTool!
+	var rectangleTool : RectangleTool!
+	var selectionTool : SelectionTool!
 	
 	init(_ document : Document){
+		super.init()
 		self.document=document
-		canvasHandler = SelectionTool()
+		initializeToolset(self.document)
+	}
+	
+	func initializeToolset(_ document : Document){
+		artboardTool = ArtboardTool(self.document)
+		rectangleTool = RectangleTool(self.document)
+		selectionTool = SelectionTool()
+		
+		canvasHandler = selectionTool
 	}
 	
 	func setCurrent(_ tool : Tool){
 		
 		switch(tool){
 		case .Artboard:
-			canvasHandler = ArtboardTool(self.document)
+			canvasHandler = artboardTool
 			artboardHandler = SelectionTool()
 		case .Selection:
-			canvasHandler = SelectionTool()
+			canvasHandler = selectionTool
 		case .Rectangle:
-			canvasHandler = RectangleTool(self.document)
-			artboardHandler = RectangleTool(self.document)
+			canvasHandler = rectangleTool
+			artboardHandler = rectangleTool
 		default:
-			canvasHandler = SelectionTool()
+			canvasHandler = selectionTool
 		}
 	}
 	
