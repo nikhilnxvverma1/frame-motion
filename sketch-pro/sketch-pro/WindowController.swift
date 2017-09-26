@@ -16,7 +16,7 @@ class WindowController: NSWindowController {
 	
     override func windowDidLoad() {
         super.windowDidLoad()
-    
+		
         // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
 
     }
@@ -43,11 +43,15 @@ class WindowController: NSWindowController {
 
 	@IBAction func insertArtboard(_ sender: NSMenuItem) {
 		let workspace = (self.document as! Document).workspace
-		workspace?.setCurrent(.Artboard)
+		workspace?.setCurrent(tool:.Artboard)
 	}
 	
+	@IBAction func appointPenTool(_ sender: Any) {
+		let workspace = (self.document as! Document).workspace
+		workspace?.setCurrent(tool:.Pen)
+	}
 	@IBAction func insertRectangle(_ sender: NSMenuItem) {
 		let workspace = (self.document as! Document).workspace
-		workspace?.setCurrent(.Rectangle)
+		workspace?.setCurrent(tool:.Rectangle)
 	}
 }

@@ -12,7 +12,9 @@
 		C40D67FA1F738CFD00FD7554 /* InspectorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D67F91F738CFD00FD7554 /* InspectorDelegate.swift */; };
 		C40D67FC1F738D3200FD7554 /* OverviewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D67FB1F738D3200FD7554 /* OverviewDelegate.swift */; };
 		C40D67FE1F738FFB00FD7554 /* LayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D67FD1F738FFB00FD7554 /* LayerDelegate.swift */; };
-		C40D68041F79568B00FD7554 /* SelectionBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D68031F79568B00FD7554 /* SelectionBox.swift */; };
+		C40D68041F79568B00FD7554 /* SelectionBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D68031F79568B00FD7554 /* SelectionBoxView.swift */; };
+		C40D68061F7A13BA00FD7554 /* PenTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D68051F7A13BA00FD7554 /* PenTool.swift */; };
+		C40D680A1F7AB1DC00FD7554 /* BezierPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D68091F7AB1DC00FD7554 /* BezierPointView.swift */; };
 		C41D15721F69920600586FCA /* ArtboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D15711F69920600586FCA /* ArtboardHandler.swift */; };
 		C41D15741F6A99D300586FCA /* RectangleTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D15731F6A99D300586FCA /* RectangleTool.swift */; };
 		C41D15761F6E5BA200586FCA /* CreateRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D15751F6E5BA200586FCA /* CreateRectangle.swift */; };
@@ -60,7 +62,9 @@
 		C40D67F91F738CFD00FD7554 /* InspectorDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspectorDelegate.swift; sourceTree = "<group>"; };
 		C40D67FB1F738D3200FD7554 /* OverviewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewDelegate.swift; sourceTree = "<group>"; };
 		C40D67FD1F738FFB00FD7554 /* LayerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerDelegate.swift; sourceTree = "<group>"; };
-		C40D68031F79568B00FD7554 /* SelectionBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionBox.swift; sourceTree = "<group>"; };
+		C40D68031F79568B00FD7554 /* SelectionBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionBoxView.swift; sourceTree = "<group>"; };
+		C40D68051F7A13BA00FD7554 /* PenTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PenTool.swift; sourceTree = "<group>"; };
+		C40D68091F7AB1DC00FD7554 /* BezierPointView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierPointView.swift; sourceTree = "<group>"; };
 		C41D15711F69920600586FCA /* ArtboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtboardHandler.swift; sourceTree = "<group>"; };
 		C41D15731F6A99D300586FCA /* RectangleTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleTool.swift; sourceTree = "<group>"; };
 		C41D15751F6E5BA200586FCA /* CreateRectangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRectangle.swift; sourceTree = "<group>"; };
@@ -143,7 +147,8 @@
 				C48F87861F5EAA1400412D7B /* ArtboardView.swift */,
 				C48F87841F5E7BFC00412D7B /* GraphicView.swift */,
 				C48F873F1F57DFC800412D7B /* DrawAreaView.swift */,
-				C40D68031F79568B00FD7554 /* SelectionBox.swift */,
+				C40D68031F79568B00FD7554 /* SelectionBoxView.swift */,
+				C40D68091F7AB1DC00FD7554 /* BezierPointView.swift */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -193,6 +198,7 @@
 				C41D15791F6E6ADF00586FCA /* Controllers */,
 				C40D67F61F738C3F00FD7554 /* Delegates */,
 				C48F87451F57ED4300412D7B /* CanvasHandler.swift */,
+				C40D68051F7A13BA00FD7554 /* PenTool.swift */,
 				C41D15731F6A99D300586FCA /* RectangleTool.swift */,
 				C41D15711F69920600586FCA /* ArtboardHandler.swift */,
 				C48F87471F57EE6100412D7B /* ArtboardTool.swift */,
@@ -359,10 +365,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C48F87461F57ED4300412D7B /* CanvasHandler.swift in Sources */,
+				C40D680A1F7AB1DC00FD7554 /* BezierPointView.swift in Sources */,
 				C41D15721F69920600586FCA /* ArtboardHandler.swift in Sources */,
 				C48F87401F57DFC800412D7B /* DrawAreaView.swift in Sources */,
 				C48F878B1F63F9DA00412D7B /* CreateArtboard.swift in Sources */,
-				C40D68041F79568B00FD7554 /* SelectionBox.swift in Sources */,
+				C40D68041F79568B00FD7554 /* SelectionBoxView.swift in Sources */,
+				C40D68061F7A13BA00FD7554 /* PenTool.swift in Sources */,
 				C48F87851F5E7BFC00412D7B /* GraphicView.swift in Sources */,
 				C48F873E1F57D9CE00412D7B /* DrawAreaController.swift in Sources */,
 				C48F87131F56E43600412D7B /* Document.xcdatamodeld in Sources */,

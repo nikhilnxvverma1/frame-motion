@@ -13,6 +13,7 @@ enum Tool{
 	case Artboard
 	case Rectangle
 	case Circle
+	case Pen
 }
 
 class Workspace: NSObject {
@@ -28,6 +29,7 @@ class Workspace: NSObject {
 	var artboardTool : ArtboardTool!
 	var rectangleTool : RectangleTool!
 	var selectionTool : SelectionTool!
+	var penTool : PenTool!
 	
 	init(_ document : Document){
 		super.init()
@@ -39,11 +41,12 @@ class Workspace: NSObject {
 		artboardTool = ArtboardTool(self.document)
 		rectangleTool = RectangleTool(self.document)
 		selectionTool = SelectionTool()
+		penTool = PenTool(self.document)
 		
 		canvasHandler = selectionTool
 	}
 	
-	func setCurrent(_ tool : Tool){
+	func setCurrent(tool : Tool){
 		
 		switch(tool){
 		case .Artboard:
@@ -54,6 +57,9 @@ class Workspace: NSObject {
 		case .Rectangle:
 			canvasHandler = rectangleTool
 			artboardHandler = rectangleTool
+		case .Pen:
+			canvasHandler = penTool
+			artboardHandler = penTool
 		default:
 			canvasHandler = selectionTool
 		}

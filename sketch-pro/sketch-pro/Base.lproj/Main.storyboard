@@ -745,7 +745,11 @@
                                                             </items>
                                                         </menu>
                                                     </menuItem>
-                                                    <menuItem title="Item 3" image="NSComputer" id="8wl-VF-lnT"/>
+                                                    <menuItem title="Pen" image="NSComputer" id="8wl-VF-lnT">
+                                                        <connections>
+                                                            <action selector="appointPenTool:" target="jGA-0Y-lOj" id="fCh-lp-HXS"/>
+                                                        </connections>
+                                                    </menuItem>
                                                 </items>
                                             </menu>
                                         </popUpButtonCell>

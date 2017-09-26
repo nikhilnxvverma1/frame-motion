@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class SelectionBox: NSView {
+class SelectionBoxView: NSView {
 
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
