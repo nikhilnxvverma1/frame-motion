@@ -39,10 +39,8 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler {
 		
 		let localPoint = artboardView.convert(event.locationInWindow, from : nil)
 		latestBezierPointView = BezierPointView()
-		latestBezierPointView.frame.origin.x = localPoint.x
-		latestBezierPointView.frame.origin.y = localPoint.y
-		
-//		bezierPoints.append(latestBezierPointView.bezierPoint)
+		latestBezierPointView.frame.origin.x = localPoint.x - latestBezierPointView.frame.width/2
+		latestBezierPointView.frame.origin.y = localPoint.y - latestBezierPointView.frame.height/2
 		artboardView.addSubview(latestBezierPointView)
 	}
 	

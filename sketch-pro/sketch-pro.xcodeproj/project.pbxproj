@@ -15,6 +15,7 @@
 		C40D68041F79568B00FD7554 /* SelectionBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D68031F79568B00FD7554 /* SelectionBoxView.swift */; };
 		C40D68061F7A13BA00FD7554 /* PenTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D68051F7A13BA00FD7554 /* PenTool.swift */; };
 		C40D680A1F7AB1DC00FD7554 /* BezierPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D68091F7AB1DC00FD7554 /* BezierPointView.swift */; };
+		C40D680C1F7C035B00FD7554 /* ControlPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D680B1F7C035B00FD7554 /* ControlPointView.swift */; };
 		C41D15721F69920600586FCA /* ArtboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D15711F69920600586FCA /* ArtboardHandler.swift */; };
 		C41D15741F6A99D300586FCA /* RectangleTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D15731F6A99D300586FCA /* RectangleTool.swift */; };
 		C41D15761F6E5BA200586FCA /* CreateRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D15751F6E5BA200586FCA /* CreateRectangle.swift */; };
@@ -65,6 +66,7 @@
 		C40D68031F79568B00FD7554 /* SelectionBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionBoxView.swift; sourceTree = "<group>"; };
 		C40D68051F7A13BA00FD7554 /* PenTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PenTool.swift; sourceTree = "<group>"; };
 		C40D68091F7AB1DC00FD7554 /* BezierPointView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierPointView.swift; sourceTree = "<group>"; };
+		C40D680B1F7C035B00FD7554 /* ControlPointView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlPointView.swift; sourceTree = "<group>"; };
 		C41D15711F69920600586FCA /* ArtboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtboardHandler.swift; sourceTree = "<group>"; };
 		C41D15731F6A99D300586FCA /* RectangleTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleTool.swift; sourceTree = "<group>"; };
 		C41D15751F6E5BA200586FCA /* CreateRectangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRectangle.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				C48F873F1F57DFC800412D7B /* DrawAreaView.swift */,
 				C40D68031F79568B00FD7554 /* SelectionBoxView.swift */,
 				C40D68091F7AB1DC00FD7554 /* BezierPointView.swift */,
+				C40D680B1F7C035B00FD7554 /* ControlPointView.swift */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				C48F87481F57EE6100412D7B /* ArtboardTool.swift in Sources */,
 				C40D67FC1F738D3200FD7554 /* OverviewDelegate.swift in Sources */,
 				C40D67FE1F738FFB00FD7554 /* LayerDelegate.swift in Sources */,
+				C40D680C1F7C035B00FD7554 /* ControlPointView.swift in Sources */,
 				C41D15741F6A99D300586FCA /* RectangleTool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

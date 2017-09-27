@@ -12,12 +12,18 @@ class BezierPointView: NSView {
 	
 	var bezierPoint : BezierPointMO!
 	
-    override func draw(_ dirtyRect: NSRect) {
-        super.draw(dirtyRect)
-		
-		// TODO: rough for now
+	override init(frame frameRect: NSRect) {
+		super.init(frame: frameRect)
 		self.frame.size.width = 10
 		self.frame.size.height = 10
+	}
+	
+	required init?(coder: NSCoder) {
+		super.init(coder: coder)
+	}
+	
+    override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
 
         // Drawing code here.
 		NSColor.blue.setFill()
