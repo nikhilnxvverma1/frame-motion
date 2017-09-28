@@ -9,6 +9,9 @@
 import Cocoa
 
 class ControlPointView: NSView {
+	
+	var x : Float!
+	var y : Float!
 
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)

@@ -11,6 +11,10 @@ import Cocoa
 class BezierPointView: NSView {
 	
 	var bezierPoint : BezierPointMO!
+	var x : Float!
+	var y : Float!
+	var forwardControlPoint : ControlPointView!
+	var backwardControlPoint : ControlPointView!
 	
 	override init(frame frameRect: NSRect) {
 		super.init(frame: frameRect)
