@@ -73,21 +73,30 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler {
 //		self.document.workspace.pushCommand(command: command, executeBeforePushing: false)
 	}
 	
-	private func angle(from:NSPoint,to:NSPoint)->Int{
+	private func angle(from:NSPoint,to:NSPoint)->Double{
+		var angle = 0.0
 		if(from.y > to.y){
 			if(from.x>to.x){
 				//first quadrant
+				let ratio = (from.y - to.y)/(from.x - to.x)
+				angle = Double(atan(ratio) * 180/CGFloat.pi)
 			}else{
 				//second quadrant
+				let ratio = (from.y - to.y)/(to.x - from.x)
+				angle = 90 + Double(atan(ratio) * 180/CGFloat.pi)
 			}
 		}else{
 			if(from.x<to.x){
 				//third quadrant
+				let ratio = (to.y - from.y)/(from.x - to.x)
+				angle = 180 + Double(atan(ratio) * 180/CGFloat.pi)
 			}else{
 				//fourth quadrant
+				let ratio = (to.y - from.y)/(to.x - from.x)
+				angle = 270 + Double(atan(ratio) * 180/CGFloat.pi)
 			}
 		}
-		return 0
+		return angle
 	}
 	
 	private func addAngle(_ angle1:Int,angle2:Int) -> Int{
