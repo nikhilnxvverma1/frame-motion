@@ -13,12 +13,22 @@ class ControlPointView: NSView {
 	var x : Float!
 	var y : Float!
 
+	override init(frame frameRect: NSRect) {
+		super.init(frame: frameRect)
+		self.frame.size.width = 5
+		self.frame.size.height = 5
+	}
+	
+	required init?(coder: NSCoder) {
+		super.init(coder: coder)
+	}
+	
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
 
         // Drawing code here.
 		// Draw a white circle 
-		NSColor.blue.setFill()
+		NSColor.red.setFill()
 		NSRectFill(dirtyRect)
 		super.draw(dirtyRect)
     }

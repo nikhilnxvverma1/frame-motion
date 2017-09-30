@@ -18,8 +18,8 @@ class BezierPointView: NSView {
 	
 	override init(frame frameRect: NSRect) {
 		super.init(frame: frameRect)
-		self.frame.size.width = 10
-		self.frame.size.height = 10
+		self.frame.size.width = 5
+		self.frame.size.height = 5
 	}
 	
 	required init?(coder: NSCoder) {
