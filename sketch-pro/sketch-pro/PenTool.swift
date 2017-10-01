@@ -15,6 +15,7 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler {
 	var graphicView : GraphicView!
 	var bezierPoints = [BezierPointMO]()
 	var latestBezierPointView : BezierPointView!
+	var latestInitialPoint : NSPoint!
 	
 	init (_ document : Document){
 		self.document = document
@@ -39,6 +40,7 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler {
 	func mouseDown(with event: NSEvent,artboardView: ArtboardView){
 		
 		let localPoint = artboardView.convert(event.locationInWindow, from : nil)
+		latestInitialPoint = localPoint
 		latestBezierPointView = BezierPointView()
 		latestBezierPointView.x = Float(localPoint.x)
 		latestBezierPointView.y = Float(localPoint.y)
@@ -64,7 +66,24 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler {
 		latestBezierPointView.forwardControlPoint.frame.origin.x = localPoint.x - latestBezierPointView.forwardControlPoint.frame.width/2
 		latestBezierPointView.forwardControlPoint.frame.origin.y = localPoint.y - latestBezierPointView.forwardControlPoint.frame.height/2
 		
+		
+		//find the angle that the latest Initial point makes with this point
+		let originAngle = angle(from: latestInitialPoint, to: localPoint)
+//		NSLog("originAngle \(originAngle)")
+		let supplememntryAngle = addAngle(Int(originAngle), angle2: 180)
+//		NSLog("supplememntryAngle \(supplememntryAngle)")
+		
+		//find the distance between latest initial point and local point
+		let distance = sqrt((localPoint.x-latestInitialPoint.x)*(localPoint.x-latestInitialPoint.x) + (localPoint.y-latestInitialPoint.y)*(localPoint.y-latestInitialPoint.y))
+		
+		//inverse control point
+		let inversePoint = pointAtDistance(latestInitialPoint , supplememntryAngle, Double(distance))
+		
 		// move backward control point at the inverse direction i.e 180 degrees
+		latestBezierPointView.backwardControlPoint.x = Float(inversePoint.x)
+		latestBezierPointView.backwardControlPoint.y = Float(inversePoint.y)
+		latestBezierPointView.backwardControlPoint.frame.origin.x = inversePoint.x - latestBezierPointView.backwardControlPoint.frame.width/2
+		latestBezierPointView.backwardControlPoint.frame.origin.y = inversePoint.y - latestBezierPointView.backwardControlPoint.frame.height/2
 		
 	}
 	
@@ -76,24 +95,26 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler {
 	private func angle(from:NSPoint,to:NSPoint)->Double{
 		var angle = 0.0
 		if(from.y > to.y){
-			if(from.x>to.x){
+			if(from.x<to.x){
 				//first quadrant
 				let ratio = (from.y - to.y)/(from.x - to.x)
-				angle = Double(atan(ratio) * 180/CGFloat.pi)
+				//first quadrant is below the x axis, therefore angle comes to be negative
+				angle = abs(Double(atan(ratio) * 180/CGFloat.pi))
 			}else{
 				//second quadrant
 				let ratio = (from.y - to.y)/(to.x - from.x)
-				angle = 90 + Double(atan(ratio) * 180/CGFloat.pi)
+				//second quadrant is below the x axis, therefore angle atan comes to be negative
+				angle = 180 - abs(Double(atan(ratio) * 180/CGFloat.pi))
 			}
 		}else{
-			if(from.x<to.x){
+			if(from.x>to.x){
 				//third quadrant
 				let ratio = (to.y - from.y)/(from.x - to.x)
 				angle = 180 + Double(atan(ratio) * 180/CGFloat.pi)
 			}else{
 				//fourth quadrant
 				let ratio = (to.y - from.y)/(to.x - from.x)
-				angle = 270 + Double(atan(ratio) * 180/CGFloat.pi)
+				angle = 360 - Double(atan(ratio) * 180/CGFloat.pi)
 			}
 		}
 		return angle
@@ -111,9 +132,9 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler {
 	
 	private func pointAtDistance(_ origin:NSPoint,_ angle:Int,_ distance:Double) -> NSPoint{
 		var distantPoint = NSPoint()
-		// TODO test
-		distantPoint.x = origin.x + CGFloat(distance * cos(Double(angle)*Double(Double.pi/180)))
-		distantPoint.y = origin.y + CGFloat(distance * sin(Double(angle)*Double(Double.pi/180)))
+		let radAngle = Double(angle)*Double(Double.pi/180)
+		distantPoint.x = origin.x + CGFloat(distance * cos(radAngle))
+		distantPoint.y = origin.y - CGFloat(distance * sin(radAngle))
 		return distantPoint
 	}
 
