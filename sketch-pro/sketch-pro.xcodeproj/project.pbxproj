@@ -16,6 +16,7 @@
 		C40D68061F7A13BA00FD7554 /* PenTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D68051F7A13BA00FD7554 /* PenTool.swift */; };
 		C40D680A1F7AB1DC00FD7554 /* BezierPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D68091F7AB1DC00FD7554 /* BezierPointView.swift */; };
 		C40D680C1F7C035B00FD7554 /* ControlPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D680B1F7C035B00FD7554 /* ControlPointView.swift */; };
+		C40D680E1F82813F00FD7554 /* ControlPointExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D680D1F82813F00FD7554 /* ControlPointExtension.swift */; };
 		C41D15721F69920600586FCA /* ArtboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D15711F69920600586FCA /* ArtboardHandler.swift */; };
 		C41D15741F6A99D300586FCA /* RectangleTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D15731F6A99D300586FCA /* RectangleTool.swift */; };
 		C41D15761F6E5BA200586FCA /* CreateRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D15751F6E5BA200586FCA /* CreateRectangle.swift */; };
@@ -67,6 +68,7 @@
 		C40D68051F7A13BA00FD7554 /* PenTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PenTool.swift; sourceTree = "<group>"; };
 		C40D68091F7AB1DC00FD7554 /* BezierPointView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierPointView.swift; sourceTree = "<group>"; };
 		C40D680B1F7C035B00FD7554 /* ControlPointView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlPointView.swift; sourceTree = "<group>"; };
+		C40D680D1F82813F00FD7554 /* ControlPointExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlPointExtension.swift; sourceTree = "<group>"; };
 		C41D15711F69920600586FCA /* ArtboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtboardHandler.swift; sourceTree = "<group>"; };
 		C41D15731F6A99D300586FCA /* RectangleTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleTool.swift; sourceTree = "<group>"; };
 		C41D15751F6E5BA200586FCA /* CreateRectangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRectangle.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				C48F873F1F57DFC800412D7B /* DrawAreaView.swift */,
 				C40D68031F79568B00FD7554 /* SelectionBoxView.swift */,
 				C40D68091F7AB1DC00FD7554 /* BezierPointView.swift */,
+				C40D680D1F82813F00FD7554 /* ControlPointExtension.swift */,
 				C40D680B1F7C035B00FD7554 /* ControlPointView.swift */,
 			);
 			name = "Custom Views";
@@ -377,6 +380,7 @@
 				C48F87851F5E7BFC00412D7B /* GraphicView.swift in Sources */,
 				C48F873E1F57D9CE00412D7B /* DrawAreaController.swift in Sources */,
 				C48F87131F56E43600412D7B /* Document.xcdatamodeld in Sources */,
+				C40D680E1F82813F00FD7554 /* ControlPointExtension.swift in Sources */,
 				C48F870C1F56E43600412D7B /* AppDelegate.swift in Sources */,
 				C40D67F51F73764800FD7554 /* InspectorController.swift in Sources */,
 				C40D67F81F738CDA00FD7554 /* DrawAreaDelegate.swift in Sources */,

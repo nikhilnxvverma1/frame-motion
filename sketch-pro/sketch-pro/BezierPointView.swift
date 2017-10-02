@@ -15,6 +15,8 @@ class BezierPointView: NSView {
 	var y : Float!
 	var forwardControlPoint : ControlPointView!
 	var backwardControlPoint : ControlPointView!
+	var forwardControlPointExtension : ControlPointExtension!
+	var backwardControlPointExtension : ControlPointExtension!
 	
 	override init(frame frameRect: NSRect) {
 		super.init(frame: frameRect)
