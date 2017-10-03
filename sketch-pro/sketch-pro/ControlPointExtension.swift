@@ -9,6 +9,9 @@
 import Cocoa
 
 class ControlPointExtension: NSView {
+	
+	var anchorPoint : NSPoint!
+	var controlPoint : NSPoint!
 
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
