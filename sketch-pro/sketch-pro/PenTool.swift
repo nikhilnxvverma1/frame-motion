@@ -85,6 +85,7 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler {
 		latestBezierPointView.backwardControlPoint.frame.origin.x = inversePoint.x - latestBezierPointView.backwardControlPoint.frame.width/2
 		latestBezierPointView.backwardControlPoint.frame.origin.y = inversePoint.y - latestBezierPointView.backwardControlPoint.frame.height/2
 		
+		// TODO attach control point extension lines from anchor point to control point
 	}
 	
 	func mouseUp(with event: NSEvent,artboardView: ArtboardView){

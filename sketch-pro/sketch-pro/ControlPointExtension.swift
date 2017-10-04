@@ -17,6 +17,8 @@ class ControlPointExtension: NSView {
         super.draw(dirtyRect)
 
         // Drawing code here.
+		
+		//TODO dotted line
     }
     
 }
