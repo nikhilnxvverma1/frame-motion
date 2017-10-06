@@ -69,9 +69,8 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler {
 		
 		//find the angle that the latest Initial point makes with this point
 		let originAngle = angle(from: latestInitialPoint, to: localPoint)
-//		NSLog("originAngle \(originAngle)")
 		let supplememntryAngle = addAngle(Int(originAngle), angle2: 180)
-//		NSLog("supplememntryAngle \(supplememntryAngle)")
+
 		
 		//find the distance between latest initial point and local point
 		let distance = sqrt((localPoint.x-latestInitialPoint.x)*(localPoint.x-latestInitialPoint.x) + (localPoint.y-latestInitialPoint.y)*(localPoint.y-latestInitialPoint.y))
