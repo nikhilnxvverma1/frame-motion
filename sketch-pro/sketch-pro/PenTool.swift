@@ -58,13 +58,35 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler {
 			latestBezierPointView.backwardControlPoint = ControlPointView()
 			artboardView.addSubview(latestBezierPointView.forwardControlPoint)
 			artboardView.addSubview(latestBezierPointView.backwardControlPoint)
+//			latestBezierPointView.addSubview(latestBezierPointView.forwardControlPoint)
+//			latestBezierPointView.addSubview(latestBezierPointView.backwardControlPoint)
+			
+			//attach control point extension lines from anchor point to control point
+			latestBezierPointView.forwardControlPointExtension = ControlPointExtension()
+			latestBezierPointView.backwardControlPointExtension = ControlPointExtension()
+			artboardView.addSubview(latestBezierPointView.forwardControlPointExtension)
+			artboardView.addSubview(latestBezierPointView.backwardControlPointExtension)
+			
+			//connect the extension lines from bezier anchor point to control points
+			latestBezierPointView.forwardControlPointExtension.bezierPoint=latestBezierPointView
+			latestBezierPointView.forwardControlPointExtension.controlPoint=latestBezierPointView.forwardControlPoint
+			latestBezierPointView.backwardControlPointExtension.bezierPoint=latestBezierPointView
+			latestBezierPointView.backwardControlPointExtension.controlPoint=latestBezierPointView.backwardControlPoint
 		}
+		
+		//local point relative to lateste bezier point
+//		let relativePoint = latestBezierPointView.convert(localPoint, from: artboardView)
+//		NSLog("relative point \(relativePoint.x),\(relativePoint.y)")
 		
 		// move forward control point to where local point is 
 		latestBezierPointView.forwardControlPoint.x = Float(localPoint.x)
 		latestBezierPointView.forwardControlPoint.y = Float(localPoint.y)
 		latestBezierPointView.forwardControlPoint.frame.origin.x = localPoint.x - latestBezierPointView.forwardControlPoint.frame.width/2
 		latestBezierPointView.forwardControlPoint.frame.origin.y = localPoint.y - latestBezierPointView.forwardControlPoint.frame.height/2
+//		latestBezierPointView.forwardControlPoint.x = Float(relativePoint.x)
+//		latestBezierPointView.forwardControlPoint.y = Float(relativePoint.y)
+//		latestBezierPointView.forwardControlPoint.frame.origin.x = relativePoint.x - latestBezierPointView.forwardControlPoint.frame.width/2
+//		latestBezierPointView.forwardControlPoint.frame.origin.y = relativePoint.y - latestBezierPointView.forwardControlPoint.frame.height/2
 		
 		
 		//find the angle that the latest Initial point makes with this point
@@ -77,6 +99,7 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler {
 		
 		//inverse control point
 		let inversePoint = pointAtDistance(latestInitialPoint , supplememntryAngle, Double(distance))
+//		let inversePoint = pointAtDistance(NSPoint.zero , supplememntryAngle, Double(distance))
 		
 		// move backward control point at the inverse direction i.e 180 degrees
 		latestBezierPointView.backwardControlPoint.x = Float(inversePoint.x)
@@ -84,7 +107,9 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler {
 		latestBezierPointView.backwardControlPoint.frame.origin.x = inversePoint.x - latestBezierPointView.backwardControlPoint.frame.width/2
 		latestBezierPointView.backwardControlPoint.frame.origin.y = inversePoint.y - latestBezierPointView.backwardControlPoint.frame.height/2
 		
-		// TODO attach control point extension lines from anchor point to control point
+		//force redraw
+		latestBezierPointView.forwardControlPointExtension.needsDisplay=true
+		latestBezierPointView.backwardControlPointExtension.needsDisplay=true
 	}
 	
 	func mouseUp(with event: NSEvent,artboardView: ArtboardView){
