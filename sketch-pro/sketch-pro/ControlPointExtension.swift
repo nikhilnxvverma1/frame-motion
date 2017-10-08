@@ -52,7 +52,7 @@ class ControlPointExtension: NSView {
 		//Keep using the method lineTo until you get to the one where about to close the path
 		
 		// first quadrant
-		if (cx>ax && cy>ay){
+		if (cx>=ax && cy>=ay){
 			self.frame.origin.x = ax
 			self.frame.origin.y = ay
 			aPath.move(to: CGPoint(x:0, y:0))
@@ -60,7 +60,7 @@ class ControlPointExtension: NSView {
 		}
 		
 		// second quadrant
-		else if (cx<ax && cy>ay){
+		else if (cx<=ax && cy>=ay){
 			self.frame.origin.x = cx
 			self.frame.origin.y = ay
 			aPath.move(to: CGPoint(x:0, y:cy-ay))
@@ -68,7 +68,7 @@ class ControlPointExtension: NSView {
 		}
 		
 		// third quadrant
-		else if (cx<ax && cy<ay){
+		else if (cx<=ax && cy<=ay){
 			self.frame.origin.x = cx
 			self.frame.origin.y = cy
 			aPath.move(to: CGPoint(x:0, y:0))
@@ -76,7 +76,7 @@ class ControlPointExtension: NSView {
 		}
 		
 		// fourth quadrant
-		else if (cx>ax && cy<ay){
+		else if (cx>=ax && cy<=ay){
 			self.frame.origin.x = ax
 			self.frame.origin.y = cy
 			aPath.move(to: CGPoint(x:0, y:ay-cy))
@@ -91,7 +91,10 @@ class ControlPointExtension: NSView {
 		//If you want to fill it as well
 		aPath.fill()
 		
-		super.draw(dirtyRect)
+		if(self.frame.size.width==0||self.frame.size.height==0){
+			NSLog("bad size : \(abs(cy-ay))")
+		}
+		
 	}
 	
 }

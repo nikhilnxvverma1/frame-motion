@@ -64,6 +64,7 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler {
 			latestBezierPointView.backwardControlPointExtension = ControlPointExtension()
 			artboardView.addSubview(latestBezierPointView.forwardControlPointExtension)
 			artboardView.addSubview(latestBezierPointView.backwardControlPointExtension)
+			NSLog("Addded extension lines")
 			
 			//connect the extension lines from bezier anchor point to control points
 			latestBezierPointView.forwardControlPointExtension.bezierPoint=latestBezierPointView
