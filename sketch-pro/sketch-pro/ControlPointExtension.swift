@@ -36,19 +36,52 @@ class ControlPointExtension: NSView {
 			return
 		}
 		
-		self.frame.origin.x = bezierPoint.frame.origin.x
-		self.frame.origin.y = bezierPoint.frame.origin.y
-		self.frame.size.width = abs(bezierPoint.frame.origin.x-controlPoint.frame.origin.x)
-		self.frame.size.height = abs(bezierPoint.frame.origin.y-controlPoint.frame.origin.y)
+		//shorthands
+		let cx = controlPoint.frame.origin.x
+		let cy = controlPoint.frame.origin.y
+		let ax = bezierPoint.frame.origin.x
+		let ay = bezierPoint.frame.origin.y
 		
-		// dotted line
+		//set size
+		self.frame.size.width = abs(ax-cx)
+		self.frame.size.height = abs(ay-cy)
+		
+		// line
 		let aPath = NSBezierPath()
 		
-		aPath.move(to: CGPoint(x:0, y:0))
+		//Keep using the method lineTo until you get to the one where about to close the path
 		
-		aPath.line(to: CGPoint(x:controlPoint.frame.origin.x-bezierPoint.frame.origin.x, y:controlPoint.frame.origin.y-bezierPoint.frame.origin.y))
+		// first quadrant
+		if (cx>ax && cy>ay){
+			self.frame.origin.x = ax
+			self.frame.origin.y = ay
+			aPath.move(to: CGPoint(x:0, y:0))
+			aPath.line(to: CGPoint(x:cx-ax, y:cy-ay))
+		}
 		
-		//Keep using the method addLineToPoint until you get to the one where about to close the path
+		// second quadrant
+		else if (cx<ax && cy>ay){
+			self.frame.origin.x = cx
+			self.frame.origin.y = ay
+			aPath.move(to: CGPoint(x:0, y:cy-ay))
+			aPath.line(to: CGPoint(x:ax-cx, y:0))
+		}
+		
+		// third quadrant
+		else if (cx<ax && cy<ay){
+			self.frame.origin.x = cx
+			self.frame.origin.y = cy
+			aPath.move(to: CGPoint(x:0, y:0))
+			aPath.line(to: CGPoint(x:ax-cx, y:ay-cy))
+		}
+		
+		// fourth quadrant
+		else if (cx>ax && cy<ay){
+			self.frame.origin.x = ax
+			self.frame.origin.y = cy
+			aPath.move(to: CGPoint(x:0, y:ay-cy))
+			aPath.line(to: CGPoint(x:cx-ax, y:0))
+		}
 		
 		aPath.close()
 		
