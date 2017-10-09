@@ -15,16 +15,17 @@ class AddShapeLayer: NSObject, Command {
 	var name : String!
 	var artboardView : ArtboardView!
 	
-	init(artboardView:ArtboardView,document : Document,name : String) {
+	init(shapeView : ShapeView,artboardView:ArtboardView,document : Document,name : String) {
 		super.init()
 		self.document = document
 		self.name = name
 		self.artboardView = artboardView
+		self.shapeView = shapeView
 	}
 	
 	func execute(){
+		createAndPersistShape()
 		self.artboardView.addSubview(shapeView)
-		saveDataModelAndReloadGraphicTable()
 	}
 	
 	func unexecute(){
@@ -33,7 +34,7 @@ class AddShapeLayer: NSObject, Command {
 		self.document.workspace.windowController.overviewController.graphicTable.reloadData()
 	}
 	
-	func saveDataModelAndReloadGraphicTable(){
+	func createAndPersistShape(){
 		shapeView.model=NSEntityDescription.insertNewObject(forEntityName: "Shape",
 		                                                       into: self.document.managedObjectContext!) as! ShapeMO
 		//set properties

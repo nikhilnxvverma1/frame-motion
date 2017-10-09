@@ -12,7 +12,7 @@ import Foundation
 class PenTool: NSObject, CanvasHandler, ArtboardHandler {
 	
 	var document : Document!
-	var pathLayer : LayerMO!
+	var shapeView : ShapeView!
 	var latestBezierPointView : BezierPointView!
 	var latestInitialPoint : NSPoint!
 	static var shapeCount = 0
@@ -103,21 +103,39 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler {
 	
 	func mouseUp(with event: NSEvent,artboardView: ArtboardView){
 		
-		//TODO create add bezier point command
-		
-		if(pathLayer==nil){
+		if(shapeView==nil){
+			
+			//new shape command
 			let name = "Path \(PenTool.shapeCount)"
 			PenTool.shapeCount+=1
-			let createShape = AddShapeLayer(artboardView: artboardView, document: self.document, name: name)
-			createShape.saveDataModelAndReloadGraphicTable()
+			shapeView = ShapeView()
+			let createShape = AddShapeLayer(shapeView: shapeView, artboardView: artboardView, document: self.document, name: name)
+			createShape.createAndPersistShape()
 			
-			//TODO Combine these two commands together
+			//create add bezier point command
+			let addBezierPoint = AddBezierPoint(bezierPointView: latestBezierPointView,shapeView: shapeView, artboardView: artboardView, document: document)
+			addBezierPoint.persistBezierPoint()
+			
+			// Combine these two commands together
+			let createShapeAndAddPoint = CompositeCommand()
+			createShapeAndAddPoint.commandList.append(createShape)
+			createShapeAndAddPoint.commandList.append(addBezierPoint)
+			
+			//push the comm and on the stack
+			self.document.workspace.pushCommand(command: createShapeAndAddPoint, executeBeforePushing: false)
+			
 		}else{
-			//TODO Use only the bezier point command
+			//Use only the bezier point command
+			let addBezierPoint = AddBezierPoint(bezierPointView: latestBezierPointView,shapeView: shapeView, artboardView: artboardView, document: document)
+			addBezierPoint.persistBezierPoint()
+			
+			//push the comm and on the stack
+			self.document.workspace.pushCommand(command: addBezierPoint, executeBeforePushing: false)
 		}
 		
 
 	}
+	
 	
 	private func angle(from:NSPoint,to:NSPoint)->Double{
 		var angle = 0.0

@@ -11,6 +11,7 @@ import Cocoa
 class ShapeView: NSView {
 
 	var model : ShapeMO!
+	var points = [BezierPointView]()
 	
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
