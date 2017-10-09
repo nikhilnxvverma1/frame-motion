@@ -15,6 +15,7 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler {
 	var pathLayer : LayerMO!
 	var latestBezierPointView : BezierPointView!
 	var latestInitialPoint : NSPoint!
+	static var shapeCount = 0
 	
 	init (_ document : Document){
 		self.document = document
@@ -102,7 +103,20 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler {
 	
 	func mouseUp(with event: NSEvent,artboardView: ArtboardView){
 		
-//		self.document.workspace.pushCommand(command: command, executeBeforePushing: false)
+		//TODO create add bezier point command
+		
+		if(pathLayer==nil){
+			let name = "Path \(PenTool.shapeCount)"
+			PenTool.shapeCount+=1
+			let createShape = AddShapeLayer(artboardView: artboardView, document: self.document, name: name)
+			createShape.saveDataModelAndReloadGraphicTable()
+			
+			//TODO Combine these two commands together
+		}else{
+			//TODO Use only the bezier point command
+		}
+		
+
 	}
 	
 	private func angle(from:NSPoint,to:NSPoint)->Double{

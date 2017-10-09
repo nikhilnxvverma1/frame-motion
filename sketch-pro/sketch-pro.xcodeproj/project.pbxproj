@@ -18,6 +18,9 @@
 		C40D680C1F7C035B00FD7554 /* ControlPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D680B1F7C035B00FD7554 /* ControlPointView.swift */; };
 		C40D680E1F82813F00FD7554 /* ControlPointExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D680D1F82813F00FD7554 /* ControlPointExtension.swift */; };
 		C40D68101F8B4A3200FD7554 /* CompositeCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D680F1F8B4A3200FD7554 /* CompositeCommand.swift */; };
+		C40D68121F8B4B6300FD7554 /* AddShapeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D68111F8B4B6300FD7554 /* AddShapeLayer.swift */; };
+		C40D68141F8B4B7300FD7554 /* AddBezierPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D68131F8B4B7300FD7554 /* AddBezierPoint.swift */; };
+		C40D68161F8B4D5700FD7554 /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D68151F8B4D5700FD7554 /* ShapeView.swift */; };
 		C41D15721F69920600586FCA /* ArtboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D15711F69920600586FCA /* ArtboardHandler.swift */; };
 		C41D15741F6A99D300586FCA /* RectangleTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D15731F6A99D300586FCA /* RectangleTool.swift */; };
 		C41D15761F6E5BA200586FCA /* CreateRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D15751F6E5BA200586FCA /* CreateRectangle.swift */; };
@@ -71,6 +74,9 @@
 		C40D680B1F7C035B00FD7554 /* ControlPointView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlPointView.swift; sourceTree = "<group>"; };
 		C40D680D1F82813F00FD7554 /* ControlPointExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlPointExtension.swift; sourceTree = "<group>"; };
 		C40D680F1F8B4A3200FD7554 /* CompositeCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompositeCommand.swift; sourceTree = "<group>"; };
+		C40D68111F8B4B6300FD7554 /* AddShapeLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddShapeLayer.swift; sourceTree = "<group>"; };
+		C40D68131F8B4B7300FD7554 /* AddBezierPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBezierPoint.swift; sourceTree = "<group>"; };
+		C40D68151F8B4D5700FD7554 /* ShapeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeView.swift; sourceTree = "<group>"; };
 		C41D15711F69920600586FCA /* ArtboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtboardHandler.swift; sourceTree = "<group>"; };
 		C41D15731F6A99D300586FCA /* RectangleTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleTool.swift; sourceTree = "<group>"; };
 		C41D15751F6E5BA200586FCA /* CreateRectangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRectangle.swift; sourceTree = "<group>"; };
@@ -142,6 +148,8 @@
 			children = (
 				C48F87881F63046800412D7B /* Command.swift */,
 				C40D680F1F8B4A3200FD7554 /* CompositeCommand.swift */,
+				C40D68111F8B4B6300FD7554 /* AddShapeLayer.swift */,
+				C40D68131F8B4B7300FD7554 /* AddBezierPoint.swift */,
 				C48F878A1F63F9DA00412D7B /* CreateArtboard.swift */,
 				C41D15751F6E5BA200586FCA /* CreateRectangle.swift */,
 			);
@@ -158,6 +166,7 @@
 				C40D68091F7AB1DC00FD7554 /* BezierPointView.swift */,
 				C40D680D1F82813F00FD7554 /* ControlPointExtension.swift */,
 				C40D680B1F7C035B00FD7554 /* ControlPointView.swift */,
+				C40D68151F8B4D5700FD7554 /* ShapeView.swift */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -374,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C48F87461F57ED4300412D7B /* CanvasHandler.swift in Sources */,
+				C40D68121F8B4B6300FD7554 /* AddShapeLayer.swift in Sources */,
 				C40D680A1F7AB1DC00FD7554 /* BezierPointView.swift in Sources */,
 				C41D15721F69920600586FCA /* ArtboardHandler.swift in Sources */,
 				C48F87401F57DFC800412D7B /* DrawAreaView.swift in Sources */,
@@ -383,6 +393,7 @@
 				C40D68061F7A13BA00FD7554 /* PenTool.swift in Sources */,
 				C48F87851F5E7BFC00412D7B /* GraphicView.swift in Sources */,
 				C48F873E1F57D9CE00412D7B /* DrawAreaController.swift in Sources */,
+				C40D68141F8B4B7300FD7554 /* AddBezierPoint.swift in Sources */,
 				C48F87131F56E43600412D7B /* Document.xcdatamodeld in Sources */,
 				C40D680E1F82813F00FD7554 /* ControlPointExtension.swift in Sources */,
 				C48F870C1F56E43600412D7B /* AppDelegate.swift in Sources */,
@@ -393,6 +404,7 @@
 				C48F87421F57E39700412D7B /* WindowController.swift in Sources */,
 				C48F87441F57E8CF00412D7B /* Workspace.swift in Sources */,
 				C48F873C1F56E80B00412D7B /* OverviewController.swift in Sources */,
+				C40D68161F8B4D5700FD7554 /* ShapeView.swift in Sources */,
 				C41D15761F6E5BA200586FCA /* CreateRectangle.swift in Sources */,
 				C48F87871F5EAA1400412D7B /* ArtboardView.swift in Sources */,
 				C40D67FA1F738CFD00FD7554 /* InspectorDelegate.swift in Sources */,
