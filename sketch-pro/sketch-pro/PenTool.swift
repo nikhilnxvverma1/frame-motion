@@ -95,9 +95,9 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler {
 		latestBezierPointView.backwardControlPoint.frame.origin.x = inversePoint.x - latestBezierPointView.backwardControlPoint.frame.width/2
 		latestBezierPointView.backwardControlPoint.frame.origin.y = inversePoint.y - latestBezierPointView.backwardControlPoint.frame.height/2
 		
-		//force redraw
-		latestBezierPointView.forwardControlPointExtension.needsDisplay=true
-		latestBezierPointView.backwardControlPointExtension.needsDisplay=true
+		//take care of the frame of the extension lines
+		reposition(extensionLine: latestBezierPointView.forwardControlPointExtension)
+		reposition(extensionLine: latestBezierPointView.backwardControlPointExtension)
 		
 	}
 	
@@ -134,6 +134,46 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler {
 		}
 		
 
+	}
+	
+	func reposition(extensionLine:ControlPointExtension){
+		
+		let cx = extensionLine.controlPoint.frame.origin.x
+		let cy = extensionLine.controlPoint.frame.origin.y
+		let ax = extensionLine.bezierPoint.frame.origin.x
+		let ay = extensionLine.bezierPoint.frame.origin.y
+		
+		//set the frame of the extension line
+		extensionLine.frame.size.width = abs(ax-cx)
+		extensionLine.frame.size.height = abs(ay-cy)
+		
+		// first quadrant
+		if (cx>=ax && cy>=ay){
+			extensionLine.frame.origin.x = ax
+			extensionLine.frame.origin.y = ay
+		}
+			
+			// second quadrant
+		else if (cx<=ax && cy>=ay){
+			extensionLine.frame.origin.x = cx
+			extensionLine.frame.origin.y = ay
+		}
+			
+			// third quadrant
+		else if (cx<=ax && cy<=ay){
+			extensionLine.frame.origin.x = cx
+			extensionLine.frame.origin.y = cy
+		}
+			
+			// fourth quadrant
+		else if (cx>=ax && cy<=ay){
+			extensionLine.frame.origin.x = ax
+			extensionLine.frame.origin.y = cy
+		}
+		
+		//force redraw
+		extensionLine.needsDisplay = true
+		
 	}
 	
 	

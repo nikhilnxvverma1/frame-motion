@@ -38,7 +38,4 @@ class ArtboardView: NSView {
 		workspace!.artboardHandler.mouseUp(with: event, artboardView: self)
 	}
 	
-	override func willRemoveSubview(_ subview: NSView){
-		NSLog("will remove this subview "+subview.description)
-	}
 }
