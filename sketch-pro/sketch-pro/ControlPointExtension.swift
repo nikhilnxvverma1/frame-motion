@@ -10,9 +10,6 @@ import Cocoa
 
 class ControlPointExtension: NSView {
 	
-//	var anchorPoint : NSPoint!
-//	var controlPoint : NSPoint!
-	
 	var bezierPoint : BezierPointView!
 	var controlPoint : ControlPointView!
 

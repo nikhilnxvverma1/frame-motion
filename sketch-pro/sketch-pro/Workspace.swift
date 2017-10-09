@@ -58,8 +58,10 @@ class Workspace: NSObject {
 			canvasHandler = rectangleTool
 			artboardHandler = rectangleTool
 		case .Pen:
+			// fresh layer on every change
+			penTool = PenTool(self.document)
 			canvasHandler = penTool
-			artboardHandler = penTool
+			artboardHandler =  penTool
 		default:
 			canvasHandler = selectionTool
 		}

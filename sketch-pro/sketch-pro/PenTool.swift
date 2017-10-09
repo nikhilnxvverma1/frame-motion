@@ -12,8 +12,7 @@ import Foundation
 class PenTool: NSObject, CanvasHandler, ArtboardHandler {
 	
 	var document : Document!
-	var graphicView : GraphicView!
-	var bezierPoints = [BezierPointMO]()
+	var pathLayer : LayerMO!
 	var latestBezierPointView : BezierPointView!
 	var latestInitialPoint : NSPoint!
 	
@@ -64,7 +63,6 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler {
 			latestBezierPointView.backwardControlPointExtension = ControlPointExtension()
 			artboardView.addSubview(latestBezierPointView.forwardControlPointExtension)
 			artboardView.addSubview(latestBezierPointView.backwardControlPointExtension)
-			NSLog("Addded extension lines")
 			
 			//connect the extension lines from bezier anchor point to control points
 			latestBezierPointView.forwardControlPointExtension.bezierPoint=latestBezierPointView
@@ -100,8 +98,6 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler {
 		latestBezierPointView.forwardControlPointExtension.needsDisplay=true
 		latestBezierPointView.backwardControlPointExtension.needsDisplay=true
 		
-//		latestBezierPointView.forwardControlPointExtension.display()
-//		latestBezierPointView.backwardControlPointExtension.display()
 	}
 	
 	func mouseUp(with event: NSEvent,artboardView: ArtboardView){
