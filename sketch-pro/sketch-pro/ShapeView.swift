@@ -25,9 +25,93 @@ class ShapeView: NSView {
 			return
 		}
 		
+		//origin shorthands
+		let ox=self.frame.origin.x
+		let oy=self.frame.origin.y
+		
 		let path = NSBezierPath()
-		path.move(to:CGPoint(x: points[0].x, y: points[0].x))
+		
+		//move to the fist point
+		path.move(to:CGPoint(x: points[0].x-ox, y: points[0].y-oy))
+		
+		//loop throught all the bezier points
+		var i = 0
+		while(i<points.count-1){
+			
+			let point = points[i]
+			let nextPoint = points[i+1]
+			
+			let nextPointCoords = NSPoint(x: nextPoint.x-ox, y: nextPoint.y-oy)
+			
+			if( point.forwardControlPoint != nil && nextPoint.backwardControlPoint != nil){
+				
+				let controlPoint1Coords = NSPoint(x: point.x-ox, y: point.y-oy)
+				let controlPoint2Coords = NSPoint(x: nextPoint.x-ox, y: nextPoint.y-oy)
+				path.curve(to: nextPointCoords, controlPoint1: controlPoint1Coords, controlPoint2: controlPoint2Coords)
+				NSLog("case 1")
+				
+			}else if( point.forwardControlPoint == nil && nextPoint.backwardControlPoint != nil){
+				
+				let controlPoint1Coords = NSPoint.zero
+				let controlPoint2Coords = NSPoint(x: nextPoint.x-ox, y: nextPoint.y-oy)
+				path.curve(to: nextPointCoords, controlPoint1: controlPoint1Coords, controlPoint2: controlPoint2Coords)
+				NSLog("case 2")
+				
+			}else if( point.forwardControlPoint != nil && nextPoint.backwardControlPoint == nil){
+				
+				let controlPoint1Coords = NSPoint(x: point.x-ox, y: point.y-oy)
+				let controlPoint2Coords = NSPoint.zero
+				path.curve(to: nextPointCoords, controlPoint1: controlPoint1Coords, controlPoint2: controlPoint2Coords)
+				NSLog("case 3")
+				
+			}else if( point.forwardControlPoint == nil && nextPoint.backwardControlPoint == nil){
+				
+				let controlPoint1Coords = NSPoint.zero
+				let controlPoint2Coords = NSPoint.zero
+				path.curve(to: nextPointCoords, controlPoint1: controlPoint1Coords, controlPoint2: controlPoint2Coords)
+				NSLog("case 4")
+				
+			}
+			i+=1
+		}
+		
+		NSColor.darkGray.setFill()
+		path.stroke()
+		NSColor.lightGray.setFill()
+		path.fill()
 		
     }
+	
+	func computeBounds(){
+		
+		var lx = 999999.0
+		var ly = 999999.0
+		var hx = 0.0
+		var hy = 0.0
+		
+		for point in points{
+			
+			if(point.x<CGFloat(lx)){
+				lx = Double(point.x)
+			}
+			
+			if(point.y<CGFloat(ly)){
+				ly = Double(point.y)
+			}
+			
+			if(point.x>CGFloat(hx)){
+				hx = Double(point.x)
+			}
+			
+			if(point.y>CGFloat(hy)){
+				hy = Double(point.y)
+			}
+		}
+		
+		self.frame.origin.x = CGFloat(lx)
+		self.frame.origin.y = CGFloat(ly)
+		self.frame.size.width = CGFloat(hx-lx)
+		self.frame.size.height = CGFloat(hy-ly)
+	}
     
 }

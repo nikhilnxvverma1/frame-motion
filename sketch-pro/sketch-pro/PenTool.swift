@@ -111,6 +111,7 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler {
 			shapeView = ShapeView()
 			let createShape = AddShapeLayer(shapeView: shapeView, artboardView: artboardView, document: self.document, name: name)
 			createShape.createAndPersistShape()
+			artboardView.addSubview(shapeView)
 			
 			//create add bezier point command
 			let addBezierPoint = AddBezierPoint(bezierPointView: latestBezierPointView,shapeView: shapeView, artboardView: artboardView, document: document)
@@ -133,8 +134,10 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler {
 			self.document.workspace.pushCommand(command: addBezierPoint, executeBeforePushing: false)
 		}
 		
+		shapeView.computeBounds()
 
 	}
+	
 	
 	func reposition(extensionLine:ControlPointExtension){
 		
