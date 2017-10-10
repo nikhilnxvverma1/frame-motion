@@ -77,21 +77,21 @@ class AddBezierPoint: NSObject, Command {
 		bezierPointView.model=NSEntityDescription.insertNewObject(forEntityName: "BezierPoint",
 		                                                    into: self.document.managedObjectContext!) as! BezierPointMO
 		
-		bezierPointView.model.x = bezierPointView.x
-		bezierPointView.model.y = bezierPointView.y
+		bezierPointView.model.x = Float(bezierPointView.x)
+		bezierPointView.model.y = Float(bezierPointView.y)
 
 		if(bezierPointView.forwardControlPoint != nil){
 			bezierPointView.model.controlPoint1=NSEntityDescription.insertNewObject(forEntityName: "Point",
 			                                                          into: self.document.managedObjectContext!) as? PointMO
-			bezierPointView.model.controlPoint1?.x=bezierPointView.forwardControlPoint.x
-			bezierPointView.model.controlPoint1?.y=bezierPointView.forwardControlPoint.y
+			bezierPointView.model.controlPoint1?.x=Float(bezierPointView.forwardControlPoint.x)
+			bezierPointView.model.controlPoint1?.y=Float(bezierPointView.forwardControlPoint.y)
 		}
 		
 		if(bezierPointView.backwardControlPoint != nil){
 			bezierPointView.model.controlPoint2=NSEntityDescription.insertNewObject(forEntityName: "Point",
 			                                                                        into: self.document.managedObjectContext!) as? PointMO
-			bezierPointView.model.controlPoint2?.x=bezierPointView.backwardControlPoint.x
-			bezierPointView.model.controlPoint2?.y=bezierPointView.backwardControlPoint.y
+			bezierPointView.model.controlPoint2?.x=Float(bezierPointView.backwardControlPoint.x)
+			bezierPointView.model.controlPoint2?.y=Float(bezierPointView.backwardControlPoint.y)
 		}
 		
 		//add it to shape view's point list
