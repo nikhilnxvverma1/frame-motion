@@ -11,8 +11,8 @@ import Cocoa
 class BezierPointView: NSView {
 	
 	var model : BezierPointMO!
-	var x : Float!
-	var y : Float!
+	var x : CGFloat!
+	var y : CGFloat!
 	var forwardControlPoint : ControlPointView!
 	var backwardControlPoint : ControlPointView!
 	var forwardControlPointExtension : ControlPointExtension!

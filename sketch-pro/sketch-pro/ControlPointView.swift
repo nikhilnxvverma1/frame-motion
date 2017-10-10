@@ -10,8 +10,8 @@ import Cocoa
 
 class ControlPointView: NSView {
 	
-	var x : Float!
-	var y : Float!
+	var x : CGFloat!
+	var y : CGFloat!
 
 	override init(frame frameRect: NSRect) {
 		super.init(frame: frameRect)

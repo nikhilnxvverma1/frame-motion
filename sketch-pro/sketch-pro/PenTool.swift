@@ -42,8 +42,8 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler {
 		let localPoint = artboardView.convert(event.locationInWindow, from : nil)
 		latestInitialPoint = localPoint
 		latestBezierPointView = BezierPointView()
-		latestBezierPointView.x = Float(localPoint.x)
-		latestBezierPointView.y = Float(localPoint.y)
+		latestBezierPointView.x = localPoint.x
+		latestBezierPointView.y = localPoint.y
 		latestBezierPointView.frame.origin.x = localPoint.x - latestBezierPointView.frame.width/2
 		latestBezierPointView.frame.origin.y = localPoint.y - latestBezierPointView.frame.height/2
 		artboardView.addSubview(latestBezierPointView)
@@ -73,8 +73,8 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler {
 		}
 		
 		// move forward control point to where local point is 
-		latestBezierPointView.forwardControlPoint.x = Float(localPoint.x)
-		latestBezierPointView.forwardControlPoint.y = Float(localPoint.y)
+		latestBezierPointView.forwardControlPoint.x = localPoint.x
+		latestBezierPointView.forwardControlPoint.y = localPoint.y
 		latestBezierPointView.forwardControlPoint.frame.origin.x = localPoint.x - latestBezierPointView.forwardControlPoint.frame.width/2
 		latestBezierPointView.forwardControlPoint.frame.origin.y = localPoint.y - latestBezierPointView.forwardControlPoint.frame.height/2
 		
@@ -90,8 +90,8 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler {
 		let inversePoint = pointAtDistance(latestInitialPoint , supplememntryAngle, Double(distance))
 		
 		// move backward control point at the inverse direction i.e 180 degrees
-		latestBezierPointView.backwardControlPoint.x = Float(inversePoint.x)
-		latestBezierPointView.backwardControlPoint.y = Float(inversePoint.y)
+		latestBezierPointView.backwardControlPoint.x = inversePoint.x
+		latestBezierPointView.backwardControlPoint.y = inversePoint.y
 		latestBezierPointView.backwardControlPoint.frame.origin.x = inversePoint.x - latestBezierPointView.backwardControlPoint.frame.width/2
 		latestBezierPointView.backwardControlPoint.frame.origin.y = inversePoint.y - latestBezierPointView.backwardControlPoint.frame.height/2
 		

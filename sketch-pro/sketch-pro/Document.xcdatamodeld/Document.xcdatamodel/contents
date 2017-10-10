@@ -10,6 +10,7 @@
         <relationship name="page" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Page" inverseName="artboards" inverseEntity="Page" syncable="YES"/>
     </entity>
     <entity name="BezierPoint" representedClassName="BezierPointMO" syncable="YES" codeGenerationType="class">
+        <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="x" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="y" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="controlPoint1" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Point" syncable="YES"/>
@@ -35,6 +36,12 @@
         <attribute name="y" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <entity name="Shape" representedClassName="ShapeMO" parentEntity="Layer" syncable="YES" codeGenerationType="class">
+        <attribute name="fillBlue" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="fillGreen" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="fillRed" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="outlineBlue" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="outlineGreen" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="outlineRed" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="path" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BezierPoint" syncable="YES"/>
     </entity>
     <entity name="Slice" representedClassName="SliceMO" parentEntity="Layer" syncable="YES" codeGenerationType="class">
@@ -51,9 +58,9 @@
         <element name="Canvas" positionX="-524" positionY="-93" width="128" height="73"/>
         <element name="Page" positionX="-774" positionY="-90" width="128" height="88"/>
         <element name="Layer" positionX="-560" positionY="63" width="128" height="103"/>
-        <element name="Shape" positionX="-729" positionY="273" width="128" height="58"/>
+        <element name="Shape" positionX="-729" positionY="273" width="128" height="148"/>
         <element name="Text" positionX="-362" positionY="273" width="128" height="58"/>
-        <element name="BezierPoint" positionX="-909" positionY="216" width="128" height="103"/>
+        <element name="BezierPoint" positionX="-909" positionY="216" width="128" height="118"/>
         <element name="Point" positionX="-1064" positionY="258" width="128" height="73"/>
         <element name="Slice" positionX="-551" positionY="252" width="128" height="103"/>
     </elements>

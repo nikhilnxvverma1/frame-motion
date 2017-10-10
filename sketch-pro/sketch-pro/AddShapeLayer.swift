@@ -31,6 +31,7 @@ class AddShapeLayer: NSObject, Command {
 	func unexecute(){
 		self.shapeView.removeFromSuperview()
 		self.document.managedObjectContext?.delete(shapeView.model)
+		shapeView.model = nil
 		self.document.workspace.windowController.overviewController.graphicTable.reloadData()
 	}
 	
@@ -39,6 +40,12 @@ class AddShapeLayer: NSObject, Command {
 		                                                       into: self.document.managedObjectContext!) as! ShapeMO
 		//set properties
 		shapeView.model.name = name
+		shapeView.model.outlineRed = 30
+		shapeView.model.outlineGreen = 30
+		shapeView.model.outlineBlue = 30
+		shapeView.model.fillRed = 200
+		shapeView.model.fillGreen = 200
+		shapeView.model.fillBlue = 200
 		self.document.workspace.windowController.overviewController.graphicTable.reloadData()
 		
 	}
