@@ -45,31 +45,27 @@ class ShapeView: NSView {
 			
 			if( point.forwardControlPoint != nil && nextPoint.backwardControlPoint != nil){
 				
-				let controlPoint1Coords = NSPoint(x: point.x-ox, y: point.y-oy)
-				let controlPoint2Coords = NSPoint(x: nextPoint.x-ox, y: nextPoint.y-oy)
+				let controlPoint1Coords = NSPoint(x: point.forwardControlPoint.x-ox, y: point.forwardControlPoint.y-oy)
+				let controlPoint2Coords = NSPoint(x: nextPoint.backwardControlPoint.x-ox, y: nextPoint.backwardControlPoint.y-oy)
 				path.curve(to: nextPointCoords, controlPoint1: controlPoint1Coords, controlPoint2: controlPoint2Coords)
-				NSLog("case 1")
 				
 			}else if( point.forwardControlPoint == nil && nextPoint.backwardControlPoint != nil){
 				
 				let controlPoint1Coords = NSPoint.zero
-				let controlPoint2Coords = NSPoint(x: nextPoint.x-ox, y: nextPoint.y-oy)
+				let controlPoint2Coords = NSPoint(x: nextPoint.backwardControlPoint.x-ox, y: nextPoint.backwardControlPoint.y-oy)
 				path.curve(to: nextPointCoords, controlPoint1: controlPoint1Coords, controlPoint2: controlPoint2Coords)
-				NSLog("case 2")
 				
 			}else if( point.forwardControlPoint != nil && nextPoint.backwardControlPoint == nil){
 				
-				let controlPoint1Coords = NSPoint(x: point.x-ox, y: point.y-oy)
+				let controlPoint1Coords = NSPoint(x: point.forwardControlPoint.x-ox, y: point.forwardControlPoint.y-oy)
 				let controlPoint2Coords = NSPoint.zero
 				path.curve(to: nextPointCoords, controlPoint1: controlPoint1Coords, controlPoint2: controlPoint2Coords)
-				NSLog("case 3")
 				
 			}else if( point.forwardControlPoint == nil && nextPoint.backwardControlPoint == nil){
 				
 				let controlPoint1Coords = NSPoint.zero
 				let controlPoint2Coords = NSPoint.zero
 				path.curve(to: nextPointCoords, controlPoint1: controlPoint1Coords, controlPoint2: controlPoint2Coords)
-				NSLog("case 4")
 				
 			}
 			i+=1
