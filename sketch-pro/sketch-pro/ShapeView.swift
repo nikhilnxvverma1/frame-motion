@@ -124,8 +124,19 @@ class ShapeView: NSView {
 				
 				// Bezier curve equation
 				// (1-t)^3*P0 * 3(1-t)^2*t*P1 + 3(1-t)*t^2*P2 + t^3*P3
-				let x = (1-t)*(1-t)*(1-t)*point.x * 3*(1-t)*(1-t)*t*point.forwardControlPoint.x + 3*(1-t)*t*t*nextPoint.backwardControlPoint.x + t*t*t*nextPoint.x
-				let y = (1-t)*(1-t)*(1-t)*point.y * 3*(1-t)*(1-t)*t*point.forwardControlPoint.y + 3*(1-t)*t*t*nextPoint.backwardControlPoint.y + t*t*t*nextPoint.y
+				let x1 = (1-t)*(1-t)*(1-t)*point.x
+				let x2 = 3*(1-t)*(1-t)*t*point.forwardControlPoint.x
+				let x3 = 3*(1-t)*t*t*nextPoint.backwardControlPoint.x
+				let x4 = t*t*t*nextPoint.x
+				let x = x1 + x2 + x3 + x4
+				
+				let y1 = (1-t)*(1-t)*(1-t)*point.y
+				let y2 = 3*(1-t)*(1-t)*t*point.forwardControlPoint.y
+				let y3 = 3*(1-t)*t*t*nextPoint.backwardControlPoint.y
+				let y4 = t*t*t*nextPoint.y
+				let y = y1 + y2 + y3 + y4
+				
+//				let y = (1-t)*(1-t)*(1-t)*point.y * 3*(1-t)*(1-t)*t*point.forwardControlPoint.y + 3*(1-t)*t*t*nextPoint.backwardControlPoint.y + t*t*t*nextPoint.y
 //				let y = (1-t)^3*point.y * 3*(1-t)^2*t*point.forwardControlPoint.y + 3*(1-t)*t^2*nextPoint.backwardControlPoint.y + t^3*nextPoint.y
 
 				if(x<CGFloat(lx)){
