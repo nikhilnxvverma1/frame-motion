@@ -93,65 +93,58 @@ class ShapeView: NSView {
 			let point = points[i]
 			let nextPoint = points[i+1]
 			
-//			let nextPointCoords = NSPoint(x: nextPoint.x, y: nextPoint.y)
-			
-//			if( point.forwardControlPoint != nil && nextPoint.backwardControlPoint != nil){
-//				
-//				let controlPoint1Coords = NSPoint(x: point.forwardControlPoint.x, y: point.forwardControlPoint.y)
-//				let controlPoint2Coords = NSPoint(x: nextPoint.backwardControlPoint.x, y: nextPoint.backwardControlPoint.y)
-//				
-//			}else if( point.forwardControlPoint == nil && nextPoint.backwardControlPoint != nil){
-//				
-//				let controlPoint1Coords = NSPoint.zero
-//				let controlPoint2Coords = NSPoint(x: nextPoint.backwardControlPoint.x, y: nextPoint.backwardControlPoint.y)
-//				
-//			}else if( point.forwardControlPoint != nil && nextPoint.backwardControlPoint == nil){
-//				
-//				let controlPoint1Coords = NSPoint(x: point.forwardControlPoint.x, y: point.forwardControlPoint.y)
-//				let controlPoint2Coords = NSPoint.zero
-//				
-//			}else if( point.forwardControlPoint == nil && nextPoint.backwardControlPoint == nil){
-//				
-//				let controlPoint1Coords = NSPoint.zero
-//				let controlPoint2Coords = NSPoint.zero
-//				
-//			}
-			
 			
 			// run through this curve to search for extremas
 			var t = 0.0
 			while t <= 1 {
 				
+				var fx = 0.0
+				if point.forwardControlPoint != nil {
+					fx = (Double)(point.forwardControlPoint.x)
+				}
+				
+				var bx = 0.0
+				if point.backwardControlPoint != nil {
+					bx = (Double)(point.backwardControlPoint.x)
+				}
+				
 				// Bezier curve equation
 				// (1-t)^3*P0 * 3(1-t)^2*t*P1 + 3(1-t)*t^2*P2 + t^3*P3
-				let x1 = (1-t)*(1-t)*(1-t)*point.x
-				let x2 = 3*(1-t)*(1-t)*t*point.forwardControlPoint.x
-				let x3 = 3*(1-t)*t*t*nextPoint.backwardControlPoint.x
-				let x4 = t*t*t*nextPoint.x
+				let x1 = (1-t)*(1-t)*(1-t)*(Double)(point.x)
+				let x2 = 3*(1-t)*(1-t)*t*fx
+				let x3 = 3*(1-t)*t*t*bx
+				let x4 = t*t*t*(Double)(nextPoint.x)
 				let x = x1 + x2 + x3 + x4
 				
-				let y1 = (1-t)*(1-t)*(1-t)*point.y
-				let y2 = 3*(1-t)*(1-t)*t*point.forwardControlPoint.y
-				let y3 = 3*(1-t)*t*t*nextPoint.backwardControlPoint.y
-				let y4 = t*t*t*nextPoint.y
+				var fy = 0.0
+				if point.forwardControlPoint != nil {
+					fy = (Double)(point.forwardControlPoint.y)
+				}
+				
+				var by = 0.0
+				if point.backwardControlPoint != nil {
+					by = (Double)(point.backwardControlPoint.y)
+				}
+				
+				let y1 = (1-t)*(1-t)*(1-t)*(Double)(point.y)
+				let y2 = 3*(1-t)*(1-t)*t*fy
+				let y3 = 3*(1-t)*t*t*by
+				let y4 = t*t*t*(Double)(nextPoint.y)
 				let y = y1 + y2 + y3 + y4
 				
-//				let y = (1-t)*(1-t)*(1-t)*point.y * 3*(1-t)*(1-t)*t*point.forwardControlPoint.y + 3*(1-t)*t*t*nextPoint.backwardControlPoint.y + t*t*t*nextPoint.y
-//				let y = (1-t)^3*point.y * 3*(1-t)^2*t*point.forwardControlPoint.y + 3*(1-t)*t^2*nextPoint.backwardControlPoint.y + t^3*nextPoint.y
-
-				if(x<CGFloat(lx)){
+				if(x<lx){
 					lx = Double(x)
 				}
 				
-				if(y<CGFloat(ly)){
+				if(y<ly){
 					ly = Double(y)
 				}
 				
-				if(x>CGFloat(hx)){
+				if(x>hx){
 					hx = Double(x)
 				}
 				
-				if(y>CGFloat(hy)){
+				if(y>hy){
 					hy = Double(y)
 				}
 				t = t + 0.01
@@ -160,25 +153,6 @@ class ShapeView: NSView {
 			
 			i+=1
 		}
-		
-//		for point in points{
-//			
-//			if(point.x<CGFloat(lx)){
-//				lx = Double(point.x)
-//			}
-//			
-//			if(point.y<CGFloat(ly)){
-//				ly = Double(point.y)
-//			}
-//			
-//			if(point.x>CGFloat(hx)){
-//				hx = Double(point.x)
-//			}
-//			
-//			if(point.y>CGFloat(hy)){
-//				hy = Double(point.y)
-//			}
-//		}
 		
 		self.frame.origin.x = CGFloat(lx)
 		self.frame.origin.y = CGFloat(ly)
