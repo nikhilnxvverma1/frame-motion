@@ -104,12 +104,12 @@ class ShapeView: NSView {
 				}
 				
 				var bx = 0.0
-				if point.backwardControlPoint != nil {
-					bx = (Double)(point.backwardControlPoint.x)
+				if nextPoint.backwardControlPoint != nil {
+					bx = (Double)(nextPoint.backwardControlPoint.x)
 				}
 				
 				// Bezier curve equation
-				// (1-t)^3*P0 * 3(1-t)^2*t*P1 + 3(1-t)*t^2*P2 + t^3*P3
+				// (1-t)^3*P0 + 3(1-t)^2*t*P1 + 3(1-t)*t^2*P2 + t^3*P3
 				let x1 = (1-t)*(1-t)*(1-t)*(Double)(point.x)
 				let x2 = 3*(1-t)*(1-t)*t*fx
 				let x3 = 3*(1-t)*t*t*bx
@@ -122,8 +122,8 @@ class ShapeView: NSView {
 				}
 				
 				var by = 0.0
-				if point.backwardControlPoint != nil {
-					by = (Double)(point.backwardControlPoint.y)
+				if nextPoint.backwardControlPoint != nil {
+					by = (Double)(nextPoint.backwardControlPoint.y)
 				}
 				
 				let y1 = (1-t)*(1-t)*(1-t)*(Double)(point.y)
