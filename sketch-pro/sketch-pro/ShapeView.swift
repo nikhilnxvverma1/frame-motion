@@ -35,7 +35,7 @@ class ShapeView: NSView {
 		path.move(to:CGPoint(x: points[0].x-ox, y: points[0].y-oy))
 		
 		//loop throught all the bezier points
-		var i = 0
+		var i = 1
 		while(i<points.count-1){
 			
 			let point = points[i]
