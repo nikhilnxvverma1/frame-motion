@@ -35,12 +35,13 @@ class ShapeView: NSView {
 		path.move(to:CGPoint(x: points[0].x-ox, y: points[0].y-oy))
 		
 		//loop throught all the bezier points
-		var i = 1
+		var i = 0
 		while(i<points.count-1){
 			
 			let point = points[i]
 			let nextPoint = points[i+1]
 			
+			let thisPointCoords = NSPoint(x: point.x-ox, y: point.y-oy)
 			let nextPointCoords = NSPoint(x: nextPoint.x-ox, y: nextPoint.y-oy)
 			
 			if( point.forwardControlPoint != nil && nextPoint.backwardControlPoint != nil){
@@ -51,20 +52,20 @@ class ShapeView: NSView {
 				
 			}else if( point.forwardControlPoint == nil && nextPoint.backwardControlPoint != nil){
 				
-				let controlPoint1Coords = NSPoint.zero
+				let controlPoint1Coords = thisPointCoords
 				let controlPoint2Coords = NSPoint(x: nextPoint.backwardControlPoint.x-ox, y: nextPoint.backwardControlPoint.y-oy)
 				path.curve(to: nextPointCoords, controlPoint1: controlPoint1Coords, controlPoint2: controlPoint2Coords)
 				
 			}else if( point.forwardControlPoint != nil && nextPoint.backwardControlPoint == nil){
 				
 				let controlPoint1Coords = NSPoint(x: point.forwardControlPoint.x-ox, y: point.forwardControlPoint.y-oy)
-				let controlPoint2Coords = NSPoint.zero
+				let controlPoint2Coords = nextPointCoords
 				path.curve(to: nextPointCoords, controlPoint1: controlPoint1Coords, controlPoint2: controlPoint2Coords)
 				
 			}else if( point.forwardControlPoint == nil && nextPoint.backwardControlPoint == nil){
 				
-				let controlPoint1Coords = NSPoint.zero
-				let controlPoint2Coords = NSPoint.zero
+				let controlPoint1Coords = thisPointCoords
+				let controlPoint2Coords = nextPointCoords
 				path.curve(to: nextPointCoords, controlPoint1: controlPoint1Coords, controlPoint2: controlPoint2Coords)
 				
 			}
