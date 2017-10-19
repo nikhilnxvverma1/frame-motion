@@ -54,4 +54,14 @@ class WindowController: NSWindowController {
 		let workspace = (self.document as! Document).workspace
 		workspace?.setCurrent(tool:.Rectangle)
 	}
+	
+	override var acceptsFirstResponder: Bool { return true }
+	
+	override func keyDown(with event: NSEvent) {
+		NSLog(" key pressed: \(event.keyCode)")
+	}
+	
+	override func cancelOperation(_ sender: Any?) {
+		NSLog("Escape pressed")
+	}
 }
