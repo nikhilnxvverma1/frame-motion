@@ -51,9 +51,10 @@ class Workspace: NSObject {
 		switch(tool){
 		case .Artboard:
 			canvasHandler = artboardTool
-			artboardHandler = SelectionTool()
+			artboardHandler = selectionTool
 		case .Selection:
 			canvasHandler = selectionTool
+			artboardHandler = selectionTool
 		case .Rectangle:
 			canvasHandler = rectangleTool
 			artboardHandler = rectangleTool
@@ -64,6 +65,7 @@ class Workspace: NSObject {
 			artboardHandler =  penTool
 		default:
 			canvasHandler = selectionTool
+			artboardHandler = selectionTool
 		}
 	}
 	

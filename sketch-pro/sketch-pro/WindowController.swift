@@ -62,6 +62,9 @@ class WindowController: NSWindowController {
 	}
 	
 	override func cancelOperation(_ sender: Any?) {
-		NSLog("Escape pressed")
+		NSLog(" Escaped ")
+		let workspace = (self.document as! Document).workspace
+		workspace?.setCurrent(tool:.Selection)
+		
 	}
 }
