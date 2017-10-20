@@ -44,8 +44,6 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler {
 		latestBezierPointView = BezierPointView()
 		latestBezierPointView.x = localPoint.x
 		latestBezierPointView.y = localPoint.y
-		latestBezierPointView.frame.origin.x = localPoint.x - latestBezierPointView.frame.width/2
-		latestBezierPointView.frame.origin.y = localPoint.y - latestBezierPointView.frame.height/2
 		artboardView.addSubview(latestBezierPointView)
 	}
 	
@@ -75,8 +73,8 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler {
 		// move forward control point to where local point is 
 		latestBezierPointView.forwardControlPoint.x = localPoint.x
 		latestBezierPointView.forwardControlPoint.y = localPoint.y
-		latestBezierPointView.forwardControlPoint.frame.origin.x = localPoint.x - latestBezierPointView.forwardControlPoint.frame.width/2
-		latestBezierPointView.forwardControlPoint.frame.origin.y = localPoint.y - latestBezierPointView.forwardControlPoint.frame.height/2
+//		latestBezierPointView.forwardControlPoint.frame.origin.x = localPoint.x - latestBezierPointView.forwardControlPoint.frame.width/2
+//		latestBezierPointView.forwardControlPoint.frame.origin.y = localPoint.y - latestBezierPointView.forwardControlPoint.frame.height/2
 		
 		//find the angle that the latest Initial point makes with this point
 		let originAngle = angle(from: latestInitialPoint, to: localPoint)
@@ -92,8 +90,8 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler {
 		// move backward control point at the inverse direction i.e 180 degrees
 		latestBezierPointView.backwardControlPoint.x = inversePoint.x
 		latestBezierPointView.backwardControlPoint.y = inversePoint.y
-		latestBezierPointView.backwardControlPoint.frame.origin.x = inversePoint.x - latestBezierPointView.backwardControlPoint.frame.width/2
-		latestBezierPointView.backwardControlPoint.frame.origin.y = inversePoint.y - latestBezierPointView.backwardControlPoint.frame.height/2
+//		latestBezierPointView.backwardControlPoint.frame.origin.x = inversePoint.x - latestBezierPointView.backwardControlPoint.frame.width/2
+//		latestBezierPointView.backwardControlPoint.frame.origin.y = inversePoint.y - latestBezierPointView.backwardControlPoint.frame.height/2
 		
 		//take care of the frame of the extension lines
 		reposition(extensionLine: latestBezierPointView.forwardControlPointExtension)

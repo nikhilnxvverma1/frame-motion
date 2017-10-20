@@ -38,11 +38,15 @@ class ControlPointExtension: NSView,CALayerDelegate {
 		}
 		
 		//shorthands
-		let cx = controlPoint.frame.origin.x
-		let cy = controlPoint.frame.origin.y
-		let ax = bezierPoint.frame.origin.x
-		let ay = bezierPoint.frame.origin.y
+		let cx = controlPoint.x
+		let cy = controlPoint.y
+		let ax = bezierPoint.x
+		let ay = bezierPoint.y
 		
+		let bw = bezierPoint.frame.size.width
+		let bh = bezierPoint.frame.size.height
+		let cw = controlPoint.frame.size.width
+		let ch = controlPoint.frame.size.height
 		
 		// line
 		let aPath = NSBezierPath()
@@ -51,26 +55,26 @@ class ControlPointExtension: NSView,CALayerDelegate {
 		
 		// first quadrant
 		if (cx>=ax && cy>=ay){
-			aPath.move(to: CGPoint(x:0, y:0))
-			aPath.line(to: CGPoint(x:cx-ax, y:cy-ay))
+			aPath.move(to: CGPoint(x:bw/2, y:bh/2))
+			aPath.line(to: CGPoint(x:cx-ax+cw/2, y:cy-ay+ch/2))
 		}
 		
 		// second quadrant
 		else if (cx<=ax && cy>=ay){
-			aPath.move(to: CGPoint(x:0, y:cy-ay))
-			aPath.line(to: CGPoint(x:ax-cx, y:0))
+			aPath.move(to: CGPoint(x:cw/2, y:cy-ay+ch/2))
+			aPath.line(to: CGPoint(x:ax-cx+bw/2, y:bh/2))
 		}
 		
 		// third quadrant
 		else if (cx<=ax && cy<=ay){
-			aPath.move(to: CGPoint(x:0, y:0))
-			aPath.line(to: CGPoint(x:ax-cx, y:ay-cy))
+			aPath.move(to: CGPoint(x:cw/2, y:ch/2))
+			aPath.line(to: CGPoint(x:ax-cx+bw/2, y:ay-cy+bh/2))
 		}
 		
 		// fourth quadrant
 		else if (cx>=ax && cy<=ay){
-			aPath.move(to: CGPoint(x:0, y:ay-cy))
-			aPath.line(to: CGPoint(x:cx-ax, y:0))
+			aPath.move(to: CGPoint(x:bw/2, y:ay-cy+bh/2))
+			aPath.line(to: CGPoint(x:cx-ax+cw/2, y:ch/2))
 		}
 		
 		aPath.close()

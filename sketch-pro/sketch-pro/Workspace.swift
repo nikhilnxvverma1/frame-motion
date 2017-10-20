@@ -52,17 +52,21 @@ class Workspace: NSObject {
 		case .Artboard:
 			canvasHandler = artboardTool
 			artboardHandler = selectionTool
+			break
 		case .Selection:
 			canvasHandler = selectionTool
 			artboardHandler = selectionTool
+			break
 		case .Rectangle:
 			canvasHandler = rectangleTool
 			artboardHandler = rectangleTool
+			break
 		case .Pen:
 			// fresh layer on every change
 			penTool = PenTool(self.document)
 			canvasHandler = penTool
 			artboardHandler =  penTool
+			break
 		default:
 			canvasHandler = selectionTool
 			artboardHandler = selectionTool
