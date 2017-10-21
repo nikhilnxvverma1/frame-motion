@@ -43,6 +43,8 @@
 		C48F87871F5EAA1400412D7B /* ArtboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F87861F5EAA1400412D7B /* ArtboardView.swift */; };
 		C48F87891F63046800412D7B /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F87881F63046800412D7B /* Command.swift */; };
 		C48F878B1F63F9DA00412D7B /* CreateArtboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F878A1F63F9DA00412D7B /* CreateArtboard.swift */; };
+		C4A99E791F9B238F009ABE7A /* Selectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A99E781F9B238E009ABE7A /* Selectable.swift */; };
+		C4A99E7B1F9B269A009ABE7A /* Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A99E7A1F9B269A009ABE7A /* Selection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +107,8 @@
 		C48F87861F5EAA1400412D7B /* ArtboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtboardView.swift; sourceTree = "<group>"; };
 		C48F87881F63046800412D7B /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		C48F878A1F63F9DA00412D7B /* CreateArtboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateArtboard.swift; sourceTree = "<group>"; };
+		C4A99E781F9B238E009ABE7A /* Selectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Selectable.swift; sourceTree = "<group>"; };
+		C4A99E7A1F9B269A009ABE7A /* Selection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Selection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +225,8 @@
 				C41D15711F69920600586FCA /* ArtboardHandler.swift */,
 				C48F87471F57EE6100412D7B /* ArtboardTool.swift */,
 				C48F87491F57EEE400412D7B /* SelectionTool.swift */,
+				C4A99E7A1F9B269A009ABE7A /* Selection.swift */,
+				C4A99E781F9B238E009ABE7A /* Selectable.swift */,
 				C48F87191F56E43600412D7B /* Info.plist */,
 			);
 			path = "sketch-pro";
@@ -394,6 +400,7 @@
 				C48F87851F5E7BFC00412D7B /* GraphicView.swift in Sources */,
 				C48F873E1F57D9CE00412D7B /* DrawAreaController.swift in Sources */,
 				C40D68141F8B4B7300FD7554 /* AddBezierPoint.swift in Sources */,
+				C4A99E791F9B238F009ABE7A /* Selectable.swift in Sources */,
 				C48F87131F56E43600412D7B /* Document.xcdatamodeld in Sources */,
 				C40D680E1F82813F00FD7554 /* ControlPointExtension.swift in Sources */,
 				C48F870C1F56E43600412D7B /* AppDelegate.swift in Sources */,
@@ -403,6 +410,7 @@
 				C48F87891F63046800412D7B /* Command.swift in Sources */,
 				C48F87421F57E39700412D7B /* WindowController.swift in Sources */,
 				C48F87441F57E8CF00412D7B /* Workspace.swift in Sources */,
+				C4A99E7B1F9B269A009ABE7A /* Selection.swift in Sources */,
 				C48F873C1F56E80B00412D7B /* OverviewController.swift in Sources */,
 				C40D68161F8B4D5700FD7554 /* ShapeView.swift in Sources */,
 				C41D15761F6E5BA200586FCA /* CreateRectangle.swift in Sources */,

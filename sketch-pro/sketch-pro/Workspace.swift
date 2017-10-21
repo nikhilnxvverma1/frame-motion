@@ -24,6 +24,7 @@ class Workspace: NSObject {
 	var redoStack = [Command]()
 	var document : Document!
 	var windowController : WindowController!
+	var currentSelection : Selection?
 	
 	// Tools
 	var artboardTool : ArtboardTool!

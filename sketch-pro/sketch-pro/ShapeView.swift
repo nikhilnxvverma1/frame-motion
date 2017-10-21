@@ -9,12 +9,36 @@
 import Cocoa
 import CoreGraphics
 
-class ShapeView: NSView {
+class ShapeView: NSView,Selectable {
 
 	var model : ShapeMO!
 	var points = [BezierPointView]()
 //	var outlineColor = CGColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
 //	var fillColor = CGColor(red: 0.6, green: 0.6, blue: 0.6, alpha: 1)
+	
+	var x : Double {
+		get{
+			return Double(self.frame.origin.x)
+		}
+	}
+	
+	var y : Double {
+		get{
+			return Double(self.frame.origin.y)
+		}
+	}
+	
+	var width : Double{
+		get{
+			return Double(self.frame.size.width)
+		}
+	}
+	
+	var height : Double{
+		get{
+			return Double(self.frame.size.height)
+		}
+	}
 	
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
