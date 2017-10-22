@@ -10,7 +10,7 @@ import Cocoa
 
 class Selection: NSObject {
 	
-	private var items = [Selectable]()
+	private var items = NSMutableArray()
 	var boundingBox : NSRect
 	
 	override init() {
@@ -37,7 +37,9 @@ class Selection: NSObject {
 		var hy = 0.0
 
 		//find the least x,y and max x,y
-		for item in items{
+		for genericItem in items{
+			
+			let item = genericItem as! Selectable
 			
 			let x = Double(item.x)
 			let y = Double(item.y)
@@ -69,19 +71,17 @@ class Selection: NSObject {
 	}
 	
 	public func add(item : Selectable){
-		//check if this item already exists or not
-		let index = index(of:item)
+		// check if item already exists
+		let index = items.index(of: item)
+		if(index != -1){
+			return
+		}
+		
+		items.add(item)
 	}
 	
-	private func index(of:Selectable) -> Int{
-		var index=0
-		for item in items{
-			if item === of {
-				return index
-			}
-			index+=1
-		}
-		return -1
+	public func remove(item : Selectable){
+		items.remove(item)
 	}
-
+	
 }
