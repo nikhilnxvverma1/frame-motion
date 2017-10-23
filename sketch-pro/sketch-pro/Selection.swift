@@ -78,10 +78,12 @@ class Selection: NSObject {
 		}
 		
 		items.add(item)
+		computeBounds()
 	}
 	
 	public func remove(item : Selectable){
 		items.remove(item)
+		computeBounds()
 	}
 	
 }

@@ -41,9 +41,10 @@ class Workspace: NSObject {
 	func initializeToolset(_ document : Document){
 		artboardTool = ArtboardTool(self.document)
 		rectangleTool = RectangleTool(self.document)
-		selectionTool = SelectionTool()
+		selectionTool = SelectionTool(self.document)
 		penTool = PenTool(self.document)
 		
+		artboardHandler = selectionTool
 		canvasHandler = selectionTool
 	}
 	
