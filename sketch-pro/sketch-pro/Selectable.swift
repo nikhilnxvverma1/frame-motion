@@ -14,5 +14,12 @@ protocol Selectable {
 	var y : Double { get }
 	var width : Double { get }
 	var height : Double { get }
+	var boundingBox : NSRect { get }
+	
+	func didGetSelected()
+	func didGetUnselected()
+	
+	func enteredDetailSelection()
+	func exitedDetailSelection()
 }
 

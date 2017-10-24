@@ -40,6 +40,12 @@ class ShapeView: NSView,Selectable {
 		}
 	}
 	
+	var boundingBox: NSRect{
+		get{
+			return NSRect(x: x, y: y, width: width, height: height)
+		}
+	}
+	
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
 
@@ -184,5 +190,37 @@ class ShapeView: NSView,Selectable {
 		self.frame.size.width = CGFloat(hx-lx)
 		self.frame.size.height = CGFloat(hy-ly)
 	}
-    
+	
+	
+	func didGetSelected(){
+		
+	}
+	
+	func didGetUnselected(){
+		hideHandles(shouldHide: true)
+	}
+	
+	func enteredDetailSelection(){
+		for point in points{
+			point.isHidden = false
+			point.backwardControlPoint.isHidden = true
+			point.forwardControlPoint.isHidden = true
+			point.backwardControlPointExtension.isHidden = true
+			point.forwardControlPointExtension.isHidden = true
+		}
+	}
+	
+	func exitedDetailSelection(){
+		hideHandles(shouldHide: true)
+	}
+	
+	private func hideHandles(shouldHide : Bool){
+		for point in points{
+			point.isHidden = shouldHide
+			point.backwardControlPoint.isHidden = shouldHide
+			point.forwardControlPoint.isHidden = shouldHide
+			point.backwardControlPointExtension.isHidden = shouldHide
+			point.forwardControlPointExtension.isHidden = shouldHide
+		}
+	}
 }

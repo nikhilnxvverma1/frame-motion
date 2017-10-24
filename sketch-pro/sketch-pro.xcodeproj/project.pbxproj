@@ -46,6 +46,7 @@
 		C4A99E791F9B238F009ABE7A /* Selectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A99E781F9B238E009ABE7A /* Selectable.swift */; };
 		C4A99E7B1F9B269A009ABE7A /* Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A99E7A1F9B269A009ABE7A /* Selection.swift */; };
 		C4A99E7D1F9CF3AE009ABE7A /* SelectionHighlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A99E7C1F9CF3AE009ABE7A /* SelectionHighlightView.swift */; };
+		C4A99E7F1F9DFD93009ABE7A /* SelectionOutlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A99E7E1F9DFD93009ABE7A /* SelectionOutlineView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		C4A99E781F9B238E009ABE7A /* Selectable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Selectable.swift; sourceTree = "<group>"; };
 		C4A99E7A1F9B269A009ABE7A /* Selection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Selection.swift; sourceTree = "<group>"; };
 		C4A99E7C1F9CF3AE009ABE7A /* SelectionHighlightView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionHighlightView.swift; sourceTree = "<group>"; };
+		C4A99E7E1F9DFD93009ABE7A /* SelectionOutlineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionOutlineView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 				C40D680B1F7C035B00FD7554 /* ControlPointView.swift */,
 				C40D68151F8B4D5700FD7554 /* ShapeView.swift */,
 				C4A99E7C1F9CF3AE009ABE7A /* SelectionHighlightView.swift */,
+				C4A99E7E1F9DFD93009ABE7A /* SelectionOutlineView.swift */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				C48F874A1F57EEE400412D7B /* SelectionTool.swift in Sources */,
 				C48F87891F63046800412D7B /* Command.swift in Sources */,
 				C48F87421F57E39700412D7B /* WindowController.swift in Sources */,
+				C4A99E7F1F9DFD93009ABE7A /* SelectionOutlineView.swift in Sources */,
 				C48F87441F57E8CF00412D7B /* Workspace.swift in Sources */,
 				C4A99E7B1F9B269A009ABE7A /* Selection.swift in Sources */,
 				C48F873C1F56E80B00412D7B /* OverviewController.swift in Sources */,

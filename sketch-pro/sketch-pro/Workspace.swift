@@ -25,6 +25,7 @@ class Workspace: NSObject {
 	var document : Document!
 	var windowController : WindowController!
 	var currentSelection : Selection?
+	var itemList = NSMutableArray()
 	
 	// Tools
 	var artboardTool : ArtboardTool!

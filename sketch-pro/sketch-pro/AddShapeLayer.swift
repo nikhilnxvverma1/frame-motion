@@ -26,13 +26,26 @@ class AddShapeLayer: NSObject, Command {
 	func execute(){
 		createAndPersistShape()
 		self.artboardView.addSubview(shapeView)
+		self.document.workspace.itemList.add(shapeView)
 	}
 	
 	func unexecute(){
 		self.shapeView.removeFromSuperview()
+		self.document.workspace.itemList.remove(shapeView)
+		self.document.workspace.itemList.remove(at: index)
 		self.document.managedObjectContext?.delete(shapeView.model)
 		shapeView.model = nil
 		self.document.workspace.windowController.overviewController.graphicTable.reloadData()
+	}
+	
+	private func index(of:Selectable, list:[Selectable])->Int{
+		
+		for (index,value) in list.enumerated(){
+			if value as AnyObject? == of as! _OptionalNilComparisonType {
+				return index
+			}
+		}
+		return -1
 	}
 	
 	func createAndPersistShape(){
