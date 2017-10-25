@@ -8,8 +8,38 @@
 
 import Cocoa
 
-class GraphicView: NSView {
+class GraphicView: NSView,Selectable {
 
+	var x : Double {
+		get{
+			return Double(self.frame.origin.x)
+		}
+	}
+	
+	var y : Double {
+		get{
+			return Double(self.frame.origin.y)
+		}
+	}
+	
+	var width : Double{
+		get{
+			return Double(self.frame.size.width)
+		}
+	}
+	
+	var height : Double{
+		get{
+			return Double(self.frame.size.height)
+		}
+	}
+	
+	var boundingBox: NSRect{
+		get{
+			return NSRect(x: x, y: y, width: width, height: height)
+		}
+	}
+	
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
 
@@ -18,5 +48,22 @@ class GraphicView: NSView {
 		NSRectFill(dirtyRect)
 		super.draw(dirtyRect)
     }
+	
+	func didGetSelected(){
+		
+	}
+	
+	func didGetUnselected(){
+		
+	}
+	
+	func enteredDetailSelection(){
+		
+	}
+	
+	func exitedDetailSelection(){
+		
+	}
+	
     
 }

@@ -32,7 +32,6 @@ class AddShapeLayer: NSObject, Command {
 	func unexecute(){
 		self.shapeView.removeFromSuperview()
 		self.document.workspace.itemList.remove(shapeView)
-		self.document.workspace.itemList.remove(at: index)
 		self.document.managedObjectContext?.delete(shapeView.model)
 		shapeView.model = nil
 		self.document.workspace.windowController.overviewController.graphicTable.reloadData()

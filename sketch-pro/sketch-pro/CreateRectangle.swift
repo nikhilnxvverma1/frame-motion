@@ -24,10 +24,12 @@ class CreateRectangle: NSObject,Command {
 	
 	func execute(){
 		self.artboardView.addSubview(graphicView)
+		self.document.workspace.itemList.add(graphicView)
 	}
 	
 	func unexecute(){
 		self.graphicView.removeFromSuperview()
+		self.document.workspace.itemList.remove(graphicView)
 	}
 	
 	func roughFetch(){
