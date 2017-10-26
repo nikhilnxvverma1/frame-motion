@@ -86,4 +86,8 @@ class Selection: NSObject {
 		computeBounds()
 	}
 	
+	public func removeAllObjects(){
+		items.removeAllObjects()
+	}
+	
 }
