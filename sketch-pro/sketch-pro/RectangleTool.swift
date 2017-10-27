@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class RectangleTool: NSObject, CanvasHandler, ArtboardHandler{
+class RectangleTool: NSObject, Tool, CanvasHandler, ArtboardHandler{
 	
 	var graphicView: GraphicView!
 	var originalPoint: NSPoint!
@@ -70,6 +70,20 @@ class RectangleTool: NSObject, CanvasHandler, ArtboardHandler{
 	func mouseUp(with event: NSEvent,artboardView: ArtboardView){
 		let command = CreateRectangle(graphicView,artboardView,document: self.document)
 		self.document.workspace.pushCommand(command: command, executeBeforePushing: false)
+	}
+	
+	// MARK: Tool functions
+	
+	func didGetSelected(_ previousToolType:ToolType){
+		
+	}
+	
+	func didGetUnselected(_ nextToolType:ToolType){
+		
+	}
+	
+	func getToolType()->ToolType{
+		return ToolType.Rectangle
 	}
 
 }

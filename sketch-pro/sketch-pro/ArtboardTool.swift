@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ArtboardTool: NSObject,CanvasHandler {
+class ArtboardTool: NSObject,Tool,CanvasHandler {
 	
 	var artboardView : ArtboardView!
 	var initialPoint : NSPoint!
@@ -68,5 +68,19 @@ class ArtboardTool: NSObject,CanvasHandler {
 		                                     name : "Artboard \(artboardSoFar)",
 		                                     saveModel: true)
 		self.document.workspace?.pushCommand(command: artboardCommand, executeBeforePushing: false)
+	}
+	
+	// MARK: Tool functions
+	
+	func didGetSelected(_ previousToolType:ToolType){
+		
+	}
+	
+	func didGetUnselected(_ nextToolType:ToolType){
+		
+	}
+	
+	func getToolType()->ToolType{
+		return ToolType.Artboard
 	}
 }

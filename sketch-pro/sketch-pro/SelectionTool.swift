@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class SelectionTool: NSObject,CanvasHandler,ArtboardHandler {
+class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 	
 	private var selectionHightlight : SelectionHighlightView!
 	private var document : Document!
@@ -116,6 +116,18 @@ class SelectionTool: NSObject,CanvasHandler,ArtboardHandler {
 //		}catch{
 //			fatalError("Selection Error: \(error)")
 //		}
+	}
+	
+	func didGetSelected(_ previousToolType:ToolType){
+		
+	}
+	
+	func didGetUnselected(_ nextToolType:ToolType){
+		
+	}
+	
+	func getToolType()->ToolType{
+		return ToolType.Selection
 	}
 
 }

@@ -8,7 +8,7 @@
 
 import Cocoa
 
-enum Tool{
+enum ToolType{
 	case Selection
 	case Artboard
 	case Rectangle
@@ -17,7 +17,8 @@ enum Tool{
 }
 
 class Workspace: NSObject {
-	private var current : Tool = .Selection
+	private var currentToolType : ToolType = .Selection
+	private var currentTool : Tool!
 	var canvasHandler : CanvasHandler!
 	var artboardHandler : ArtboardHandler!
 	var undoStack = [Command]()
@@ -49,31 +50,48 @@ class Workspace: NSObject {
 		canvasHandler = selectionTool
 	}
 	
-	func setCurrent(tool : Tool){
+	func setCurrent(tool : ToolType){
 		
+		//ignore if this doesn't make any difference
+		if currentToolType==tool {
+			return
+		}
+		
+		let oldToolType = currentToolType
+		currentTool.didGetUnselected(tool)
+		
+		
+		//change the current Tool
 		switch(tool){
 		case .Artboard:
 			canvasHandler = artboardTool
 			artboardHandler = selectionTool
+			currentTool = artboardTool
 			break
 		case .Selection:
 			canvasHandler = selectionTool
 			artboardHandler = selectionTool
+			currentTool = selectionTool
 			break
 		case .Rectangle:
 			canvasHandler = rectangleTool
 			artboardHandler = rectangleTool
+			currentTool = rectangleTool
 			break
 		case .Pen:
 			// fresh layer on every change
 			penTool = PenTool(self.document)
 			canvasHandler = penTool
 			artboardHandler =  penTool
+			currentTool = penTool
 			break
 		default:
 			canvasHandler = selectionTool
 			artboardHandler = selectionTool
+			currentTool = selectionTool
 		}
+		
+		currentTool.didGetSelected(oldToolType)
 	}
 	
 	func pushCommand(command:Command!,executeBeforePushing:Bool){

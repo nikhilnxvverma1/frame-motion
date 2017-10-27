@@ -9,7 +9,7 @@
 import Cocoa
 import Foundation
 
-class PenTool: NSObject, CanvasHandler, ArtboardHandler {
+class PenTool: NSObject, CanvasHandler, ArtboardHandler, Tool {
 	
 	var document : Document!
 	var shapeView : ShapeView!
@@ -222,6 +222,20 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler {
 		distantPoint.x = origin.x + CGFloat(distance * cos(radAngle))
 		distantPoint.y = origin.y - CGFloat(distance * sin(radAngle))
 		return distantPoint
+	}
+	
+	// MARK: Tool functions
+	
+	func didGetSelected(_ previousToolType:ToolType){
+		
+	}
+	
+	func didGetUnselected(_ nextToolType:ToolType){
+		
+	}
+	
+	func getToolType()->ToolType{
+		return ToolType.Pen
 	}
 
 }
