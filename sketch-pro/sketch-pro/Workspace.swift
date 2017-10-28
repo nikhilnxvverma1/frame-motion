@@ -48,6 +48,7 @@ class Workspace: NSObject {
 		
 		artboardHandler = selectionTool
 		canvasHandler = selectionTool
+		currentTool = selectionTool
 	}
 	
 	func setCurrent(tool : ToolType){
