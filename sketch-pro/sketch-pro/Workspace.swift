@@ -59,6 +59,7 @@ class Workspace: NSObject {
 		}
 		
 		let oldToolType = currentToolType
+		currentToolType = tool
 		currentTool.didGetUnselected(tool)
 		
 		

@@ -231,7 +231,7 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler, Tool {
 	}
 	
 	func didGetUnselected(_ nextToolType:ToolType){
-		
+		NSLog("will close the figure now")
 	}
 	
 	func getToolType()->ToolType{
