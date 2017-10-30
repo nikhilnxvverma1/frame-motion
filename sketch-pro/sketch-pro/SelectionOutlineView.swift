@@ -69,7 +69,9 @@ class SelectionOutlineView: NSView {
 		context?.addPath(path)
 		//		context?.setFillColor(NSColor.blue.cgColor)
 		context?.setFillColor(SelectionOutlineView.boxColor)
+		context?.setStrokeColor(CGColor(red: 0, green: 0, blue: 0, alpha: 1))
 		context?.drawPath(using: .stroke)
+		
 	}
 	
 }

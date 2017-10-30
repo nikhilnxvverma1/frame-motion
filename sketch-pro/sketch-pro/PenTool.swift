@@ -231,7 +231,19 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler, Tool {
 	}
 	
 	func didGetUnselected(_ nextToolType:ToolType){
-		NSLog("will close the figure now")
+		
+		if(shapeView==nil){
+			return
+		}
+		
+		// close the figure if needed
+		
+		// clear the previous selection list
+		document.workspace.selectionArea?.removeAllObjects()
+		
+		// add only this shape to the selection group
+		document.workspace.selectionArea?.add(item: shapeView)
+		
 	}
 	
 	func getToolType()->ToolType{

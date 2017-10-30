@@ -10,7 +10,14 @@ import Cocoa
 
 class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 	
+	// used to show the dragged area
 	private var selectionHightlight : SelectionHighlightView!
+	
+	//used to show the selected objects bounds
+	private var selectionOutline : SelectionOutlineView?
+	
+	private var dragMadeInLastSequence = false
+	
 	private var document : Document!
 	var originalPoint: NSPoint!
 	
@@ -34,6 +41,14 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 	
 	// MARK: Artboard
 	
+	private func createOutline(_ artboardView:ArtboardView){
+		selectionOutline = SelectionOutlineView()
+		selectionOutline?.width = 0
+		selectionOutline?.height = 0
+		
+		artboardView.addSubview(selectionOutline!)
+	}
+	
 	func mouseDown(with event: NSEvent,artboardView: ArtboardView){
 		
 		let localPoint = artboardView.convert(event.locationInWindow, from : nil)
@@ -45,6 +60,11 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 		selectionHightlight.height = 0
 		
 		artboardView.addSubview(selectionHightlight)
+		
+		createOutline(artboardView)
+		
+		//reset drag flag 
+		dragMadeInLastSequence = false
 	}
 	
 	func mouseDragged(with event: NSEvent,artboardView: ArtboardView){
@@ -65,11 +85,23 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 			selectionHightlight.height =  originalPoint.y - localPoint.y
 			selectionHightlight.y = localPoint.y
 		}
+		
+		// TODO: compute the overlapping shapes that make up the selection
+		
+		//set this flag so that the highlight does not get destroyed
+		dragMadeInLastSequence = true
 	}
 	
 	func mouseUp(with event: NSEvent,artboardView: ArtboardView){
 		selectionHightlight.removeFromSuperview()
 		selectionHightlight = nil
+		
+		// if no drag was made, 
+		if( !dragMadeInLastSequence ){
+			// TODO: check if this click was done on an empty area or not
+			
+			computeSizeOfOutline()
+		}
 	}
 	
 	private func selectOverlappingShapesIn(_ artboardView:ArtboardView,selectionBox:SelectionHighlightView){
@@ -118,12 +150,16 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 //		}
 	}
 	
+	private func computeSizeOfOutline(){
+		
+	}
+	
 	func didGetSelected(_ previousToolType:ToolType){
 		
 	}
 	
 	func didGetUnselected(_ nextToolType:ToolType){
-		
+		computeSizeOfOutline()
 	}
 	
 	func getToolType()->ToolType{
