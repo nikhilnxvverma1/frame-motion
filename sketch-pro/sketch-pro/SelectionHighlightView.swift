@@ -51,6 +51,12 @@ class SelectionHighlightView: NSView {
 			self.frame.size.height = CGFloat(newValue)
 		}
 	}
+	
+	var boundingBox : NSRect{
+		get{
+			return NSRect(x: x, y: y, width: width, height: height)
+		}
+	}
 
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)

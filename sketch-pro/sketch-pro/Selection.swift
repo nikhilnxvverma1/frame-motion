@@ -72,10 +72,10 @@ class Selection: NSObject {
 	
 	public func add(item : Selectable){
 		// check if item already exists
-		let index = items.index(of: item)
-		if(index != -1){
-			return
-		}
+//		let index = items.index(of: item)
+//		if(index != -1){
+//			return
+//		}
 		
 		items.add(item)
 		computeBounds()
@@ -88,6 +88,16 @@ class Selection: NSObject {
 	
 	public func removeAllObjects(){
 		items.removeAllObjects()
+		boundingBox.origin.x = 0
+		boundingBox.origin.y = 0
+		boundingBox.size.width = 0
+		boundingBox.size.height = 0
+	}
+	
+	public func printAllItems(){
+		for item in items{
+			NSLog((item as AnyObject).description)
+		}
 	}
 	
 }

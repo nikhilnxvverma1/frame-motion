@@ -108,6 +108,7 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler, Tool {
 			PenTool.shapeCount+=1
 			shapeView = ShapeView()
 			let createShape = AddShapeLayer(shapeView: shapeView, artboardView: artboardView, document: self.document, name: name)
+			document.workspace.itemList.add(shapeView)
 			createShape.createAndPersistShape()
 			artboardView.addSubview(shapeView)
 			
@@ -239,10 +240,10 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler, Tool {
 		// close the figure if needed
 		
 		// clear the previous selection list
-		document.workspace.selectionArea?.removeAllObjects()
+		document.workspace.selectionArea.removeAllObjects()
 		
 		// add only this shape to the selection group
-		document.workspace.selectionArea?.add(item: shapeView)
+		document.workspace.selectionArea.add(item: shapeView)
 		
 	}
 	

@@ -25,7 +25,7 @@ class Workspace: NSObject {
 	var redoStack = [Command]()
 	var document : Document!
 	var windowController : WindowController!
-	var selectionArea : Selection?
+	var selectionArea = Selection()
 	var itemList = NSMutableArray()
 	
 	// Tools

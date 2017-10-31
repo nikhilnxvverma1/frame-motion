@@ -86,7 +86,10 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 			selectionHightlight.y = localPoint.y
 		}
 		
-		// TODO: compute the overlapping shapes that make up the selection
+		// compute the overlapping shapes that make up the selection
+		selectOverlappingShapesIn(artboardView, selectionBox: selectionHightlight)
+		
+		document.workspace.selectionArea.printAllItems()
 		
 		//set this flag so that the highlight does not get destroyed
 		dragMadeInLastSequence = true
@@ -107,12 +110,13 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 	private func selectOverlappingShapesIn(_ artboardView:ArtboardView,selectionBox:SelectionHighlightView){
 		
 		//clear the list first
-		document.workspace.selectionArea?.removeAllObjects()
+		document.workspace.selectionArea.removeAllObjects()
 		
 		//selection bounds
-		let selectionBounds = document.workspace.selectionArea?.boundingBox
+//		let selectionBounds = document.workspace.selectionArea.boundingBox
+		let selectionBounds = selectionBox.boundingBox
 		
-		if (selectionBounds?.isNull)! {
+		if (selectionBounds.isNull) {
 			return
 		}
 		
@@ -122,12 +126,12 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 			
 			//add this item to the list only if it overlaps with the selection bounds
 			let selectable = item as! Selectable
-			if(!selectable.boundingBox.intersection(selectionBounds!).isNull ||
-				!selectionBounds!.intersection(selectable.boundingBox).isNull ||
-				!selectable.boundingBox.contains(selectionBounds!) ||
-				!(selectionBounds?.contains(selectable.boundingBox))!){
+			if(!selectable.boundingBox.intersection(selectionBounds).isNull ||
+				!selectionBounds.intersection(selectable.boundingBox).isNull ||
+				!selectable.boundingBox.contains(selectionBounds) ||
+				!(selectionBounds.contains(selectable.boundingBox))){
 				
-				document.workspace.selectionArea?.add(item: selectable)
+				document.workspace.selectionArea.add(item: selectable)
 			}
 		}
 //		let layerFetch = NSFetchRequest<LayerMO>(entityName: "Layer")
@@ -151,6 +155,11 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 	}
 	
 	private func computeSizeOfOutline(){
+		let bounds = document.workspace.selectionArea.boundingBox
+		selectionOutline?.x = (bounds.origin.x)
+		selectionOutline?.y = (bounds.origin.y)
+		selectionOutline?.width = (bounds.size.width)
+		selectionOutline?.height = (bounds.size.height)
 		
 	}
 	
