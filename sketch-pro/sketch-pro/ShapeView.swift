@@ -124,6 +124,7 @@ class ShapeView: NSView,Selectable {
 			let point = points[i]
 			let nextPoint = points[i+1]
 			
+			NSLog("i = \(i)")
 			
 			// run through this curve to search for extremas
 			var t = 0.0
@@ -178,12 +179,19 @@ class ShapeView: NSView,Selectable {
 				if(y>hy){
 					hy = Double(y)
 				}
+				
+				let ts = String(format: "t = %.2f, x,y = %.2f,%.2f", t,x,y)
+				
+				NSLog(ts)
 				t = t + 0.01
 			}
 			
 			
 			i+=1
 		}
+		
+		let os = String(format: "lx,ly = %.2f,%.2f, hx,hy = %.2f,%.2f", lx,ly,hx,hy)
+		NSLog(os)
 		
 		self.frame.origin.x = CGFloat(lx)
 		self.frame.origin.y = CGFloat(ly)
