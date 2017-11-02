@@ -73,9 +73,7 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler, Tool {
 		// move forward control point to where local point is 
 		latestBezierPointView.forwardControlPoint.x = localPoint.x
 		latestBezierPointView.forwardControlPoint.y = localPoint.y
-//		latestBezierPointView.forwardControlPoint.frame.origin.x = localPoint.x - latestBezierPointView.forwardControlPoint.frame.width/2
-//		latestBezierPointView.forwardControlPoint.frame.origin.y = localPoint.y - latestBezierPointView.forwardControlPoint.frame.height/2
-		
+
 		//find the angle that the latest Initial point makes with this point
 		let originAngle = angle(from: latestInitialPoint, to: localPoint)
 		let supplememntryAngle = addAngle(Int(originAngle), angle2: 180)
@@ -90,9 +88,7 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler, Tool {
 		// move backward control point at the inverse direction i.e 180 degrees
 		latestBezierPointView.backwardControlPoint.x = inversePoint.x
 		latestBezierPointView.backwardControlPoint.y = inversePoint.y
-//		latestBezierPointView.backwardControlPoint.frame.origin.x = inversePoint.x - latestBezierPointView.backwardControlPoint.frame.width/2
-//		latestBezierPointView.backwardControlPoint.frame.origin.y = inversePoint.y - latestBezierPointView.backwardControlPoint.frame.height/2
-		
+
 		//take care of the frame of the extension lines
 		reposition(extensionLine: latestBezierPointView.forwardControlPointExtension)
 		reposition(extensionLine: latestBezierPointView.backwardControlPointExtension)
