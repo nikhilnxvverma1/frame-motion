@@ -24,15 +24,15 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler, Tool {
 	// MARK: Scroll View Canvas
 	
 	func mouseDown(with event: NSEvent,under view: DrawAreaView){
-		
+		// TODO: remove if not needed
 	}
 	
 	func mouseDragged(with event: NSEvent,under view: DrawAreaView){
-		
+		// TODO: remove if not needed
 	}
 	
 	func mouseUp(with event: NSEvent,under view: DrawAreaView){
-		
+		// TODO: remove if not needed
 	}
 	
 	// MARK: Artboard
