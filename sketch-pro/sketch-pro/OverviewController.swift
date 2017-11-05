@@ -134,6 +134,8 @@ class OverviewController: NSViewController,
 		
 	}
 	
+	
+	//displaying table data
 	func outlineView(_ outlineView: NSOutlineView,
 	                 viewFor tableColumn: NSTableColumn?,
 	                 item: Any) -> NSView?{
@@ -144,18 +146,16 @@ class OverviewController: NSViewController,
 				if let artboard = item as? ArtboardMO{
 					view = outlineView.make(withIdentifier: "graphicCell", owner: self) as? NSTableCellView
 					
-//					view?.stringValue = artboard.name!
 					if let textField = view?.textField{
 						textField.stringValue = artboard.name!
-//						textField.sizeToFit()
 					}
 				}else if let page = item as? PageMO{
 					view = outlineView.make(withIdentifier: "graphicCell", owner: self) as? NSTableCellView
 					
-					//					view?.stringValue = artboard.name!
+
 					if let textField = view?.textField{
 						textField.stringValue = page.name!
-//						textField.sizeToFit()
+
 					}
 				}
 			}
