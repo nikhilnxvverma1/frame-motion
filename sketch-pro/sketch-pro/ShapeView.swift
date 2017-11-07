@@ -59,6 +59,8 @@ class ShapeView: NSView,Selectable {
 		let ox=self.frame.origin.x
 		let oy=self.frame.origin.y
 		
+		// TODO: try using the bounding box of this path
+		
 		let path = NSBezierPath()
 		
 		//move to the fist point
@@ -102,7 +104,6 @@ class ShapeView: NSView,Selectable {
 			i+=1
 		}
 		
-		
 		// TODO: get color and stroke from model
 		NSColor.darkGray.setFill()
 		path.stroke()
@@ -111,6 +112,9 @@ class ShapeView: NSView,Selectable {
 		
     }
 	
+	/*
+	Computes and sets the bounds of the view by stepping through all the points of the connected bezier shape
+	*/
 	func computeBounds(){
 		
 		var lx = 999999.0

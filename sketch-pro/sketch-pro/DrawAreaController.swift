@@ -16,12 +16,9 @@ class DrawAreaController: NSViewController, DrawAreaDelegate, LayerDelegate{
 
 	@IBOutlet weak var drawArea: DrawAreaView!
 	
-	@IBOutlet weak var drawAreaBasicView: NSView! ;// TOOD not needed
-	
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
-//		drawArea.drawAreaBasicView = drawAreaBasicView
     }
 	
 	func loadContentFrom(artboardSet:NSSet?){
