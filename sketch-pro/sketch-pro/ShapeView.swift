@@ -13,6 +13,7 @@ class ShapeView: NSView,Selectable {
 
 	var model : ShapeMO!
 	var points = [BezierPointView]()
+	var path : NSBezierPath?
 //	var outlineColor = CGColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
 //	var fillColor = CGColor(red: 0.6, green: 0.6, blue: 0.6, alpha: 1)
 	
@@ -61,10 +62,10 @@ class ShapeView: NSView,Selectable {
 		
 		// TODO: try using the bounding box of this path
 		
-		let path = NSBezierPath()
+		path = NSBezierPath()
 		
 		//move to the fist point
-		path.move(to:CGPoint(x: points[0].x-ox, y: points[0].y-oy))
+		path?.move(to:CGPoint(x: points[0].x-ox, y: points[0].y-oy))
 		
 		//loop throught all the bezier points
 		var i = 0
@@ -80,35 +81,119 @@ class ShapeView: NSView,Selectable {
 				
 				let controlPoint1Coords = NSPoint(x: point.forwardControlPoint.x-ox, y: point.forwardControlPoint.y-oy)
 				let controlPoint2Coords = NSPoint(x: nextPoint.backwardControlPoint.x-ox, y: nextPoint.backwardControlPoint.y-oy)
-				path.curve(to: nextPointCoords, controlPoint1: controlPoint1Coords, controlPoint2: controlPoint2Coords)
+				path!.curve(to: nextPointCoords, controlPoint1: controlPoint1Coords, controlPoint2: controlPoint2Coords)
 				
 			}else if( point.forwardControlPoint == nil && nextPoint.backwardControlPoint != nil){
 				
 				let controlPoint1Coords = thisPointCoords
 				let controlPoint2Coords = NSPoint(x: nextPoint.backwardControlPoint.x-ox, y: nextPoint.backwardControlPoint.y-oy)
-				path.curve(to: nextPointCoords, controlPoint1: controlPoint1Coords, controlPoint2: controlPoint2Coords)
+				path!.curve(to: nextPointCoords, controlPoint1: controlPoint1Coords, controlPoint2: controlPoint2Coords)
 				
 			}else if( point.forwardControlPoint != nil && nextPoint.backwardControlPoint == nil){
 				
 				let controlPoint1Coords = NSPoint(x: point.forwardControlPoint.x-ox, y: point.forwardControlPoint.y-oy)
 				let controlPoint2Coords = nextPointCoords
-				path.curve(to: nextPointCoords, controlPoint1: controlPoint1Coords, controlPoint2: controlPoint2Coords)
+				path!.curve(to: nextPointCoords, controlPoint1: controlPoint1Coords, controlPoint2: controlPoint2Coords)
 				
 			}else if( point.forwardControlPoint == nil && nextPoint.backwardControlPoint == nil){
 				
 				let controlPoint1Coords = thisPointCoords
 				let controlPoint2Coords = nextPointCoords
-				path.curve(to: nextPointCoords, controlPoint1: controlPoint1Coords, controlPoint2: controlPoint2Coords)
+				path!.curve(to: nextPointCoords, controlPoint1: controlPoint1Coords, controlPoint2: controlPoint2Coords)
 				
 			}
 			i+=1
 		}
 		
+		// debugging purposes
+		var lx = 999999.0
+		var ly = 999999.0
+		var hx = 0.0
+		var hy = 0.0
+		
+		i = 0
+		while i < points.count-1 {
+			
+			let point = points[i]
+			let nextPoint = points[i+1]
+			
+			NSLog("i = \(i)")
+			
+			// run through this curve to search for extremas
+			var t = 0.0
+			while t <= 1 {
+				
+				var fx = 0.0
+				if point.forwardControlPoint != nil {
+					fx = (Double)(point.forwardControlPoint.x)
+				}
+				
+				var bx = 0.0
+				if nextPoint.backwardControlPoint != nil {
+					bx = (Double)(nextPoint.backwardControlPoint.x)
+				}
+				
+				// Bezier curve equation
+				// (1-t)^3*P0 + 3(1-t)^2*t*P1 + 3(1-t)*t^2*P2 + t^3*P3
+				let x1 = (1-t)*(1-t)*(1-t)*(Double)(point.x)
+				let x2 = 3*(1-t)*(1-t)*t*fx
+				let x3 = 3*(1-t)*t*t*bx
+				let x4 = t*t*t*(Double)(nextPoint.x)
+				let x = x1 + x2 + x3 + x4
+				
+				var fy = 0.0
+				if point.forwardControlPoint != nil {
+					fy = (Double)(point.forwardControlPoint.y)
+				}
+				
+				var by = 0.0
+				if nextPoint.backwardControlPoint != nil {
+					by = (Double)(nextPoint.backwardControlPoint.y)
+				}
+				
+				let y1 = (1-t)*(1-t)*(1-t)*(Double)(point.y)
+				let y2 = 3*(1-t)*(1-t)*t*fy
+				let y3 = 3*(1-t)*t*t*by
+				let y4 = t*t*t*(Double)(nextPoint.y)
+				let y = y1 + y2 + y3 + y4
+				
+				if(x<lx){
+					lx = Double(x)
+				}
+				
+				if(y<ly){
+					ly = Double(y)
+				}
+				
+				if(x>hx){
+					hx = Double(x)
+				}
+				
+				if(y>hy){
+					hy = Double(y)
+				}
+				
+				// TODO: use x,y to draw a circle
+				
+				let ts = String(format: "t = %.2f, x,y = %.2f,%.2f", t,x,y)
+				
+				NSLog(ts)
+				t = t + 0.01
+			}
+			
+			
+			i+=1
+		}
+	
+	
+		
 		// TODO: get color and stroke from model
 		NSColor.darkGray.setFill()
-		path.stroke()
+		path!.stroke()
 		NSColor.lightGray.setFill()
-		path.fill()
+		path!.fill()
+		
+		
 		
     }
 	
@@ -201,6 +286,27 @@ class ShapeView: NSView,Selectable {
 		self.frame.origin.y = CGFloat(ly)
 		self.frame.size.width = CGFloat(hx-lx)
 		self.frame.size.height = CGFloat(hy-ly)
+
+		
+//		if(path != nil){
+//			self.frame.origin.x = path!.bounds.origin.x
+//			self.frame.origin.y = path!.bounds.origin.y
+//			self.frame.size.width = path!.bounds.size.width
+//			self.frame.size.height = path!.bounds.size.height
+//			
+//			if (path?.isEmpty)!{
+//				NSLog("empty path")
+//			}else{
+//				NSLog("filled path")
+//			}
+//			
+//		}
+//		
+//		let bs = String(format: "x,y = %.2f,%.2f, width,height = %.2f,%.2f", self.frame.origin.x,self.frame.origin.y,self.frame.size.width,self.frame.size.height)
+//		
+//		
+//		NSLog(bs)
+		
 	}
 	
 	
