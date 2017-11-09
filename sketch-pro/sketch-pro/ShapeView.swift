@@ -173,7 +173,14 @@ class ShapeView: NSView,Selectable {
 					hy = Double(y)
 				}
 				
-				// TODO: use x,y to draw a circle
+				// use x,y to draw a circle
+
+				let r = 2.0
+				NSColor.black.setFill()
+				NSColor.black.setStroke()
+				drawDebugCircle(x: x, y: y, r: r)
+				
+				
 				
 				let ts = String(format: "t = %.2f, x,y = %.2f,%.2f", t,x,y)
 				
@@ -184,6 +191,14 @@ class ShapeView: NSView,Selectable {
 			
 			i+=1
 		}
+		
+		NSColor.red.setFill()
+		NSColor.red.setStroke()
+		drawDebugCircle(x: lx, y: ly, r: 3.0)
+		
+		NSColor.blue.setFill()
+		NSColor.blue.setStroke()
+		drawDebugCircle(x: hx, y: hy, r: 3.0)
 	
 	
 		
@@ -196,6 +211,15 @@ class ShapeView: NSView,Selectable {
 		
 		
     }
+	
+	
+	/* Debuggging utility*/
+	private func drawDebugCircle(x:Double,y:Double,r:Double){
+		let circleBounds = NSRect(x: x-r, y: y-r, width: 2*r, height: 2*r)
+		let circlePath = NSBezierPath(ovalIn: circleBounds)
+		circlePath.stroke()
+		circlePath.fill()
+	}
 	
 	/*
 	Computes and sets the bounds of the view by stepping through all the points of the connected bezier shape
