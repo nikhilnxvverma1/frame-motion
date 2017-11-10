@@ -60,10 +60,10 @@ class SelectionOutlineView: NSView {
 		let path = CGMutablePath()
 		
 		// make a rectangle from this path
-		path.move(to: CGPoint(x: 0, y: 0))
-		path.addLine(to: CGPoint(x: width, y: 0))
+		path.move(to: CGPoint(x: x, y: y))
+		path.addLine(to: CGPoint(x: width, y: y))
 		path.addLine(to: CGPoint(x: width, y: height))
-		path.addLine(to: CGPoint(x: 0, y: height))
+		path.addLine(to: CGPoint(x: x, y: height))
 		path.closeSubpath()
 		
 		context?.addPath(path)

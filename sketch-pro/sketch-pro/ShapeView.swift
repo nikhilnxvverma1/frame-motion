@@ -117,44 +117,44 @@ class ShapeView: NSView,Selectable {
 			let point = points[i]
 			let nextPoint = points[i+1]
 			
-			NSLog("i = \(i)")
+//			NSLog("i = \(i)")
 			
 			// run through this curve to search for extremas
 			var t = 0.0
 			while t <= 1 {
 				
-				var fx = 0.0
+				var fx = Double(point.x-ox)
 				if point.forwardControlPoint != nil {
-					fx = (Double)(point.forwardControlPoint.x)
+					fx = Double(point.forwardControlPoint.x-ox)
 				}
 				
-				var bx = 0.0
+				var bx = Double(nextPoint.x-ox)
 				if nextPoint.backwardControlPoint != nil {
-					bx = (Double)(nextPoint.backwardControlPoint.x)
+					bx = Double(nextPoint.backwardControlPoint.x-ox)
 				}
 				
 				// Bezier curve equation
 				// (1-t)^3*P0 + 3(1-t)^2*t*P1 + 3(1-t)*t^2*P2 + t^3*P3
-				let x1 = (1-t)*(1-t)*(1-t)*(Double)(point.x)
+				let x1 = (1-t)*(1-t)*(1-t)*(Double)(point.x-ox)
 				let x2 = 3*(1-t)*(1-t)*t*fx
 				let x3 = 3*(1-t)*t*t*bx
-				let x4 = t*t*t*(Double)(nextPoint.x)
+				let x4 = t*t*t*(Double)(nextPoint.x-ox)
 				let x = x1 + x2 + x3 + x4
 				
-				var fy = 0.0
+				var fy = Double(point.y-oy)
 				if point.forwardControlPoint != nil {
-					fy = (Double)(point.forwardControlPoint.y)
+					fy = Double(point.forwardControlPoint.y-oy)
 				}
 				
-				var by = 0.0
+				var by = Double(nextPoint.y-oy)
 				if nextPoint.backwardControlPoint != nil {
-					by = (Double)(nextPoint.backwardControlPoint.y)
+					by = Double(nextPoint.backwardControlPoint.y-oy)
 				}
 				
-				let y1 = (1-t)*(1-t)*(1-t)*(Double)(point.y)
+				let y1 = (1-t)*(1-t)*(1-t)*(Double)(point.y-oy)
 				let y2 = 3*(1-t)*(1-t)*t*fy
 				let y3 = 3*(1-t)*t*t*by
-				let y4 = t*t*t*(Double)(nextPoint.y)
+				let y4 = t*t*t*(Double)(nextPoint.y-oy)
 				let y = y1 + y2 + y3 + y4
 				
 				if(x<lx){
@@ -180,11 +180,9 @@ class ShapeView: NSView,Selectable {
 				NSColor.black.setStroke()
 				drawDebugCircle(x: x, y: y, r: r)
 				
+//				let ts = String(format: "t = %.2f, x,y = %.2f,%.2f", t,x,y)
 				
-				
-				let ts = String(format: "t = %.2f, x,y = %.2f,%.2f", t,x,y)
-				
-				NSLog(ts)
+//				NSLog(ts)
 				t = t + 0.01
 			}
 			
@@ -231,50 +229,52 @@ class ShapeView: NSView,Selectable {
 		var hx = 0.0
 		var hy = 0.0
 		
+		//origin shorthands
+		let ox=self.frame.origin.x
+		let oy=self.frame.origin.y
+		
 		var i = 0
 		while i < points.count-1 {
 			
 			let point = points[i]
 			let nextPoint = points[i+1]
 			
-			NSLog("i = \(i)")
-			
 			// run through this curve to search for extremas
 			var t = 0.0
 			while t <= 1 {
 				
-				var fx = 0.0
+				var fx = Double(point.x-ox)
 				if point.forwardControlPoint != nil {
-					fx = (Double)(point.forwardControlPoint.x)
+					fx = Double(point.forwardControlPoint.x-ox)
 				}
 				
-				var bx = 0.0
+				var bx = Double(nextPoint.x-ox)
 				if nextPoint.backwardControlPoint != nil {
-					bx = (Double)(nextPoint.backwardControlPoint.x)
+					bx = Double(nextPoint.backwardControlPoint.x-ox)
 				}
 				
 				// Bezier curve equation
 				// (1-t)^3*P0 + 3(1-t)^2*t*P1 + 3(1-t)*t^2*P2 + t^3*P3
-				let x1 = (1-t)*(1-t)*(1-t)*(Double)(point.x)
+				let x1 = (1-t)*(1-t)*(1-t)*(Double)(point.x-ox)
 				let x2 = 3*(1-t)*(1-t)*t*fx
 				let x3 = 3*(1-t)*t*t*bx
-				let x4 = t*t*t*(Double)(nextPoint.x)
+				let x4 = t*t*t*(Double)(nextPoint.x-ox)
 				let x = x1 + x2 + x3 + x4
 				
-				var fy = 0.0
+				var fy = Double(point.y-oy)
 				if point.forwardControlPoint != nil {
-					fy = (Double)(point.forwardControlPoint.y)
+					fy = Double(point.forwardControlPoint.y-oy)
 				}
 				
-				var by = 0.0
+				var by = Double(nextPoint.y-oy)
 				if nextPoint.backwardControlPoint != nil {
-					by = (Double)(nextPoint.backwardControlPoint.y)
+					by = Double(nextPoint.backwardControlPoint.y-oy)
 				}
 				
-				let y1 = (1-t)*(1-t)*(1-t)*(Double)(point.y)
+				let y1 = (1-t)*(1-t)*(1-t)*(Double)(point.y-oy)
 				let y2 = 3*(1-t)*(1-t)*t*fy
 				let y3 = 3*(1-t)*t*t*by
-				let y4 = t*t*t*(Double)(nextPoint.y)
+				let y4 = t*t*t*(Double)(nextPoint.y-oy)
 				let y = y1 + y2 + y3 + y4
 				
 				if(x<lx){
@@ -293,44 +293,28 @@ class ShapeView: NSView,Selectable {
 					hy = Double(y)
 				}
 				
-				let ts = String(format: "t = %.2f, x,y = %.2f,%.2f", t,x,y)
 				
-				NSLog(ts)
+				
+//								let ts = String(format: "t = %.2f, x,y = %.2f,%.2f", t,x,y)
+//				
+//								NSLog(ts)
 				t = t + 0.01
 			}
 			
 			
 			i+=1
 		}
-		
 		let os = String(format: "lx,ly = %.2f,%.2f, hx,hy = %.2f,%.2f", lx,ly,hx,hy)
 		NSLog(os)
 		
-		self.frame.origin.x = CGFloat(lx)
-		self.frame.origin.y = CGFloat(ly)
-		self.frame.size.width = CGFloat(hx-lx)
-		self.frame.size.height = CGFloat(hy-ly)
+		if(i>0){
+			self.frame.origin.x = CGFloat(lx)
+			self.frame.origin.y = CGFloat(ly)
+			self.frame.size.width = CGFloat(hx-lx)
+			self.frame.size.height = CGFloat(hy-ly)
+		}
+		
 
-		
-//		if(path != nil){
-//			self.frame.origin.x = path!.bounds.origin.x
-//			self.frame.origin.y = path!.bounds.origin.y
-//			self.frame.size.width = path!.bounds.size.width
-//			self.frame.size.height = path!.bounds.size.height
-//			
-//			if (path?.isEmpty)!{
-//				NSLog("empty path")
-//			}else{
-//				NSLog("filled path")
-//			}
-//			
-//		}
-//		
-//		let bs = String(format: "x,y = %.2f,%.2f, width,height = %.2f,%.2f", self.frame.origin.x,self.frame.origin.y,self.frame.size.width,self.frame.size.height)
-//		
-//		
-//		NSLog(bs)
-		
 	}
 	
 	

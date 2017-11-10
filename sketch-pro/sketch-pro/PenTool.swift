@@ -103,6 +103,8 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler, Tool {
 			let name = "Path \(PenTool.shapeCount)"
 			PenTool.shapeCount+=1
 			shapeView = ShapeView()
+//			shapeView.frame.origin.x = latestBezierPointView.x
+//			shapeView.frame.origin.y = latestBezierPointView.y
 			let createShape = AddShapeLayer(shapeView: shapeView, artboardView: artboardView, document: self.document, name: name)
 			document.workspace.itemList.add(shapeView)
 			createShape.createAndPersistShape()
