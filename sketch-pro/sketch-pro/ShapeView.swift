@@ -60,8 +60,6 @@ class ShapeView: NSView,Selectable {
 		let ox=self.frame.origin.x
 		let oy=self.frame.origin.y
 		
-		// TODO: try using the bounding box of this path
-		
 		path = NSBezierPath()
 		
 		//move to the fist point
@@ -306,6 +304,9 @@ class ShapeView: NSView,Selectable {
 		}
 		let os = String(format: "lx,ly = %.2f,%.2f, hx,hy = %.2f,%.2f", lx,ly,hx,hy)
 		NSLog(os)
+		
+		// TODO : for odd no of points, origin of frame is at 0,0
+		// whereas dimensions are fine
 		
 		if(i>0){
 			self.frame.origin.x = CGFloat(lx)
