@@ -102,100 +102,6 @@ class ShapeView: NSView,Selectable {
 			}
 			i+=1
 		}
-		
-		// debugging purposes
-		var lx = 999999.0
-		var ly = 999999.0
-		var hx = 0.0
-		var hy = 0.0
-		
-		i = 0
-		while i < points.count-1 {
-			
-			let point = points[i]
-			let nextPoint = points[i+1]
-			
-//			NSLog("i = \(i)")
-			
-			// run through this curve to search for extremas
-			var t = 0.0
-			while t <= 1 {
-				
-				var fx = Double(point.x-ox)
-				if point.forwardControlPoint != nil {
-					fx = Double(point.forwardControlPoint.x-ox)
-				}
-				
-				var bx = Double(nextPoint.x-ox)
-				if nextPoint.backwardControlPoint != nil {
-					bx = Double(nextPoint.backwardControlPoint.x-ox)
-				}
-				
-				// Bezier curve equation
-				// (1-t)^3*P0 + 3(1-t)^2*t*P1 + 3(1-t)*t^2*P2 + t^3*P3
-				let x1 = (1-t)*(1-t)*(1-t)*(Double)(point.x-ox)
-				let x2 = 3*(1-t)*(1-t)*t*fx
-				let x3 = 3*(1-t)*t*t*bx
-				let x4 = t*t*t*(Double)(nextPoint.x-ox)
-				let x = x1 + x2 + x3 + x4
-				
-				var fy = Double(point.y-oy)
-				if point.forwardControlPoint != nil {
-					fy = Double(point.forwardControlPoint.y-oy)
-				}
-				
-				var by = Double(nextPoint.y-oy)
-				if nextPoint.backwardControlPoint != nil {
-					by = Double(nextPoint.backwardControlPoint.y-oy)
-				}
-				
-				let y1 = (1-t)*(1-t)*(1-t)*(Double)(point.y-oy)
-				let y2 = 3*(1-t)*(1-t)*t*fy
-				let y3 = 3*(1-t)*t*t*by
-				let y4 = t*t*t*(Double)(nextPoint.y-oy)
-				let y = y1 + y2 + y3 + y4
-				
-				if(x<lx){
-					lx = Double(x)
-				}
-				
-				if(y<ly){
-					ly = Double(y)
-				}
-				
-				if(x>hx){
-					hx = Double(x)
-				}
-				
-				if(y>hy){
-					hy = Double(y)
-				}
-				
-				// use x,y to draw a circle
-
-				let r = 2.0
-				NSColor.black.setFill()
-				NSColor.black.setStroke()
-				drawDebugCircle(x: x, y: y, r: r)
-				
-//				let ts = String(format: "t = %.2f, x,y = %.2f,%.2f", t,x,y)
-				
-//				NSLog(ts)
-				t = t + 0.01
-			}
-			
-			
-			i+=1
-		}
-		
-		NSColor.red.setFill()
-		NSColor.red.setStroke()
-		drawDebugCircle(x: lx, y: ly, r: 3.0)
-		
-		NSColor.blue.setFill()
-		NSColor.blue.setStroke()
-		drawDebugCircle(x: hx, y: hy, r: 3.0)
-	
 	
 		
 		// TODO: get color and stroke from model
@@ -227,10 +133,6 @@ class ShapeView: NSView,Selectable {
 		var hx = 0.0
 		var hy = 0.0
 		
-		//origin shorthands
-		let ox=self.frame.origin.x
-		let oy=self.frame.origin.y
-		
 		var i = 0
 		while i < points.count-1 {
 			
@@ -241,38 +143,38 @@ class ShapeView: NSView,Selectable {
 			var t = 0.0
 			while t <= 1 {
 				
-				var fx = Double(point.x-ox)
+				var fx = Double(point.x)
 				if point.forwardControlPoint != nil {
-					fx = Double(point.forwardControlPoint.x-ox)
+					fx = Double(point.forwardControlPoint.x)
 				}
 				
-				var bx = Double(nextPoint.x-ox)
+				var bx = Double(nextPoint.x)
 				if nextPoint.backwardControlPoint != nil {
-					bx = Double(nextPoint.backwardControlPoint.x-ox)
+					bx = Double(nextPoint.backwardControlPoint.x)
 				}
 				
 				// Bezier curve equation
 				// (1-t)^3*P0 + 3(1-t)^2*t*P1 + 3(1-t)*t^2*P2 + t^3*P3
-				let x1 = (1-t)*(1-t)*(1-t)*(Double)(point.x-ox)
+				let x1 = (1-t)*(1-t)*(1-t)*(Double)(point.x)
 				let x2 = 3*(1-t)*(1-t)*t*fx
 				let x3 = 3*(1-t)*t*t*bx
-				let x4 = t*t*t*(Double)(nextPoint.x-ox)
+				let x4 = t*t*t*(Double)(nextPoint.x)
 				let x = x1 + x2 + x3 + x4
 				
-				var fy = Double(point.y-oy)
+				var fy = Double(point.y)
 				if point.forwardControlPoint != nil {
-					fy = Double(point.forwardControlPoint.y-oy)
+					fy = Double(point.forwardControlPoint.y)
 				}
 				
-				var by = Double(nextPoint.y-oy)
+				var by = Double(nextPoint.y)
 				if nextPoint.backwardControlPoint != nil {
-					by = Double(nextPoint.backwardControlPoint.y-oy)
+					by = Double(nextPoint.backwardControlPoint.y)
 				}
 				
-				let y1 = (1-t)*(1-t)*(1-t)*(Double)(point.y-oy)
+				let y1 = (1-t)*(1-t)*(1-t)*(Double)(point.y)
 				let y2 = 3*(1-t)*(1-t)*t*fy
 				let y3 = 3*(1-t)*t*t*by
-				let y4 = t*t*t*(Double)(nextPoint.y-oy)
+				let y4 = t*t*t*(Double)(nextPoint.y)
 				let y = y1 + y2 + y3 + y4
 				
 				if(x<lx){
@@ -291,22 +193,16 @@ class ShapeView: NSView,Selectable {
 					hy = Double(y)
 				}
 				
-				
-				
 //								let ts = String(format: "t = %.2f, x,y = %.2f,%.2f", t,x,y)
-//				
 //								NSLog(ts)
 				t = t + 0.01
 			}
 			
-			
 			i+=1
 		}
-		let os = String(format: "lx,ly = %.2f,%.2f, hx,hy = %.2f,%.2f", lx,ly,hx,hy)
-		NSLog(os)
+//		let os = String(format: "lx,ly = %.2f,%.2f, hx,hy = %.2f,%.2f", lx,ly,hx,hy)
+//		NSLog(os)
 		
-		// TODO : for odd no of points, origin of frame is at 0,0
-		// whereas dimensions are fine
 		
 		if(i>0){
 			self.frame.origin.x = CGFloat(lx)
