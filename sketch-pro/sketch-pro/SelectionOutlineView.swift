@@ -10,7 +10,7 @@ import Cocoa
 
 class SelectionOutlineView: NSView {
 	
-	private static var boxColor = CGColor(red: 0, green: 0, blue: 0, alpha: 0)
+	private static var boxColor = CGColor(red: 0, green: 1, blue: 0, alpha: 0.5)//for debugging purposes
 
 	var x : CGFloat {
 		get{
@@ -60,10 +60,10 @@ class SelectionOutlineView: NSView {
 		let path = CGMutablePath()
 		
 		// make a rectangle from this path
-		path.move(to: CGPoint(x: x, y: y))
-		path.addLine(to: CGPoint(x: width, y: y))
+		path.move(to: CGPoint(x: 0, y: 0))
+		path.addLine(to: CGPoint(x: width, y: 0))
 		path.addLine(to: CGPoint(x: width, y: height))
-		path.addLine(to: CGPoint(x: x, y: height))
+		path.addLine(to: CGPoint(x: 0, y: height))
 		path.closeSubpath()
 		
 		context?.addPath(path)
