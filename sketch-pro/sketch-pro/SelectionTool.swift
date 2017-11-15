@@ -27,26 +27,40 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 	
 	// MARK: Scroll View Canvas
 	
-	func mouseDown(with event: NSEvent,under view: DrawAreaView){
+	func mouseDown(with event: NSEvent,under drawAreaView: DrawAreaView){
+		let localPoint = drawAreaView.convert(event.locationInWindow, from : nil)
+		originalPoint = localPoint
+		selectionHightlight = SelectionHighlightView()
+		selectionHightlight.x = localPoint.x
+		selectionHightlight.y = localPoint.y
+		selectionHightlight.width = 0
+		selectionHightlight.height = 0
 		
+		drawAreaView.addSubview(selectionHightlight)
+		
+		createOutline(drawAreaView)
 	}
 	
 	func mouseDragged(with event: NSEvent,under view: DrawAreaView){
 		
+		let localPoint = view.convert(event.locationInWindow, from : nil)
+		expandAsNeeded(localPoint)
 	}
 	
 	func mouseUp(with event: NSEvent,under view: DrawAreaView){
 		
+		selectionHightlight.removeFromSuperview()
+		selectionHightlight = nil
 	}
 	
 	// MARK: Artboard
 	
-	private func createOutline(_ artboardView:ArtboardView){
+	private func createOutline(_ view:NSView){
 		selectionOutline = SelectionOutlineView()
 		selectionOutline?.width = 0
 		selectionOutline?.height = 0
 		
-		artboardView.addSubview(selectionOutline!)
+		view.addSubview(selectionOutline!)
 	}
 	
 	func mouseDown(with event: NSEvent,artboardView: ArtboardView){
@@ -67,8 +81,7 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 		dragMadeInLastSequence = false
 	}
 	
-	func mouseDragged(with event: NSEvent,artboardView: ArtboardView){
-		let localPoint = artboardView.convert(event.locationInWindow, from : nil)
+	private func expandAsNeeded(_ localPoint:NSPoint){
 		//width
 		if(originalPoint.x < localPoint.x){
 			selectionHightlight.width = localPoint.x - originalPoint.x
@@ -85,9 +98,15 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 			selectionHightlight.height =  originalPoint.y - localPoint.y
 			selectionHightlight.y = localPoint.y
 		}
+	}
+	
+	func mouseDragged(with event: NSEvent,artboardView: ArtboardView){
+		let localPoint = artboardView.convert(event.locationInWindow, from : nil)
+		
+		expandAsNeeded(localPoint)
 		
 		// compute the overlapping shapes that make up the selection
-		selectOverlappingShapesIn(artboardView, selectionBox: selectionHightlight)
+		selectOverlappingShapesIn(selectionBox: selectionHightlight)
 		
 		document.workspace.selectionArea.printAllItems()
 		
@@ -107,7 +126,7 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 		}
 	}
 	
-	private func selectOverlappingShapesIn(_ artboardView:ArtboardView,selectionBox:SelectionHighlightView){
+	private func selectOverlappingShapesIn(selectionBox:SelectionHighlightView){
 		
 		//clear the list first
 		document.workspace.selectionArea.removeAllObjects()
