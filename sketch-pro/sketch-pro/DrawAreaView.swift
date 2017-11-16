@@ -36,11 +36,5 @@ class DrawAreaView: NSScrollView {
 		workspace = document.workspace
 		workspace.canvasHandler.mouseUp(with: event, under: self)
 	}
-	
-//	override var acceptsFirstResponder: Bool { return true }
-//	
-//	override func keyDown(with event: NSEvent) {
-//		NSLog(" key pressed: \(event.keyCode)")
-//	}
     
 }
