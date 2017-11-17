@@ -39,6 +39,15 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler, Tool {
 	
 	func mouseDown(with event: NSEvent,artboardView: ArtboardView){
 		
+		// remove previous control point gadget if any
+		if( latestBezierPointView != nil && latestBezierPointView.forwardControlPoint != nil ){
+			latestBezierPointView.forwardControlPoint.removeFromSuperview()
+			latestBezierPointView.backwardControlPoint.removeFromSuperview()
+			
+			latestBezierPointView.forwardControlPointExtension.removeFromSuperview()
+			latestBezierPointView.backwardControlPointExtension.removeFromSuperview()
+		}
+		
 		let localPoint = artboardView.convert(event.locationInWindow, from : nil)
 		latestInitialPoint = localPoint
 		latestBezierPointView = BezierPointView()
