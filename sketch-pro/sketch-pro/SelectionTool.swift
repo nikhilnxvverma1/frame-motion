@@ -75,7 +75,9 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 		
 		artboardView.addSubview(selectionHightlight)
 		
-		createOutline(artboardView)
+//		createOutline(artboardView)
+		selectionOutline?.removeFromSuperview()
+		selectionOutline = nil
 		
 		//reset drag flag 
 		dragMadeInLastSequence = false
@@ -121,7 +123,7 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 		// if no drag was made, 
 		if( !dragMadeInLastSequence ){
 			// TODO: check if this click was done on an empty area or not
-			
+			createOutline(artboardView)
 			computeSizeOfOutline()
 		}
 	}
