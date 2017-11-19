@@ -13,6 +13,12 @@ class Selection: NSObject {
 	private var items = NSMutableArray()
 	var boundingBox : NSRect
 	
+	var count : Int{
+		get{
+			return items.count
+		}
+	}
+	
 	override init() {
 		boundingBox = NSRect()
 	}

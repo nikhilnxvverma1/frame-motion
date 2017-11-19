@@ -121,11 +121,13 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 		selectionHightlight = nil
 		
 		// if no drag was made, 
-		if( !dragMadeInLastSequence ){
+		if( document.workspace.selectionArea.count>0 ){
 			// TODO: check if this click was done on an empty area or not
 			createOutline(artboardView)
 			computeSizeOfOutline()
 		}
+		
+
 	}
 	
 	private func selectOverlappingShapesIn(selectionBox:SelectionHighlightView){
