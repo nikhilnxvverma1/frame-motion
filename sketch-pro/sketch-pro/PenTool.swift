@@ -54,6 +54,16 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler, Tool {
 		latestBezierPointView.x = localPoint.x
 		latestBezierPointView.y = localPoint.y
 		artboardView.addSubview(latestBezierPointView)
+		
+		if(shapeView != nil){
+			//Use only the bezier point command
+			let addBezierPoint = AddBezierPoint(bezierPointView: latestBezierPointView,shapeView: shapeView, artboardView: artboardView, document: document)
+			addBezierPoint.persistBezierPoint()
+			
+			//push the comm and on the stack
+			self.document.workspace.pushCommand(command: addBezierPoint, executeBeforePushing: false)
+		}
+		
 	}
 	
 	func mouseDragged(with event: NSEvent,artboardView: ArtboardView){
@@ -102,6 +112,7 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler, Tool {
 		reposition(extensionLine: latestBezierPointView.forwardControlPointExtension)
 		reposition(extensionLine: latestBezierPointView.backwardControlPointExtension)
 		
+		shapeView.computeBounds()
 	}
 	
 	func mouseUp(with event: NSEvent,artboardView: ArtboardView){
@@ -132,12 +143,12 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler, Tool {
 			self.document.workspace.pushCommand(command: createShapeAndAddPoint, executeBeforePushing: false)
 			
 		}else{
-			//Use only the bezier point command
-			let addBezierPoint = AddBezierPoint(bezierPointView: latestBezierPointView,shapeView: shapeView, artboardView: artboardView, document: document)
-			addBezierPoint.persistBezierPoint()
-			
-			//push the comm and on the stack
-			self.document.workspace.pushCommand(command: addBezierPoint, executeBeforePushing: false)
+//			//Use only the bezier point command
+//			let addBezierPoint = AddBezierPoint(bezierPointView: latestBezierPointView,shapeView: shapeView, artboardView: artboardView, document: document)
+//			addBezierPoint.persistBezierPoint()
+//			
+//			//push the comm and on the stack
+//			self.document.workspace.pushCommand(command: addBezierPoint, executeBeforePushing: false)
 		}
 		
 		shapeView.computeBounds()
