@@ -112,7 +112,10 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler, Tool {
 		reposition(extensionLine: latestBezierPointView.forwardControlPointExtension)
 		reposition(extensionLine: latestBezierPointView.backwardControlPointExtension)
 		
-		shapeView.computeBounds()
+		if(shapeView != nil){
+			shapeView.computeBounds()
+		}
+		
 	}
 	
 	func mouseUp(with event: NSEvent,artboardView: ArtboardView){
