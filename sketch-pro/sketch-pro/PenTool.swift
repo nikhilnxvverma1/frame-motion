@@ -16,6 +16,7 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler, Tool {
 	var latestBezierPointView : BezierPointView!
 	var latestInitialPoint : NSPoint!
 	static var shapeCount = 0
+	private var addBezierPoint : AddBezierPoint?
 	
 	init (_ document : Document){
 		self.document = document
@@ -57,8 +58,8 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler, Tool {
 		
 		if(shapeView != nil){
 			//Use only the bezier point command
-			let addBezierPoint = AddBezierPoint(bezierPointView: latestBezierPointView,shapeView: shapeView, artboardView: artboardView, document: document)
-			addBezierPoint.persistBezierPoint()
+			addBezierPoint = AddBezierPoint(bezierPointView: latestBezierPointView,shapeView: shapeView, artboardView: artboardView, document: document)
+//			addBezierPoint.persistBezierPoint()
 			
 			//push the comm and on the stack
 			self.document.workspace.pushCommand(command: addBezierPoint, executeBeforePushing: false)
@@ -152,6 +153,7 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler, Tool {
 //			
 //			//push the comm and on the stack
 //			self.document.workspace.pushCommand(command: addBezierPoint, executeBeforePushing: false)
+			addBezierPoint!.persistBezierPoint()
 		}
 		
 		shapeView.computeBounds()
