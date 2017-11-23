@@ -37,6 +37,8 @@ class AddBezierPoint: NSObject, Command {
 			artboardView.addSubview(bezierPointView.backwardControlPointExtension)
 		}
 		
+		hideEverythingExceptSelf(true)
+		redraw()
 	}
 	
 	func unexecute(){
@@ -70,6 +72,20 @@ class AddBezierPoint: NSObject, Command {
 		//remove from shapeView's points list
 		let index = shapeView.points.index(of: bezierPointView)
 		shapeView.points.remove(at: index!)
+		
+		hideEverythingExceptSelf(true)
+		shapeView.points.last?.hideHandle(false)
+		redraw()
+	}
+	
+	func redraw() {
+		let fullRect = NSRect(x: 0, y: 0, width: shapeView.frame.width, height: shapeView.frame.height)
+		shapeView.setNeedsDisplay(fullRect)
+	}
+	
+	func hideEverythingExceptSelf(_ shouldHide:Bool){
+		shapeView.hideHandles(shouldHide: shouldHide)
+		self.bezierPointView.hideHandle(false)
 	}
 	
 	func persistBezierPoint(){

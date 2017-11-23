@@ -56,5 +56,18 @@ class BezierPointView: NSView {
 		NSRectFill(dirtyRect)
 		super.draw(dirtyRect)
     }
+	
+	func hideHandle(_ shouldHide:Bool){
+		
+		if(self.backwardControlPoint != nil){
+			self.backwardControlPoint.isHidden = shouldHide
+			self.backwardControlPointExtension.isHidden = shouldHide
+		}
+		
+		if(self.forwardControlPoint != nil){
+			self.forwardControlPoint.isHidden = shouldHide
+			self.forwardControlPointExtension.isHidden = shouldHide
+		}
+	}
     
 }

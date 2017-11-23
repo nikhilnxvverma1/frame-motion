@@ -237,13 +237,20 @@ class ShapeView: NSView,Selectable {
 		hideHandles(shouldHide: true)
 	}
 	
-	private func hideHandles(shouldHide : Bool){
+	func hideHandles(shouldHide : Bool){
 		for point in points{
 			point.isHidden = shouldHide
-			point.backwardControlPoint.isHidden = shouldHide
-			point.forwardControlPoint.isHidden = shouldHide
-			point.backwardControlPointExtension.isHidden = shouldHide
-			point.forwardControlPointExtension.isHidden = shouldHide
+			if (point.backwardControlPoint != nil) {
+				point.backwardControlPoint.isHidden = shouldHide
+				point.backwardControlPointExtension.isHidden = shouldHide
+			}
+			
+			if (point.backwardControlPoint != nil) {
+				point.forwardControlPointExtension.isHidden = shouldHide
+				point.forwardControlPoint.isHidden = shouldHide
+			}
+			
 		}
 	}
+	
 }
