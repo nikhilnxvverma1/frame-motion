@@ -38,6 +38,7 @@ class AddBezierPoint: NSObject, Command {
 		}
 		
 		hideEverythingExceptSelf(true)
+		shapeView.points.last?.hideHandle(false)
 		redraw()
 	}
 	
@@ -84,7 +85,7 @@ class AddBezierPoint: NSObject, Command {
 	}
 	
 	func hideEverythingExceptSelf(_ shouldHide:Bool){
-		shapeView.hideHandles(shouldHide: shouldHide)
+		shapeView.hideHandles(shouldHide: shouldHide,hidePointsAlso:false)
 		self.bezierPointView.hideHandle(false)
 	}
 	

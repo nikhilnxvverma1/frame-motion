@@ -220,7 +220,7 @@ class ShapeView: NSView,Selectable {
 	}
 	
 	func didGetUnselected(){
-		hideHandles(shouldHide: true)
+		hideHandles(shouldHide: true,hidePointsAlso:true)
 	}
 	
 	func enteredDetailSelection(){
@@ -234,12 +234,12 @@ class ShapeView: NSView,Selectable {
 	}
 	
 	func exitedDetailSelection(){
-		hideHandles(shouldHide: true)
+		hideHandles(shouldHide: true,hidePointsAlso:true)
 	}
 	
-	func hideHandles(shouldHide : Bool){
+	func hideHandles(shouldHide : Bool,hidePointsAlso : Bool){
 		for point in points{
-			point.isHidden = shouldHide
+			point.isHidden = hidePointsAlso
 			if (point.backwardControlPoint != nil) {
 				point.backwardControlPoint.isHidden = shouldHide
 				point.backwardControlPointExtension.isHidden = shouldHide
