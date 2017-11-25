@@ -110,21 +110,37 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 		// compute the overlapping shapes that make up the selection
 		selectOverlappingShapesIn(selectionBox: selectionHightlight)
 		
-		document.workspace.selectionArea.printAllItems()
+		
 		
 		//set this flag so that the highlight does not get destroyed
 		dragMadeInLastSequence = true
 	}
 	
 	func mouseUp(with event: NSEvent,artboardView: ArtboardView){
+		
+		document.workspace.selectionArea.printAllItems()
+		
+		let localPoint = artboardView.convert(event.locationInWindow, from : nil)
+		
 		selectionHightlight.removeFromSuperview()
 		selectionHightlight = nil
 		
-		// if no drag was made, 
+		// if no drag was made,
+		if(!dragMadeInLastSequence){
+			// check if this click was done on an empty area or not
+			let container = findShapeAt(point: localPoint)
+			if(container == nil){
+				// clear the outline
+				selectionOutline?.removeFromSuperview()
+				
+				//clear the list first
+				document.workspace.selectionArea.removeAllObjects()
+			}
+		}
 		if( document.workspace.selectionArea.count>0 ){
-			// TODO: check if this click was done on an empty area or not
+			
 			createOutline(artboardView)
-			computeSizeOfOutline()
+			setSizeOfOutline()
 		}
 		
 
@@ -159,7 +175,22 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 		}
 	}
 	
-	private func computeSizeOfOutline(){
+	private func findShapeAt(point:NSPoint)->Selectable?{
+		
+		//go through all the items in the artboard and check for bounds that contain the point
+		for item in document.workspace.itemList{
+			
+			//check if this item contains the point
+			let selectable = item as! Selectable
+			if(selectable.boundingBox.contains(point)){
+				return selectable
+			}
+		}
+		
+		return nil
+	}
+	
+	private func setSizeOfOutline(){
 		let bounds = document.workspace.selectionArea.boundingBox
 		selectionOutline?.x = (bounds.origin.x)
 		selectionOutline?.y = (bounds.origin.y)
@@ -173,7 +204,7 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 	}
 	
 	func didGetUnselected(_ nextToolType:ToolType){
-		computeSizeOfOutline()
+		setSizeOfOutline()
 	}
 	
 	func getToolType()->ToolType{
