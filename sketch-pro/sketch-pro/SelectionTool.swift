@@ -133,10 +133,21 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 				// clear the outline
 				selectionOutline?.removeFromSuperview()
 				
-				//clear the list first
+				//clear the list
 				document.workspace.selectionArea.removeAllObjects()
+				
+			}else{
+				
+				//clear the list (only single item will get selected)
+				document.workspace.selectionArea.removeAllObjects()
+				
+				//add this shape to the list 
+				//ouline will get made shortly right after
+				document.workspace.selectionArea.add(item: container!)
 			}
 		}
+		
+		//visual outline
 		if( document.workspace.selectionArea.count>0 ){
 			
 			createOutline(artboardView)
@@ -166,9 +177,7 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 			//add this item to the list only if it overlaps with the selection bounds
 			let selectable = item as! Selectable
 			if(!selectable.boundingBox.intersection(selectionBounds).isNull ||
-				!selectionBounds.intersection(selectable.boundingBox).isNull ||
-				!selectable.boundingBox.contains(selectionBounds) ||
-				!(selectionBounds.contains(selectable.boundingBox))){
+				!selectionBounds.intersection(selectable.boundingBox).isNull) {
 				
 				document.workspace.selectionArea.add(item: selectable)
 			}
