@@ -81,6 +81,7 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 		
 		//reset drag flag 
 		dragMadeInLastSequence = false
+		
 	}
 	
 	private func expandAsNeeded(_ localPoint:NSPoint){
@@ -145,6 +146,8 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 				//ouline will get made shortly right after
 				document.workspace.selectionArea.add(item: container!)
 			}
+		}else{
+			// TODO: create a translate command that moves this shapeview by the difference
 		}
 		
 		//visual outline
