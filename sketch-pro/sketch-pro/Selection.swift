@@ -109,4 +109,16 @@ class Selection: NSObject {
 		}
 	}
 	
+	public func notifySelectionChange(selected:Bool){
+		for item in items{
+			NSLog((item as AnyObject).description)
+			let selectableItem = item as! Selectable
+			
+			if(selected){
+				selectableItem.didGetSelected()
+			}else{
+				selectableItem.didGetUnselected()
+			}
+		}
+	}
 }

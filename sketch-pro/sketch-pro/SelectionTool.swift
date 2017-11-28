@@ -157,6 +157,8 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 			setSizeOfOutline()
 		}
 		
+		
+		document.workspace.selectionArea.notifySelectionChange(selected: true)
 
 	}
 	
