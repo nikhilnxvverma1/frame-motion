@@ -17,6 +17,8 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 	private var selectionOutline : SelectionOutlineView?
 	
 	private var dragMadeInLastSequence = false
+
+	private var originShape : Selectable?
 	
 	private var document : Document!
 	var originalPoint: NSPoint!
@@ -43,8 +45,11 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 	
 	func mouseDragged(with event: NSEvent,under view: DrawAreaView){
 		
+		// resize the highlight view as needed
 		let localPoint = view.convert(event.locationInWindow, from : nil)
 		expandAsNeeded(localPoint)
+		
+		
 	}
 	
 	func mouseUp(with event: NSEvent,under view: DrawAreaView){
@@ -65,17 +70,23 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 	
 	func mouseDown(with event: NSEvent,artboardView: ArtboardView){
 		
+		//record original point
 		let localPoint = artboardView.convert(event.locationInWindow, from : nil)
 		originalPoint = localPoint
-		selectionHightlight = SelectionHighlightView()
-		selectionHightlight.x = localPoint.x
-		selectionHightlight.y = localPoint.y
-		selectionHightlight.width = 0
-		selectionHightlight.height = 0
 		
-		artboardView.addSubview(selectionHightlight)
+		//check to see if there is a shape at this point
+		originShape = findShapeAt(point: localPoint)
+		if(originShape == nil){
+			//create an empty highlight view
+			selectionHightlight = SelectionHighlightView()
+			selectionHightlight.x = localPoint.x
+			selectionHightlight.y = localPoint.y
+			selectionHightlight.width = 0
+			selectionHightlight.height = 0
+			artboardView.addSubview(selectionHightlight)
+		}
 		
-//		createOutline(artboardView)
+		//remove any existing outline, if any
 		selectionOutline?.removeFromSuperview()
 		selectionOutline = nil
 		
@@ -106,11 +117,19 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 	func mouseDragged(with event: NSEvent,artboardView: ArtboardView){
 		let localPoint = artboardView.convert(event.locationInWindow, from : nil)
 		
-		expandAsNeeded(localPoint)
-		
-		// compute the overlapping shapes that make up the selection
-		selectOverlappingShapesIn(selectionBox: selectionHightlight)
-		
+		if(originShape != nil){
+			originShape?.moveBy(event.deltaX,event.deltaY)
+			
+			//refresh the outline for the new position
+			document.workspace.selectionArea.computeBounds()
+			setSizeOfOutline()
+		}else{
+			// resize the highlight view as needed
+			expandAsNeeded(localPoint)
+			
+			// compute the overlapping shapes that make up the selection
+			selectOverlappingShapesIn(selectionBox: selectionHightlight)
+		}
 		
 		
 		//set this flag so that the highlight does not get destroyed

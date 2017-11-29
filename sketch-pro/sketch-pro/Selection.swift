@@ -35,7 +35,7 @@ class Selection: NSObject {
 		}
 	}
 	
-	private func computeBounds(){
+	public func computeBounds(){
 		
 		var lx = 999999.0
 		var ly = 999999.0

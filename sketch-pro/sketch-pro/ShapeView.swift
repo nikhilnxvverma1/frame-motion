@@ -21,11 +21,17 @@ class ShapeView: NSView,Selectable {
 		get{
 			return Double(self.frame.origin.x)
 		}
+		set{
+			self.frame.origin.x = CGFloat(newValue)
+		}
 	}
 	
 	var y : Double {
 		get{
 			return Double(self.frame.origin.y)
+		}
+		set{
+			self.frame.origin.y = CGFloat(newValue)
 		}
 	}
 	
@@ -33,11 +39,17 @@ class ShapeView: NSView,Selectable {
 		get{
 			return Double(self.frame.size.width)
 		}
+		set{
+			self.frame.size.width = CGFloat(newValue)
+		}
 	}
 	
 	var height : Double{
 		get{
 			return Double(self.frame.size.height)
+		}
+		set{
+			self.frame.size.height = CGFloat(newValue)
 		}
 	}
 	
@@ -45,6 +57,11 @@ class ShapeView: NSView,Selectable {
 		get{
 			return NSRect(x: x, y: y, width: width, height: height)
 		}
+	}
+	
+	func moveBy(_ deltaX:CGFloat,_ deltaY:CGFloat){
+		x += Double(deltaX)
+		y += Double(deltaY)
 	}
 	
     override func draw(_ dirtyRect: NSRect) {

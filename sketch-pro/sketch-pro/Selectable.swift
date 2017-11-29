@@ -21,5 +21,6 @@ protocol Selectable {
 	
 	func enteredDetailSelection()
 	func exitedDetailSelection()
+	func moveBy(_ deltaX:CGFloat,_ deltaY:CGFloat)
 }
 

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "sketch-pro/ShapeView.swift"
-            timestampString = "533585250.337191"
+            timestampString = "533672355.300814"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "223"
-            endingLineNumber = "223"
+            startingLineNumber = "240"
+            endingLineNumber = "240"
             landmarkName = "didGetUnselected()"
             landmarkType = "7">
          </BreakpointContent>

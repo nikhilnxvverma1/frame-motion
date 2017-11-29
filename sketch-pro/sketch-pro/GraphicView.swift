@@ -14,11 +14,17 @@ class GraphicView: NSView,Selectable {
 		get{
 			return Double(self.frame.origin.x)
 		}
+		set{
+			self.x = newValue
+		}
 	}
 	
 	var y : Double {
 		get{
 			return Double(self.frame.origin.y)
+		}
+		set{
+			self.y = newValue
 		}
 	}
 	
@@ -26,11 +32,17 @@ class GraphicView: NSView,Selectable {
 		get{
 			return Double(self.frame.size.width)
 		}
+		set{
+			self.width = newValue
+		}
 	}
 	
 	var height : Double{
 		get{
 			return Double(self.frame.size.height)
+		}
+		set{
+			self.height = newValue
 		}
 	}
 	
@@ -38,6 +50,11 @@ class GraphicView: NSView,Selectable {
 		get{
 			return NSRect(x: x, y: y, width: width, height: height)
 		}
+	}
+	
+	func moveBy(_ deltaX:CGFloat,_ deltaY:CGFloat){
+		x += Double(deltaX)
+		y += Double(deltaY)
 	}
 	
     override func draw(_ dirtyRect: NSRect) {
