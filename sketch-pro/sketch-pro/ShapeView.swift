@@ -60,8 +60,14 @@ class ShapeView: NSView,Selectable {
 	}
 	
 	func moveBy(_ deltaX:CGFloat,_ deltaY:CGFloat){
-		x += Double(deltaX)
-		y += Double(deltaY)
+//		x += Double(deltaX)
+//		y += Double(deltaY)
+		
+		// move all points by this difference
+		for point in points{
+			point.x = point.x + deltaX
+			point.y = point.y + deltaY
+		}
 	}
 	
     override func draw(_ dirtyRect: NSRect) {

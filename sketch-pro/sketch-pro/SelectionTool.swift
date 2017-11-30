@@ -142,8 +142,11 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 		
 		let localPoint = artboardView.convert(event.locationInWindow, from : nil)
 		
-		selectionHightlight.removeFromSuperview()
-		selectionHightlight = nil
+		if(selectionHightlight != nil){
+			selectionHightlight.removeFromSuperview()
+			selectionHightlight = nil
+		}
+		
 		
 		// if no drag was made,
 		if(!dragMadeInLastSequence){
