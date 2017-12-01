@@ -60,14 +60,28 @@ class ShapeView: NSView,Selectable {
 	}
 	
 	func moveBy(_ deltaX:CGFloat,_ deltaY:CGFloat){
-//		x += Double(deltaX)
-//		y += Double(deltaY)
+		x += Double(deltaX)
+		y -= Double(deltaY)
 		
 		// move all points by this difference
 		for point in points{
 			point.x = point.x + deltaX
-			point.y = point.y + deltaY
+			point.y = point.y - deltaY //y is inverted
+			
+			//move control points also if any
+			if(point.backwardControlPoint != nil){
+				point.backwardControlPoint.x += deltaX
+				point.backwardControlPoint.y -= deltaY
+			}
+			
+			if(point.forwardControlPoint != nil){
+				point.forwardControlPoint.x += deltaX
+				point.forwardControlPoint.y -= deltaY
+			}
 		}
+		
+		computeBounds()
+		
 	}
 	
     override func draw(_ dirtyRect: NSRect) {
