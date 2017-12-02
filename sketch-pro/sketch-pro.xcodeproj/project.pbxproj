@@ -24,6 +24,7 @@
 		C41D15721F69920600586FCA /* ArtboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D15711F69920600586FCA /* ArtboardHandler.swift */; };
 		C41D15741F6A99D300586FCA /* RectangleTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D15731F6A99D300586FCA /* RectangleTool.swift */; };
 		C41D15761F6E5BA200586FCA /* CreateRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D15751F6E5BA200586FCA /* CreateRectangle.swift */; };
+		C46F29741FD324810093A08A /* Translate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46F29731FD324810093A08A /* Translate.swift */; };
 		C48F870C1F56E43600412D7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F870B1F56E43600412D7B /* AppDelegate.swift */; };
 		C48F87101F56E43600412D7B /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F870F1F56E43600412D7B /* Document.swift */; };
 		C48F87131F56E43600412D7B /* Document.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C48F87111F56E43600412D7B /* Document.xcdatamodeld */; };
@@ -85,6 +86,7 @@
 		C41D15711F69920600586FCA /* ArtboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtboardHandler.swift; sourceTree = "<group>"; };
 		C41D15731F6A99D300586FCA /* RectangleTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleTool.swift; sourceTree = "<group>"; };
 		C41D15751F6E5BA200586FCA /* CreateRectangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRectangle.swift; sourceTree = "<group>"; };
+		C46F29731FD324810093A08A /* Translate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Translate.swift; sourceTree = "<group>"; };
 		C48F87081F56E43600412D7B /* sketch-pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sketch-pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C48F870B1F56E43600412D7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C48F870F1F56E43600412D7B /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				C40D68131F8B4B7300FD7554 /* AddBezierPoint.swift */,
 				C48F878A1F63F9DA00412D7B /* CreateArtboard.swift */,
 				C41D15751F6E5BA200586FCA /* CreateRectangle.swift */,
+				C46F29731FD324810093A08A /* Translate.swift */,
 			);
 			name = Commands;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				C48F87101F56E43600412D7B /* Document.swift in Sources */,
 				C48F87481F57EE6100412D7B /* ArtboardTool.swift in Sources */,
 				C40D67FC1F738D3200FD7554 /* OverviewDelegate.swift in Sources */,
+				C46F29741FD324810093A08A /* Translate.swift in Sources */,
 				C40D67FE1F738FFB00FD7554 /* LayerDelegate.swift in Sources */,
 				C40D680C1F7C035B00FD7554 /* ControlPointView.swift in Sources */,
 				C41D15741F6A99D300586FCA /* RectangleTool.swift in Sources */,
