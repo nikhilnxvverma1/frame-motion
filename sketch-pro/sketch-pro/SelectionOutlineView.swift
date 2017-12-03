@@ -74,4 +74,9 @@ class SelectionOutlineView: NSView {
 		
 	}
 	
+	override func mouseDragged(with event: NSEvent){
+		NSLog("Event on outline")
+	}
+
+	
 }

@@ -69,8 +69,8 @@ class Selection: NSObject {
 			}
 		}
 		
-		let os = String(format: "Out: lx,ly = %.2f,%.2f, hx,hy = %.2f,%.2f", lx,ly,hx,hy)
-		NSLog(os)
+//		let os = String(format: "Out: lx,ly = %.2f,%.2f, hx,hy = %.2f,%.2f", lx,ly,hx,hy)
+//		NSLog(os)
 		
 		boundingBox.origin.x = CGFloat(lx)
 		boundingBox.origin.y = CGFloat(ly)

@@ -49,6 +49,9 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 		let localPoint = view.convert(event.locationInWindow, from : nil)
 		expandAsNeeded(localPoint)
 		
+		if(originShape != nil){
+			NSLog("drW AREA not nil")
+		}
 		
 	}
 	
@@ -86,6 +89,10 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 			artboardView.addSubview(selectionHightlight)
 		}
 		
+		if(originShape != nil){
+			NSLog("shape not nil")
+		}
+		
 		//remove any existing outline, if any
 		selectionOutline?.removeFromSuperview()
 		selectionOutline = nil
@@ -116,6 +123,10 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 	
 	func mouseDragged(with event: NSEvent,artboardView: ArtboardView){
 		let localPoint = artboardView.convert(event.locationInWindow, from : nil)
+		
+		if(originShape != nil){
+			NSLog("dragging")
+		}
 		
 		if(originShape != nil){
 			originShape?.moveBy(event.deltaX,event.deltaY)
