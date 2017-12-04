@@ -23,11 +23,13 @@ class Translate: NSObject, Command {
 	}
 	
 	func execute(){
-		
+		shapeView!.moveBy(difference.x, difference.y)
+		// TODO: also update view and model
 	}
 	
 	func unexecute(){
-		
+		shapeView!.moveBy(-difference.x, -difference.y)
+		// TODO: also update view and model
 	}
 	
 }
