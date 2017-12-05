@@ -121,4 +121,12 @@ class Selection: NSObject {
 			}
 		}
 	}
+	
+	public func copyOfSelectionList()->NSMutableArray{
+		let copy = NSMutableArray()
+		for item in items{
+			copy.add(item)
+		}
+		return copy
+	}
 }

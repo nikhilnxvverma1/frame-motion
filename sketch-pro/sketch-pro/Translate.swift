@@ -9,27 +9,49 @@
 import Cocoa
 
 class Translate: NSObject, Command {
+	var selectables = NSMutableArray()
 	var shapeView : ShapeView!
 	var document : Document!
 	var artboardView : ArtboardView!
 	var difference : NSPoint!
 	
-	init(shapeView : ShapeView,artboardView:ArtboardView,document : Document, difference : NSPoint) {
+	init(list: NSMutableArray,artboardView:ArtboardView,document : Document, difference : NSPoint) {
 		super.init()
 		self.document = document
 		self.artboardView = artboardView
-		self.shapeView = shapeView
+		self.selectables = list
 		self.difference = difference
 	}
 	
 	func execute(){
-		shapeView!.moveBy(difference.x, difference.y)
+		
+		//move by difference
+		for item in selectables{
+			let selectable = item as! Selectable
+			selectable.moveBy(difference.x, difference.y)
+		}
+		
 		// TODO: also update view and model
 	}
 	
 	func unexecute(){
-		shapeView!.moveBy(-difference.x, -difference.y)
+		
+		//move in reverse
+		for item in selectables{
+			let selectable = item as! Selectable
+			selectable.moveBy(-difference.x, -difference.y)
+		}
 		// TODO: also update view and model
+	}
+	
+	
+	//not needed
+	private func copy(list:NSMutableArray)->NSMutableArray{
+		let copy = NSMutableArray()
+		for item in list{
+			copy.add(item)
+		}
+		return copy
 	}
 	
 }

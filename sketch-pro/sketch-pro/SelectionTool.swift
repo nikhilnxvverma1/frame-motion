@@ -69,6 +69,7 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 		selectionOutline?.height = 0
 		
 		view.addSubview(selectionOutline!)
+		
 	}
 	
 	func mouseDown(with event: NSEvent,artboardView: ArtboardView){
@@ -133,7 +134,7 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 			
 			//refresh the outline for the new position
 			document.workspace.selectionArea.computeBounds()
-			setSizeOfOutline()
+//			setSizeOfOutline()
 		}else{
 			// resize the highlight view as needed
 			expandAsNeeded(localPoint)
@@ -180,7 +181,17 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 				document.workspace.selectionArea.add(item: container!)
 			}
 		}else{
-			// TODO: create a translate command that moves this shapeview by the difference
+			
+			//calculate the difference
+			let difference = NSPoint(x:localPoint.x-originalPoint.x,y:localPoint.y-originalPoint.y)
+			
+			//create and commit a translate command that moves selected selectables by the difference
+			let translate = Translate(list:document.workspace.selectionArea.copyOfSelectionList(),
+			                          artboardView:artboardView,
+			                          document:document,
+			                          difference:difference)
+			document.workspace.pushCommand(command: translate, executeBeforePushing: false)
+			
 		}
 		
 		//visual outline
