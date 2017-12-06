@@ -47,8 +47,9 @@ class ControlPointView: NSView {
 
         // Drawing code here.
 		// Draw a white circle 
-		NSColor.red.setFill()
+		NSColor.orange.setFill()
 		NSRectFill(dirtyRect)
+		
 		super.draw(dirtyRect)
     }
     

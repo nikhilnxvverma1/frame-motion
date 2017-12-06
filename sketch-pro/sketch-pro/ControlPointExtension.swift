@@ -80,7 +80,7 @@ class ControlPointExtension: NSView,CALayerDelegate {
 		aPath.close()
 		
 		//If you want to stroke it with a green color
-		NSColor.green.set()
+		NSColor.gray.set()
 		aPath.stroke()
 		//If you want to fill it as well
 		aPath.fill()
