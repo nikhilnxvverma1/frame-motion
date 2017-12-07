@@ -14,6 +14,7 @@ class ShapeView: NSView,Selectable {
 	var model : ShapeMO!
 	var points = [BezierPointView]()
 	var path : NSBezierPath?
+	
 //	var outlineColor = CGColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
 //	var fillColor = CGColor(red: 0.6, green: 0.6, blue: 0.6, alpha: 1)
 	
@@ -253,11 +254,20 @@ class ShapeView: NSView,Selectable {
 	
 	
 	func didGetSelected(){
-		
+		//show all points
+		for point in points{
+			point.isHidden=false
+		}
 	}
 	
 	func didGetUnselected(){
 		hideHandles(shouldHide: true,hidePointsAlso:true)
+		
+		// also hide points
+		for point in points{
+			point.isHidden=true
+		}
+		
 	}
 	
 	func enteredDetailSelection(){

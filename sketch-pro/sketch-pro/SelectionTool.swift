@@ -88,6 +88,8 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 			selectionHightlight.width = 0
 			selectionHightlight.height = 0
 			artboardView.addSubview(selectionHightlight)
+		}else{
+			// TODO: origin shape not added to selection area
 		}
 		
 		if(originShape != nil){

@@ -88,19 +88,25 @@ class Selection: NSObject {
 		
 		items.add(item)
 		computeBounds()
+		item.didGetSelected()
 	}
 	
 	public func remove(item : Selectable){
 		items.remove(item)
 		computeBounds()
+		item.didGetUnselected()
 	}
 	
 	public func removeAllObjects(){
+		for item in items{
+			(item as! Selectable).didGetUnselected()
+		}
 		items.removeAllObjects()
 		boundingBox.origin.x = 0
 		boundingBox.origin.y = 0
 		boundingBox.size.width = 0
 		boundingBox.size.height = 0
+		
 	}
 	
 	public func printAllItems(){
