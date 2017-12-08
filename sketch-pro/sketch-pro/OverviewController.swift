@@ -171,7 +171,7 @@ class OverviewController: NSViewController,
 			pageList=try document.managedObjectContext?.fetch(pageFetch)
 			if(pageList != nil){
 				//load the contents of a previously saved document
-				if(pageList!.count>1){
+				if(pageList!.count>=1){
 					selectedPage = pageList![0]
 					drawAreaDelegate.loadContentFrom(artboardSet: selectedPage.artboards)
 				}else{
