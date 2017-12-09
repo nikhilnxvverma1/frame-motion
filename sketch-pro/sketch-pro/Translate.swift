@@ -31,7 +31,8 @@ class Translate: NSObject, Command {
 			selectable.moveBy(difference.x, difference.y)
 		}
 		
-		// TODO: also update view and model
+		// also update view and model
+		artboardView.setNeedsDisplay(artboardView.frame)
 	}
 	
 	func unexecute(){
@@ -40,8 +41,10 @@ class Translate: NSObject, Command {
 		for item in selectables{
 			let selectable = item as! Selectable
 			selectable.moveBy(-difference.x, -difference.y)
+			
 		}
-		// TODO: also update view and model
+		// also update view and model
+		artboardView.setNeedsDisplay(artboardView.frame)
 	}
 	
 	

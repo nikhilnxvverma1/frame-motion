@@ -82,6 +82,7 @@ class ShapeView: NSView,Selectable {
 		}
 		
 		computeBounds()
+		self.setNeedsDisplay(self.frame)
 		
 	}
 	
