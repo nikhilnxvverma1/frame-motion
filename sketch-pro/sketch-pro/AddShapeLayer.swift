@@ -27,6 +27,7 @@ class AddShapeLayer: NSObject, Command {
 		createAndPersistShape()
 		self.artboardView.addSubview(shapeView)
 		self.document.workspace.itemList.add(shapeView)
+		self.document.workspace.windowController.overviewController.graphicTable.reloadData()
 	}
 	
 	func unexecute(){

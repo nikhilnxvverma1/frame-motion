@@ -146,6 +146,9 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler, Tool {
 			//push the comm and on the stack
 			self.document.workspace.pushCommand(command: createShapeAndAddPoint, executeBeforePushing: false)
 			
+			//refresh table
+			self.document.workspace.windowController.overviewController.graphicTable.reloadData()
+			
 		}else{
 //			//Use only the bezier point command
 //			let addBezierPoint = AddBezierPoint(bezierPointView: latestBezierPointView,shapeView: shapeView, artboardView: artboardView, document: document)

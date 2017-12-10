@@ -143,19 +143,25 @@ class OverviewController: NSViewController,
 		if outlineView == graphicTable{
 			if tableColumn?.identifier == "graphicColumn"{
 			
+				
+				view = outlineView.make(withIdentifier: "graphicCell", owner: self) as? NSTableCellView
 				if let artboard = item as? ArtboardMO{
-					view = outlineView.make(withIdentifier: "graphicCell", owner: self) as? NSTableCellView
+					
 					
 					if let textField = view?.textField{
 						textField.stringValue = artboard.name!
 					}
 				}else if let page = item as? PageMO{
-					view = outlineView.make(withIdentifier: "graphicCell", owner: self) as? NSTableCellView
 					
-
 					if let textField = view?.textField{
 						textField.stringValue = page.name!
 
+					}
+				}else if let layer = item as? LayerMO{
+					
+					if let textField = view?.textField{
+						textField.stringValue = layer.name!
+						
 					}
 				}
 			}
@@ -171,7 +177,7 @@ class OverviewController: NSViewController,
 			pageList=try document.managedObjectContext?.fetch(pageFetch)
 			if(pageList != nil){
 				//load the contents of a previously saved document
-				if(pageList!.count>=1){
+				if(pageList!.count>1){
 					selectedPage = pageList![0]
 					drawAreaDelegate.loadContentFrom(artboardSet: selectedPage.artboards)
 				}else{
