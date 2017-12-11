@@ -16,5 +16,13 @@ class InspectorController: NSViewController, InspectorDelegate {
         super.viewDidLoad()
         // Do view setup here.
     }
+	
+	public func showArtboardControls(){
+		
+	}
+	
+	public func showPenToolControls(){
+		
+	}
     
 }
