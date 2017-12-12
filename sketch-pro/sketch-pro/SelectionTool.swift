@@ -128,10 +128,6 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 		let localPoint = artboardView.convert(event.locationInWindow, from : nil)
 		
 		if(originShape != nil){
-			NSLog("dragging")
-		}
-		
-		if(originShape != nil){
 			originShape?.moveBy(event.deltaX,event.deltaY)
 			
 			//refresh the outline for the new position

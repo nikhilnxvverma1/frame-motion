@@ -25,6 +25,8 @@
 		C41D15741F6A99D300586FCA /* RectangleTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D15731F6A99D300586FCA /* RectangleTool.swift */; };
 		C41D15761F6E5BA200586FCA /* CreateRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D15751F6E5BA200586FCA /* CreateRectangle.swift */; };
 		C46F29741FD324810093A08A /* Translate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46F29731FD324810093A08A /* Translate.swift */; };
+		C46F29761FE048140093A08A /* ArtboardOptions.xib in Resources */ = {isa = PBXBuildFile; fileRef = C46F29751FE048140093A08A /* ArtboardOptions.xib */; };
+		C46F29781FE04AB90093A08A /* PenToolOptions.xib in Resources */ = {isa = PBXBuildFile; fileRef = C46F29771FE04AB90093A08A /* PenToolOptions.xib */; };
 		C48F870C1F56E43600412D7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F870B1F56E43600412D7B /* AppDelegate.swift */; };
 		C48F87101F56E43600412D7B /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F870F1F56E43600412D7B /* Document.swift */; };
 		C48F87131F56E43600412D7B /* Document.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C48F87111F56E43600412D7B /* Document.xcdatamodeld */; };
@@ -87,6 +89,8 @@
 		C41D15731F6A99D300586FCA /* RectangleTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleTool.swift; sourceTree = "<group>"; };
 		C41D15751F6E5BA200586FCA /* CreateRectangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRectangle.swift; sourceTree = "<group>"; };
 		C46F29731FD324810093A08A /* Translate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Translate.swift; sourceTree = "<group>"; };
+		C46F29751FE048140093A08A /* ArtboardOptions.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtboardOptions.xib; sourceTree = "<group>"; };
+		C46F29771FE04AB90093A08A /* PenToolOptions.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PenToolOptions.xib; sourceTree = "<group>"; };
 		C48F87081F56E43600412D7B /* sketch-pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sketch-pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C48F870B1F56E43600412D7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C48F870F1F56E43600412D7B /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
@@ -225,6 +229,8 @@
 				C48F87431F57E8CF00412D7B /* Workspace.swift */,
 				C48F87141F56E43600412D7B /* Assets.xcassets */,
 				C48F87161F56E43600412D7B /* Main.storyboard */,
+				C46F29751FE048140093A08A /* ArtboardOptions.xib */,
+				C46F29771FE04AB90093A08A /* PenToolOptions.xib */,
 				C48F87111F56E43600412D7B /* Document.xcdatamodeld */,
 				C41D15771F6E696A00586FCA /* Commands */,
 				C41D15781F6E699000586FCA /* Custom Views */,
@@ -374,8 +380,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C46F29781FE04AB90093A08A /* PenToolOptions.xib in Resources */,
 				C48F87151F56E43600412D7B /* Assets.xcassets in Resources */,
 				C48F87181F56E43600412D7B /* Main.storyboard in Resources */,
+				C46F29761FE048140093A08A /* ArtboardOptions.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
