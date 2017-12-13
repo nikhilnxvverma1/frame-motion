@@ -44,11 +44,13 @@ class WindowController: NSWindowController {
 	@IBAction func insertArtboard(_ sender: NSMenuItem) {
 		let workspace = (self.document as! Document).workspace
 		workspace?.setCurrent(tool:.Artboard)
+		inspectorController.showArtboardControls()
 	}
 	
 	@IBAction func appointPenTool(_ sender: Any) {
 		let workspace = (self.document as! Document).workspace
 		workspace?.setCurrent(tool:.Pen)
+		inspectorController.showPenToolControls()
 	}
 	@IBAction func insertRectangle(_ sender: NSMenuItem) {
 		let workspace = (self.document as! Document).workspace
