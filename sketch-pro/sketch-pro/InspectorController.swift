@@ -9,6 +9,7 @@
 import Cocoa
 
 class InspectorController: NSViewController, InspectorDelegate {
+	@IBOutlet var rootView: NSView!
 
 	var layerDelegate : LayerDelegate!
 	
@@ -18,11 +19,11 @@ class InspectorController: NSViewController, InspectorDelegate {
     }
 	
 	public func showArtboardControls(){
-		
+		NSLog("artboard controls")
 	}
 	
 	public func showPenToolControls(){
-		
+		NSLog("pen tool controls")
 	}
     
 }

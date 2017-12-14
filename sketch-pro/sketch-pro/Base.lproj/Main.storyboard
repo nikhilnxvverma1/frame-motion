@@ -1041,6 +1041,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="142" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </view>
+                    <connections>
+                        <outlet property="rootView" destination="w8w-uk-FGA" id="NH2-vT-gHe"/>
+                    </connections>
                 </viewController>
                 <customObject id="8Rt-cM-aU2" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
