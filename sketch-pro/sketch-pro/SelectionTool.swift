@@ -187,7 +187,8 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 			let translate = Translate(list:document.workspace.selectionArea.copyOfSelectionList(),
 			                          artboardView:artboardView,
 			                          document:document,
-			                          difference:difference)
+			                          difference:difference,
+			                          selectionTool:self)
 			document.workspace.pushCommand(command: translate, executeBeforePushing: false)
 			
 		}

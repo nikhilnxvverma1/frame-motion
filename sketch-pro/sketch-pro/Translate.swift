@@ -14,13 +14,15 @@ class Translate: NSObject, Command {
 	var document : Document!
 	var artboardView : ArtboardView!
 	var difference : NSPoint!
+	var selectionTool:SelectionTool!
 	
-	init(list: NSMutableArray,artboardView:ArtboardView,document : Document, difference : NSPoint) {
+	init(list: NSMutableArray,artboardView:ArtboardView,document : Document, difference : NSPoint,selectionTool:SelectionTool) {
 		super.init()
 		self.document = document
 		self.artboardView = artboardView
 		self.selectables = list
 		self.difference = difference
+		self.selectionTool = selectionTool
 	}
 	
 	func execute(){
