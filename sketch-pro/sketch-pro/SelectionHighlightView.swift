@@ -76,6 +76,7 @@ class SelectionHighlightView: NSView {
 //		context?.setFillColor(NSColor.blue.cgColor)
 		context?.setFillColor(SelectionHighlightView.boxColor)
 		context?.drawPath(using: .fillStroke)
+		context?.setLineDash(phase: 0, lengths: [12])
     }
 	
 }

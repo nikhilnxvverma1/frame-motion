@@ -89,9 +89,9 @@ class OverviewController: NSViewController,
 	                 ofItem item: Any?) -> Any{
 		if outlineView == graphicTable{
 			if let page = item as? PageMO{
-				return page.artboards?.allObjects[index]
+				return page.artboards?.allObjects[index] as Any
 			}else if let artboard = item as? ArtboardMO{
-				return artboard.layers?.allObjects[index]
+				return artboard.layers?.allObjects[index] as Any
 			}else if item == nil {
 				if pageList != nil {
 					return pageList![index]
