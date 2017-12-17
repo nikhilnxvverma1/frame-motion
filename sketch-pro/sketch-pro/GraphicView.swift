@@ -15,7 +15,7 @@ class GraphicView: NSView,Selectable {
 			return Double(self.frame.origin.x)
 		}
 		set{
-			self.x = newValue
+			self.frame.origin.x = CGFloat(newValue)
 		}
 	}
 	
@@ -24,7 +24,7 @@ class GraphicView: NSView,Selectable {
 			return Double(self.frame.origin.y)
 		}
 		set{
-			self.y = newValue
+			self.frame.origin.y = CGFloat(newValue)
 		}
 	}
 	
@@ -33,7 +33,7 @@ class GraphicView: NSView,Selectable {
 			return Double(self.frame.size.width)
 		}
 		set{
-			self.width = newValue
+			self.frame.size.width = CGFloat(newValue)
 		}
 	}
 	
@@ -42,7 +42,7 @@ class GraphicView: NSView,Selectable {
 			return Double(self.frame.size.height)
 		}
 		set{
-			self.height = newValue
+			self.frame.size.height = CGFloat(newValue)
 		}
 	}
 	
@@ -54,7 +54,7 @@ class GraphicView: NSView,Selectable {
 	
 	func moveBy(_ deltaX:CGFloat,_ deltaY:CGFloat){
 		x += Double(deltaX)
-		y += Double(deltaY)
+		y -= Double(deltaY)
 	}
 	
     override func draw(_ dirtyRect: NSRect) {
