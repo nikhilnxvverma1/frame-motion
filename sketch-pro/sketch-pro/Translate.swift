@@ -33,6 +33,8 @@ class Translate: NSObject, Command {
 			selectable.moveBy(difference.x, difference.y)
 		}
 		
+		// TODO move selection outline
+		
 		// also update view and model
 		artboardView.setNeedsDisplay(artboardView.frame)
 	}
