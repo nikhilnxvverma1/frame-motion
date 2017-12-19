@@ -92,13 +92,10 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 			// TODO: origin shape not added to selection area
 		}
 		
-		if(originShape != nil){
-			NSLog("shape not nil")
-		}
-		
 		//remove any existing outline, if any
 		selectionOutline?.removeFromSuperview()
 		selectionOutline = nil
+		
 		
 		//reset drag flag 
 		dragMadeInLastSequence = false
@@ -128,6 +125,10 @@ class SelectionTool: NSObject,Tool,CanvasHandler,ArtboardHandler {
 		let localPoint = artboardView.convert(event.locationInWindow, from : nil)
 		
 		if(originShape != nil){
+			
+			NSLog("dragging")
+			
+			
 			originShape?.moveBy(event.deltaX,event.deltaY)
 			
 			//refresh the outline for the new position

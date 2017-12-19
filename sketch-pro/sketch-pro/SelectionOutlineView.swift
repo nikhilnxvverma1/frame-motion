@@ -73,10 +73,21 @@ class SelectionOutlineView: NSView {
 		context?.drawPath(using: .stroke)
 		
 	}
+
+	override func mouseDown(with event: NSEvent){
+		// TODO: remove if not needed
+		NSLog("outline mouse down" )
+	}
 	
 	override func mouseDragged(with event: NSEvent){
-		NSLog("Event on outline")
+		// TODO: delegate this over to selection tool
+		NSLog("outline mouse dragged" )
+		
 	}
-
+	
+	override func mouseUp(with event: NSEvent){
+		// TODO: remove if not needed
+		NSLog("outline mouse up" )
+	}
 	
 }
