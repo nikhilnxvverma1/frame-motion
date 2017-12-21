@@ -92,6 +92,8 @@ class OverviewController: NSViewController,
 				return page.artboards?.allObjects[index] as Any
 			}else if let artboard = item as? ArtboardMO{
 				return artboard.layers?.allObjects[index] as Any
+			}else if let layer = item as? LayerMO{
+				return layer as Any
 			}else if item == nil {
 				if pageList != nil {
 					return pageList![index]

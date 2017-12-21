@@ -33,6 +33,7 @@ class AddShapeLayer: NSObject, Command {
 	func unexecute(){
 		self.shapeView.removeFromSuperview()
 		self.document.workspace.itemList.remove(shapeView)
+		artboardView.model.removeFromLayers(shapeView.model)
 		self.document.managedObjectContext?.delete(shapeView.model)
 		shapeView.model = nil
 		self.document.workspace.windowController.overviewController.graphicTable.reloadData()
@@ -49,6 +50,7 @@ class AddShapeLayer: NSObject, Command {
 	}
 	
 	func createAndPersistShape(){
+		
 		shapeView.model=NSEntityDescription.insertNewObject(forEntityName: "Shape",
 		                                                       into: self.document.managedObjectContext!) as! ShapeMO
 		//set properties
@@ -59,6 +61,10 @@ class AddShapeLayer: NSObject, Command {
 		shapeView.model.fillRed = 200
 		shapeView.model.fillGreen = 200
 		shapeView.model.fillBlue = 200
+		
+		//make the link in the model list aswell
+		artboardView.model.addToLayers(shapeView.model)
+		
 		self.document.workspace.windowController.overviewController.graphicTable.reloadData()
 		
 	}
