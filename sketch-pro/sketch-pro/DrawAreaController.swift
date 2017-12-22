@@ -32,6 +32,13 @@ class DrawAreaController: NSViewController, DrawAreaDelegate, LayerDelegate{
 				artboardView.frame.origin.y = CGFloat (artboardMO.y)
 				artboardView.frame.size.width = CGFloat(artboardMO.width)
 				artboardView.frame.size.height = CGFloat(artboardMO.height)
+				
+				//add all layers from this artboard into the artboard view
+				for layerObject in artboardMO.layers!{
+					let layerMO = layerObject as! LayerMO
+					// TODO: check if this is a shape layer and if so
+					//iterate through all the points and add the shape
+				}
 			}
 		}
 	}
