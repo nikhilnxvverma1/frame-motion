@@ -35,9 +35,16 @@ class DrawAreaController: NSViewController, DrawAreaDelegate, LayerDelegate{
 				
 				//add all layers from this artboard into the artboard view
 				for layerObject in artboardMO.layers!{
-					let layerMO = layerObject as! LayerMO
-					// TODO: check if this is a shape layer and if so
-					//iterate through all the points and add the shape
+//					let layerMO = layerObject as! LayerMO
+					// check if this is a shape layer and if so
+					if let shape = layerObject as? ShapeMO{
+						let shapeView = ShapeView()
+						//iterate through all the points and add the shape
+						for pointObject in shape.path! {
+							
+						}
+					}
+					
 				}
 			}
 		}
