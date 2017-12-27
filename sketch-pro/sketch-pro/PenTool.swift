@@ -61,6 +61,8 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler, Tool {
 			addBezierPoint = AddBezierPoint(bezierPointView: latestBezierPointView,shapeView: shapeView, artboardView: artboardView, document: document)
 //			addBezierPoint.persistBezierPoint()
 			
+			// TODO: Points should also be persisted in model object
+			
 			//push the comm and on the stack
 			self.document.workspace.pushCommand(command: addBezierPoint, executeBeforePushing: false)
 		}

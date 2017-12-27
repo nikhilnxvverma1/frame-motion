@@ -111,6 +111,9 @@ class AddBezierPoint: NSObject, Command {
 			bezierPointView.model.controlPoint2?.y=Float(bezierPointView.backwardControlPoint.y)
 		}
 		
+		// TODO: Points should be converted and be assigned to view object
+		
+		
 		//add it to shape view's point list
 		shapeView.points.append(bezierPointView)
 		

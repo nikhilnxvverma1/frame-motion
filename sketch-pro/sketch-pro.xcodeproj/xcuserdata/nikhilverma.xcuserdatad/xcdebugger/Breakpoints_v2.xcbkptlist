@@ -58,7 +58,7 @@
                   moduleName = "sketch-pro"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nikhilverma/Desktop/frame-motion/sketch-pro/sketch-pro/OverviewController.swift"
-                  timestampString = "535572635.203337"
+                  timestampString = "536090699.109002"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "164"
@@ -73,7 +73,7 @@
                   moduleName = "sketch-pro"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nikhilverma/Desktop/frame-motion/sketch-pro/sketch-pro/OverviewController.swift"
-                  timestampString = "535572635.205048"
+                  timestampString = "536090699.110382"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "164"
@@ -144,6 +144,22 @@
             startingLineNumber = "144"
             endingLineNumber = "144"
             landmarkName = "outlineView(_:viewFor:item:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "sketch-pro/DrawAreaController.swift"
+            timestampString = "536048101.273748"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "loadContentFrom(artboardSet:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
