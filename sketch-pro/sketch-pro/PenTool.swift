@@ -9,7 +9,7 @@
 import Cocoa
 import Foundation
 
-class PenTool: NSObject, CanvasHandler, ArtboardHandler, Tool {
+class PenTool: NSObject, ArtboardHandler, Tool {
 	
 	var document : Document!
 	var shapeView : ShapeView!
@@ -21,21 +21,7 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler, Tool {
 	init (_ document : Document){
 		self.document = document
 	}
-	
-	// MARK: Scroll View Canvas
-	
-	func mouseDown(with event: NSEvent,under view: DrawAreaView){
-		// TODO: remove if not needed
-	}
-	
-	func mouseDragged(with event: NSEvent,under view: DrawAreaView){
-		// TODO: remove if not needed
-	}
-	
-	func mouseUp(with event: NSEvent,under view: DrawAreaView){
-		// TODO: remove if not needed
-	}
-	
+		
 	// MARK: Artboard
 	
 	func mouseDown(with event: NSEvent,artboardView: ArtboardView){
@@ -60,8 +46,6 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler, Tool {
 			//Use only the bezier point command
 			addBezierPoint = AddBezierPoint(bezierPointView: latestBezierPointView,shapeView: shapeView, artboardView: artboardView, document: document)
 //			addBezierPoint.persistBezierPoint()
-			
-			// TODO: Points should also be persisted in model object
 			
 			//push the comm and on the stack
 			self.document.workspace.pushCommand(command: addBezierPoint, executeBeforePushing: false)
@@ -135,6 +119,8 @@ class PenTool: NSObject, CanvasHandler, ArtboardHandler, Tool {
 			document.workspace.itemList.add(shapeView)
 			createShape.createAndPersistShape()
 			artboardView.addSubview(shapeView)
+			
+			// TODO: Points should also be persisted in model object
 			
 			//create add bezier point command
 			let addBezierPoint = AddBezierPoint(bezierPointView: latestBezierPointView,shapeView: shapeView, artboardView: artboardView, document: document)
