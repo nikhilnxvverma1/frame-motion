@@ -83,7 +83,7 @@ class Workspace: NSObject {
 		case .Pen:
 			// fresh layer on every change
 			penTool = PenTool(self.document)
-			canvasHandler = penTool
+			canvasHandler = selectionTool
 			artboardHandler =  penTool
 			currentTool = penTool
 			break
