@@ -24,6 +24,7 @@
 		C41D15721F69920600586FCA /* ArtboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D15711F69920600586FCA /* ArtboardHandler.swift */; };
 		C41D15741F6A99D300586FCA /* RectangleTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D15731F6A99D300586FCA /* RectangleTool.swift */; };
 		C41D15761F6E5BA200586FCA /* CreateRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D15751F6E5BA200586FCA /* CreateRectangle.swift */; };
+		C424337D1FF955EF00A296BB /* TextTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = C424337C1FF955EF00A296BB /* TextTool.swift */; };
 		C46F29741FD324810093A08A /* Translate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46F29731FD324810093A08A /* Translate.swift */; };
 		C46F29761FE048140093A08A /* ArtboardOptions.xib in Resources */ = {isa = PBXBuildFile; fileRef = C46F29751FE048140093A08A /* ArtboardOptions.xib */; };
 		C46F29781FE04AB90093A08A /* PenToolOptions.xib in Resources */ = {isa = PBXBuildFile; fileRef = C46F29771FE04AB90093A08A /* PenToolOptions.xib */; };
@@ -88,6 +89,7 @@
 		C41D15711F69920600586FCA /* ArtboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtboardHandler.swift; sourceTree = "<group>"; };
 		C41D15731F6A99D300586FCA /* RectangleTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleTool.swift; sourceTree = "<group>"; };
 		C41D15751F6E5BA200586FCA /* CreateRectangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRectangle.swift; sourceTree = "<group>"; };
+		C424337C1FF955EF00A296BB /* TextTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextTool.swift; sourceTree = "<group>"; };
 		C46F29731FD324810093A08A /* Translate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Translate.swift; sourceTree = "<group>"; };
 		C46F29751FE048140093A08A /* ArtboardOptions.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtboardOptions.xib; sourceTree = "<group>"; };
 		C46F29771FE04AB90093A08A /* PenToolOptions.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PenToolOptions.xib; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				C41D15791F6E6ADF00586FCA /* Controllers */,
 				C40D67F61F738C3F00FD7554 /* Delegates */,
 				C48F87451F57ED4300412D7B /* CanvasHandler.swift */,
+				C424337C1FF955EF00A296BB /* TextTool.swift */,
 				C40D68051F7A13BA00FD7554 /* PenTool.swift */,
 				C41D15731F6A99D300586FCA /* RectangleTool.swift */,
 				C41D15711F69920600586FCA /* ArtboardHandler.swift */,
@@ -422,6 +425,7 @@
 				C40D68141F8B4B7300FD7554 /* AddBezierPoint.swift in Sources */,
 				C4A99E791F9B238F009ABE7A /* Selectable.swift in Sources */,
 				C48F87131F56E43600412D7B /* Document.xcdatamodeld in Sources */,
+				C424337D1FF955EF00A296BB /* TextTool.swift in Sources */,
 				C4A99E811FA3A4FB009ABE7A /* Tool.swift in Sources */,
 				C40D680E1F82813F00FD7554 /* ControlPointExtension.swift in Sources */,
 				C48F870C1F56E43600412D7B /* AppDelegate.swift in Sources */,

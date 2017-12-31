@@ -14,6 +14,7 @@ enum ToolType{
 	case Rectangle
 	case Circle
 	case Pen
+	case Text
 }
 
 class Workspace: NSObject {
