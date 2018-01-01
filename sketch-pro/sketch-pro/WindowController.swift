@@ -57,6 +57,10 @@ class WindowController: NSWindowController {
 		workspace?.setCurrent(tool:.Rectangle)
 	}
 	
+	@IBAction func appointTextTool(_ sender: Any) {
+		NSLog("TODO need to select text tool")
+	}
+	
 	override var acceptsFirstResponder: Bool { return true }
 	
 	override func keyDown(with event: NSEvent) {

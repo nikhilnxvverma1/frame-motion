@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
@@ -751,6 +751,11 @@
                                                             <action selector="appointPenTool:" target="jGA-0Y-lOj" id="fCh-lp-HXS"/>
                                                         </connections>
                                                     </menuItem>
+                                                    <menuItem title="Text" image="NSNetwork" id="K3q-VK-TgW">
+                                                        <connections>
+                                                            <action selector="appointTextTool:" target="jGA-0Y-lOj" id="cw6-nT-DXF"/>
+                                                        </connections>
+                                                    </menuItem>
                                                 </items>
                                             </menu>
                                         </popUpButtonCell>
@@ -795,6 +800,8 @@
                         </toolbar>
                     </window>
                     <connections>
+                        <outlet property="appointTextTool" destination="K3q-VK-TgW" id="jsq-P3-Mgs"/>
+                        <outlet property="insertText" destination="K3q-VK-TgW" id="nXx-Lj-tsg"/>
                         <segue destination="spt-t4-FP9" kind="relationship" relationship="window.shadowedContentViewController" id="IXg-kK-bEm"/>
                     </connections>
                 </windowController>
@@ -1060,6 +1067,7 @@
         <image name="NSFolder" width="32" height="32"/>
         <image name="NSFontPanel" width="32" height="32"/>
         <image name="NSInfo" width="32" height="32"/>
+        <image name="NSNetwork" width="32" height="32"/>
         <image name="NSRemoveTemplate" width="11" height="11"/>
     </resources>
 </document>
