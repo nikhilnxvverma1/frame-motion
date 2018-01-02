@@ -58,7 +58,9 @@ class WindowController: NSWindowController {
 	}
 	
 	@IBAction func appointTextTool(_ sender: Any) {
-		NSLog("TODO need to select text tool")
+//		NSLog("TODO need to select text tool")
+		let workspace = (self.document as! Document).workspace
+		workspace?.setCurrent(tool:.Text)
 	}
 	
 	override var acceptsFirstResponder: Bool { return true }

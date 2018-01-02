@@ -34,6 +34,7 @@ class Workspace: NSObject {
 	var rectangleTool : RectangleTool!
 	var selectionTool : SelectionTool!
 	var penTool : PenTool!
+	var textTool : TextTool!
 	
 	init(_ document : Document){
 		super.init()
@@ -46,6 +47,7 @@ class Workspace: NSObject {
 		rectangleTool = RectangleTool(self.document)
 		selectionTool = SelectionTool(self.document)
 		penTool = PenTool(self.document)
+		textTool = TextTool(self.document)
 		
 		artboardHandler = selectionTool
 		canvasHandler = selectionTool

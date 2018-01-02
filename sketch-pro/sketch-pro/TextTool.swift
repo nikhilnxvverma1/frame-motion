@@ -10,6 +10,13 @@ import Foundation
 import Cocoa
 
 class TextTool: NSObject, ArtboardHandler, Tool{
+	
+	var document : Document!
+	
+	init (_ document : Document){
+		self.document = document
+	}
+	
 	// MARK: Artboard
 	
 	func mouseDown(with event: NSEvent,artboardView: ArtboardView){
