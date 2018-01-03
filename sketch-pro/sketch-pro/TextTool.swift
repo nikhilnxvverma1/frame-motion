@@ -12,6 +12,7 @@ import Cocoa
 class TextTool: NSObject, ArtboardHandler, Tool{
 	
 	var document : Document!
+	var textView : TextView!
 	
 	init (_ document : Document){
 		self.document = document
