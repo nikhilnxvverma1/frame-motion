@@ -85,7 +85,13 @@ class Workspace: NSObject {
 			break
 		case .Pen:
 			// fresh layer on every change
-			penTool = PenTool(self.document)
+//			penTool = PenTool(self.document)
+			canvasHandler = selectionTool
+			artboardHandler =  penTool
+			currentTool = penTool
+			break
+		case .Text:
+			// fresh layer on every change
 			canvasHandler = selectionTool
 			artboardHandler =  textTool
 			currentTool = textTool

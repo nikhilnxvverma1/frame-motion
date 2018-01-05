@@ -70,7 +70,7 @@ class TextView: NSView {
 		
 		context?.addPath(path)
 		//		context?.setFillColor(NSColor.blue.cgColor)
-		context?.setFillColor(TextView.boxColor)
+//		context?.setFillColor(TextView.boxColor)
 		context?.setStrokeColor(CGColor(red: 0, green: 0, blue: 0, alpha: 1))
 		context?.drawPath(using: .stroke)
 		
