@@ -60,8 +60,9 @@ class TextTool: NSObject, ArtboardHandler, Tool{
 	func mouseUp(with event: NSEvent,artboardView: ArtboardView){
 
 		// TODO : Create Text Command
+		let command = CreateText(textView,artboardView,document: self.document)
 //		let command = CreateRectangle(textView,artboardView,document: self.document)
-//		self.document.workspace.pushCommand(command: command, executeBeforePushing: false)
+		self.document.workspace.pushCommand(command: command, executeBeforePushing: false)
 		self.document.workspace.itemList.add(textView)
 		
 	}
