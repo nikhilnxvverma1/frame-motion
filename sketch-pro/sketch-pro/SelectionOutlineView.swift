@@ -90,4 +90,8 @@ class SelectionOutlineView: NSView {
 		NSLog("outline mouse up" )
 	}
 	
+	override func hitTest(_ point: NSPoint) -> NSView? {
+		return nil
+	}
+	
 }
