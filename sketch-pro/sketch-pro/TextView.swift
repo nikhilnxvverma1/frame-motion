@@ -14,6 +14,7 @@ class TextView: NSView {
 	
 	var model : TextMO!
 	var text : String!
+	var view : NSTextView!
 	
 	private static var boxColor = CGColor(red: 0, green: 1, blue: 0, alpha: 0.5)//for debugging purposes
 	

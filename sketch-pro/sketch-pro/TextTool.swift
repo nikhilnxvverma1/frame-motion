@@ -59,6 +59,8 @@ class TextTool: NSObject, ArtboardHandler, Tool{
 	
 	func mouseUp(with event: NSEvent,artboardView: ArtboardView){
 
+		// TODO : Add nstextview as a child of text view
+		
 		// TODO : Create Text Command
 		let command = CreateText(textView,artboardView,document: self.document)
 //		let command = CreateRectangle(textView,artboardView,document: self.document)
